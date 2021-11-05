@@ -1,0 +1,412 @@
+{
+  "tags": {
+    "tag": [
+      {
+        "name": "rock",
+        "url": "https://www.last.fm/tag/rock",
+        "reach": "397408",
+        "taggings": "3998555",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "electronic",
+        "url": "https://www.last.fm/tag/electronic",
+        "reach": "256126",
+        "taggings": "2397081",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "seen live",
+        "url": "https://www.last.fm/tag/seen+live",
+        "reach": "81817",
+        "taggings": "2144417",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "alternative",
+        "url": "https://www.last.fm/tag/alternative",
+        "reach": "263329",
+        "taggings": "2103403",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "indie",
+        "url": "https://www.last.fm/tag/indie",
+        "reach": "255391",
+        "taggings": "2028792",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "pop",
+        "url": "https://www.last.fm/tag/pop",
+        "reach": "228137",
+        "taggings": "1996418",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "female vocalists",
+        "url": "https://www.last.fm/tag/female+vocalists",
+        "reach": "168404",
+        "taggings": "1607729",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "metal",
+        "url": "https://www.last.fm/tag/metal",
+        "reach": "156371",
+        "taggings": "1267744",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "alternative rock",
+        "url": "https://www.last.fm/tag/alternative+rock",
+        "reach": "167598",
+        "taggings": "1175532",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "jazz",
+        "url": "https://www.last.fm/tag/jazz",
+        "reach": "147625",
+        "taggings": "1160783",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "classic rock",
+        "url": "https://www.last.fm/tag/classic+rock",
+        "reach": "136758",
+        "taggings": "1141408",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "ambient",
+        "url": "https://www.last.fm/tag/ambient",
+        "reach": "145617",
+        "taggings": "1069995",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "experimental",
+        "url": "https://www.last.fm/tag/experimental",
+        "reach": "140773",
+        "taggings": "1065048",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "folk",
+        "url": "https://www.last.fm/tag/folk",
+        "reach": "148490",
+        "taggings": "925616",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "punk",
+        "url": "https://www.last.fm/tag/punk",
+        "reach": "142831",
+        "taggings": "891026",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "indie rock",
+        "url": "https://www.last.fm/tag/indie+rock",
+        "reach": "134350",
+        "taggings": "885916",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "Hip-Hop",
+        "url": "https://www.last.fm/tag/Hip-Hop",
+        "reach": "128268",
+        "taggings": "876339",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "hard rock",
+        "url": "https://www.last.fm/tag/hard+rock",
+        "reach": "114254",
+        "taggings": "864134",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "black metal",
+        "url": "https://www.last.fm/tag/black+metal",
+        "reach": "62332",
+        "taggings": "851456",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "instrumental",
+        "url": "https://www.last.fm/tag/instrumental",
+        "reach": "123952",
+        "taggings": "850128",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "singer-songwriter",
+        "url": "https://www.last.fm/tag/singer-songwriter",
+        "reach": "108601",
+        "taggings": "835881",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "dance",
+        "url": "https://www.last.fm/tag/dance",
+        "reach": "132661",
+        "taggings": "802351",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "80s",
+        "url": "https://www.last.fm/tag/80s",
+        "reach": "100102",
+        "taggings": "781017",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "Progressive rock",
+        "url": "https://www.last.fm/tag/Progressive+rock",
+        "reach": "95645",
+        "taggings": "727200",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "death metal",
+        "url": "https://www.last.fm/tag/death+metal",
+        "reach": "71449",
+        "taggings": "723456",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "heavy metal",
+        "url": "https://www.last.fm/tag/heavy+metal",
+        "reach": "89873",
+        "taggings": "707203",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "hardcore",
+        "url": "https://www.last.fm/tag/hardcore",
+        "reach": "97451",
+        "taggings": "695591",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "british",
+        "url": "https://www.last.fm/tag/british",
+        "reach": "92936",
+        "taggings": "687893",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "soul",
+        "url": "https://www.last.fm/tag/soul",
+        "reach": "100769",
+        "taggings": "676517",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "chillout",
+        "url": "https://www.last.fm/tag/chillout",
+        "reach": "103204",
+        "taggings": "648249",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "electronica",
+        "url": "https://www.last.fm/tag/electronica",
+        "reach": "101704",
+        "taggings": "631816",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "rap",
+        "url": "https://www.last.fm/tag/rap",
+        "reach": "105387",
+        "taggings": "577862",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "Classical",
+        "url": "https://www.last.fm/tag/Classical",
+        "reach": "73961",
+        "taggings": "565889",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "industrial",
+        "url": "https://www.last.fm/tag/industrial",
+        "reach": "83565",
+        "taggings": "565276",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "Soundtrack",
+        "url": "https://www.last.fm/tag/Soundtrack",
+        "reach": "84210",
+        "taggings": "561060",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "punk rock",
+        "url": "https://www.last.fm/tag/punk+rock",
+        "reach": "97305",
+        "taggings": "552916",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "blues",
+        "url": "https://www.last.fm/tag/blues",
+        "reach": "95632",
+        "taggings": "546654",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "thrash metal",
+        "url": "https://www.last.fm/tag/thrash+metal",
+        "reach": "62182",
+        "taggings": "497513",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "90s",
+        "url": "https://www.last.fm/tag/90s",
+        "reach": "56687",
+        "taggings": "484847",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "metalcore",
+        "url": "https://www.last.fm/tag/metalcore",
+        "reach": "66875",
+        "taggings": "477143",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "acoustic",
+        "url": "https://www.last.fm/tag/acoustic",
+        "reach": "110442",
+        "taggings": "477010",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "psychedelic",
+        "url": "https://www.last.fm/tag/psychedelic",
+        "reach": "77617",
+        "taggings": "474740",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "japanese",
+        "url": "https://www.last.fm/tag/japanese",
+        "reach": "48790",
+        "taggings": "463401",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "post-rock",
+        "url": "https://www.last.fm/tag/post-rock",
+        "reach": "64948",
+        "taggings": "443097",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "hip hop",
+        "url": "https://www.last.fm/tag/hip+hop",
+        "reach": "77701",
+        "taggings": "436328",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "Progressive metal",
+        "url": "https://www.last.fm/tag/Progressive+metal",
+        "reach": "62069",
+        "taggings": "435673",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "german",
+        "url": "https://www.last.fm/tag/german",
+        "reach": "59182",
+        "taggings": "434497",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "funk",
+        "url": "https://www.last.fm/tag/funk",
+        "reach": "82566",
+        "taggings": "425437",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "new wave",
+        "url": "https://www.last.fm/tag/new+wave",
+        "reach": "63776",
+        "taggings": "421026",
+        "streamable": "1",
+        "wiki": {}
+      },
+      {
+        "name": "House",
+        "url": "https://www.last.fm/tag/House",
+        "reach": "73013",
+        "taggings": "419948",
+        "streamable": "1",
+        "wiki": {}
+      }
+    ],
+    "@attr": {
+      "page": "1",
+      "perPage": "50",
+      "totalPages": "55245",
+      "total": "2762239"
+    }
+  }
+}

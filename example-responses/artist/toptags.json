@@ -1,0 +1,132 @@
+{
+  "toptags": {
+    "tag": [
+      { "count": 100, "name": "pop", "url": "https://www.last.fm/tag/pop" },
+      {
+        "count": 71,
+        "name": "female vocalists",
+        "url": "https://www.last.fm/tag/female+vocalists"
+      },
+      { "count": 52, "name": "80s", "url": "https://www.last.fm/tag/80s" },
+      { "count": 49, "name": "dance", "url": "https://www.last.fm/tag/dance" },
+      { "count": 35, "name": "rock", "url": "https://www.last.fm/tag/rock" },
+      { "count": 15, "name": "cher", "url": "https://www.last.fm/tag/cher" },
+      { "count": 10, "name": "diva", "url": "https://www.last.fm/tag/diva" },
+      { "count": 9, "name": "90s", "url": "https://www.last.fm/tag/90s" },
+      { "count": 9, "name": "70s", "url": "https://www.last.fm/tag/70s" },
+      {
+        "count": 8,
+        "name": "american",
+        "url": "https://www.last.fm/tag/american"
+      },
+      { "count": 8, "name": "female", "url": "https://www.last.fm/tag/female" },
+      {
+        "count": 6,
+        "name": "classic rock",
+        "url": "https://www.last.fm/tag/classic+rock"
+      },
+      { "count": 6, "name": "60s", "url": "https://www.last.fm/tag/60s" },
+      { "count": 6, "name": "Disco", "url": "https://www.last.fm/tag/Disco" },
+      {
+        "count": 5,
+        "name": "female vocalist",
+        "url": "https://www.last.fm/tag/female+vocalist"
+      },
+      { "count": 4, "name": "legend", "url": "https://www.last.fm/tag/legend" },
+      {
+        "count": 4,
+        "name": "seen live",
+        "url": "https://www.last.fm/tag/seen+live"
+      },
+      {
+        "count": 3,
+        "name": "pop rock",
+        "url": "https://www.last.fm/tag/pop+rock"
+      },
+      {
+        "count": 3,
+        "name": "electronic",
+        "url": "https://www.last.fm/tag/electronic"
+      },
+      { "count": 3, "name": "00s", "url": "https://www.last.fm/tag/00s" },
+      { "count": 3, "name": "gay", "url": "https://www.last.fm/tag/gay" },
+      { "count": 3, "name": "Ballad", "url": "https://www.last.fm/tag/Ballad" },
+      {
+        "count": 3,
+        "name": "soft rock",
+        "url": "https://www.last.fm/tag/soft+rock"
+      },
+      { "count": 3, "name": "USA", "url": "https://www.last.fm/tag/USA" },
+      { "count": 2, "name": "soul", "url": "https://www.last.fm/tag/soul" },
+      { "count": 2, "name": "folk", "url": "https://www.last.fm/tag/folk" },
+      { "count": 2, "name": "oldies", "url": "https://www.last.fm/tag/oldies" },
+      {
+        "count": 2,
+        "name": "Gay Icon",
+        "url": "https://www.last.fm/tag/Gay+Icon"
+      },
+      {
+        "count": 2,
+        "name": "singer-songwriter",
+        "url": "https://www.last.fm/tag/singer-songwriter"
+      },
+      {
+        "count": 2,
+        "name": "love songs",
+        "url": "https://www.last.fm/tag/love+songs"
+      },
+      {
+        "count": 2,
+        "name": "Pop-Rock",
+        "url": "https://www.last.fm/tag/Pop-Rock"
+      },
+      { "count": 2, "name": "sweet", "url": "https://www.last.fm/tag/sweet" },
+      {
+        "count": 2,
+        "name": "ballads",
+        "url": "https://www.last.fm/tag/ballads"
+      },
+      {
+        "count": 2,
+        "name": "love song",
+        "url": "https://www.last.fm/tag/love+song"
+      },
+      {
+        "count": 2,
+        "name": "goddess of pop",
+        "url": "https://www.last.fm/tag/goddess+of+pop"
+      },
+      {
+        "count": 2,
+        "name": "alternative",
+        "url": "https://www.last.fm/tag/alternative"
+      },
+      {
+        "count": 2,
+        "name": "favorites",
+        "url": "https://www.last.fm/tag/favorites"
+      },
+      { "count": 2, "name": "divas", "url": "https://www.last.fm/tag/divas" },
+      {
+        "count": 1,
+        "name": "electronica",
+        "url": "https://www.last.fm/tag/electronica"
+      },
+      { "count": 1, "name": "House", "url": "https://www.last.fm/tag/House" },
+      { "count": 1, "name": "singer", "url": "https://www.last.fm/tag/singer" },
+      { "count": 1, "name": "80's", "url": "https://www.last.fm/tag/80%27s" },
+      { "count": 1, "name": "icon", "url": "https://www.last.fm/tag/icon" },
+      {
+        "count": 1,
+        "name": "adult contemporary",
+        "url": "https://www.last.fm/tag/adult+contemporary"
+      },
+      {
+        "count": 1,
+        "name": "goddess",
+        "url": "https://www.last.fm/tag/goddess"
+      }
+    ],
+    "@attr": { "artist": "Cher" }
+  }
+}
