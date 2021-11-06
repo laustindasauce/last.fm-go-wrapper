@@ -39,3 +39,9 @@ type TrackRank struct {
 type TrackRankInt struct {
 	Rank int `json:"rank"`
 }
+
+func (c *Client) TrackGetInfo(track, artist string) (string, error) {
+	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=YOUR_API_KEY&format=json
+	lastfmURL := c.getNoAuthURL("method.track.getInfo", "track."+track, "artist."+artist)
+	return lastfmURL, nil
+}
