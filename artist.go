@@ -11,56 +11,56 @@ type ArtistStats struct {
 }
 
 type ArtistAlbums struct {
-	Album []Album `json:"album"`
-	Attr ArtistAttr `json:"@attr"`
+	Album []Album    `json:"album"`
+	Attr  ArtistAttr `json:"@attr"`
 }
 
 type AlbumArtist struct {
 	Name string `json:"name"`
 	MBID string `json:"mbid"`
-	URL string 	`json:"url"`
+	URL  string `json:"url"`
 }
 
 type BareArtist struct {
-	Name string `json:"name"`
-	URL string 	`json:"url"`
+	Name  string  `json:"name"`
+	URL   string  `json:"url"`
 	Image []Image `json:"image"`
 }
 
 type Artist struct {
-	Name string `json:"name"`
-	Listeners string `json:"listeners"`
-	MBID string `json:"mbid"`
-	Match string `json:"match"`
-	URL string 	`json:"url"`
-	Image []Image `json:"image"`
-	Streamable string `json:"streamable"`
+	Name       string  `json:"name"`
+	Listeners  string  `json:"listeners"`
+	MBID       string  `json:"mbid"`
+	Match      string  `json:"match,omitempty"`
+	URL        string  `json:"url"`
+	Image      []Image `json:"image"`
+	Streamable string  `json:"streamable"`
 }
 
 type FullArtist struct {
-	Name string `json:"name"`
-	MBID string `json:"mbid"`
-	URL string 	`json:"url"`
-	Image []Image `json:"image"`
-	Streamable string `json:"streamable"`
-	OnTour string `json:"on_tour"`
-	Stats ArtistStats `json:"stats"`
-	Similar Artists `json:"similar"`
-	Tags Tags `json:"tags"`
-	Bio Bio `json:"bio"`
+	Name       string      `json:"name"`
+	MBID       string      `json:"mbid"`
+	URL        string      `json:"url"`
+	Image      []Image     `json:"image"`
+	Streamable string      `json:"streamable"`
+	OnTour     string      `json:"on_tour"`
+	Stats      ArtistStats `json:"stats"`
+	Similar    Artists     `json:"similar"`
+	Tags       Tags        `json:"tags"`
+	Bio        Bio         `json:"bio"`
 }
 
 type SimilarArtists struct {
-	SimilarArtists []Artist `json:"artist"`
-	Attr ArtistTagAttr `json:"@attr"`
+	SimilarArtists []Artist      `json:"artist"`
+	Attr           ArtistTagAttr `json:"@attr"`
 }
 
 type ArtistAttr struct {
-	Artist string `json:"artist"`
-	Page string `json:"page"`
-	PerPage string `json:"perPage"`
+	Artist     string `json:"artist"`
+	Page       string `json:"page"`
+	PerPage    string `json:"perPage"`
 	TotalPages string `json:"totalPages"`
-	Total string `json:"total"`
+	Total      string `json:"total"`
 }
 
 type ArtistTagAttr struct {
@@ -68,12 +68,12 @@ type ArtistTagAttr struct {
 }
 
 type ArtistSearchRes struct {
-	Query OpenSearchQuery `json:"opensearch:Query"`
-	QueryTotalResults string `json:"opensearch:totalResults"`
-	QueryStartIndex string `json:"opensearch:startIndex"`
-	QueryItemsPerPage string `json:"opensearch:itemsPerPage"`
-	ArtistMatches ArtistMatches `json:"artistmatches"`
-	Attr SearchAttr `json:"@attr"`
+	Query             OpenSearchQuery `json:"opensearch:Query"`
+	QueryTotalResults string          `json:"opensearch:totalResults"`
+	QueryStartIndex   string          `json:"opensearch:startIndex"`
+	QueryItemsPerPage string          `json:"opensearch:itemsPerPage"`
+	ArtistMatches     ArtistMatches   `json:"artistmatches"`
+	Attr              SearchAttr      `json:"@attr"`
 }
 
 type ArtistMatches struct {
@@ -134,7 +134,7 @@ func (c *Client) ArtistGetTopAlbums(artist string) (ArtistAlbums, error) {
 func (c *Client) ArtistGetTopTags(artist string) (TagsWithCount, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.gettoptags&artist=cher&api_key=YOUR_API_KEY&format=json
 	lastfmURL := c.getNoAuthURL("method.artist.gettoptags", "artist."+artist)
-	
+
 	var topTags struct {
 		Tags TagsWithCount `json:"toptags"`
 	}
@@ -148,11 +148,9 @@ func (c *Client) ArtistGetTopTags(artist string) (TagsWithCount, error) {
 	return topTags.Tags, nil
 }
 
-
 func (c *Client) ArtistGetTopTracks(artist string) (Tracks, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=cher&api_key=YOUR_API_KEY&format=json
 	lastfmURL := c.getNoAuthURL("method.artist.gettoptracks", "artist."+artist)
-
 
 	var topTracks struct {
 		TopTracks Tracks `json:"toptracks"`
@@ -163,14 +161,13 @@ func (c *Client) ArtistGetTopTracks(artist string) (Tracks, error) {
 	if err != nil {
 		return Tracks{}, err
 	}
-	
+
 	return topTracks.TopTracks, nil
 }
 
 func (c *Client) ArtistSearch(artist string) (ArtistSearchRes, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=YOUR_API_KEY&format=json
 	lastfmURL := c.getNoAuthURL("method.artist.search", "artist."+artist)
-
 
 	var searchRes struct {
 		SearchResults ArtistSearchRes `json:"results"`
@@ -181,6 +178,6 @@ func (c *Client) ArtistSearch(artist string) (ArtistSearchRes, error) {
 	if err != nil {
 		return ArtistSearchRes{}, err
 	}
-	
+
 	return searchRes.SearchResults, nil
 }

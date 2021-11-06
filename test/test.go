@@ -11,7 +11,7 @@ import (
 )
 
 func testLastfmFunc(client *lastfm.Client) {
-	res, err := client.TrackGetInfo("Believe", "Cher")
+	res, err := client.GeoGetTopArtists("germani")
 
 	if err != nil {
 		log.Fatal(err)

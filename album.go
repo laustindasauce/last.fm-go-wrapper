@@ -2,35 +2,35 @@ package lastfm
 
 // Album struct
 type Album struct {
-	Name string `json:"name"`
-	Playcount int `json:"playcount"`
-	MBID string `json:"mbid"`
-	URL string `json:"url"`
-	Artist AlbumArtist `json:"artist"`
-	Image []Image `json:"image"`
-	Attr ArtistAttr `json:"@attr"`
+	Name      string      `json:"name"`
+	Playcount int         `json:"playcount"`
+	MBID      string      `json:"mbid"`
+	URL       string      `json:"url"`
+	Artist    AlbumArtist `json:"artist"`
+	Image     []Image     `json:"image"`
+	Attr      ArtistAttr  `json:"@attr"`
 }
 
 type SimpleAlbum struct {
-	Name string `json:"name"`
-	Artist string `json:"artist"`
-	URL string `json:"url"`
-	Image []Image `json:"image"`
-	Streamable string `json:"streamable"`
-	MBID string `json:"mbid"`
+	Name       string  `json:"name"`
+	Artist     string  `json:"artist"`
+	URL        string  `json:"url"`
+	Image      []Image `json:"image"`
+	Streamable string  `json:"streamable"`
+	MBID       string  `json:"mbid"`
 }
 
 type FullAlbum struct {
-	Artist string `json:"artist"`
-	MBID string `json:"mbid"`
-	Tags Tags `json:"tags"`
-	Playcount string `json:"playcount"`
-	Image []Image `json:"image"`
-	Tracks AlbumTracks `json:"tracks"`
-	URL string `json:"url"`
-	Name string `json:"name"`
-	Listeners string `json:"listeners"`
-	Wiki Wiki `json:"wiki"`
+	Artist    string      `json:"artist"`
+	MBID      string      `json:"mbid"`
+	Tags      Tags        `json:"tags"`
+	Playcount string      `json:"playcount"`
+	Image     []Image     `json:"image"`
+	Tracks    AlbumTracks `json:"tracks"`
+	URL       string      `json:"url"`
+	Name      string      `json:"name"`
+	Listeners string      `json:"listeners"`
+	Wiki      Wiki        `json:"wiki"`
 }
 
 type AlbumTracks struct {
@@ -38,22 +38,22 @@ type AlbumTracks struct {
 }
 
 type AlbumTopTags struct {
-	Tag []TagWithCount `json:"tag"`
-	Attr AlbumAttr `json:"@attr"`
+	Tag  []TagWithCount `json:"tag"`
+	Attr AlbumAttr      `json:"@attr"`
 }
 
 type AlbumAttr struct {
 	Artist string `json:"artist"`
-	Album string `json:"album"`
+	Album  string `json:"album"`
 }
 
 type AlbumSearchRes struct {
-	Query OpenSearchQuery `json:"opensearch:Query"`
-	QueryTotalResults string `json:"opensearch:totalResults"`
-	QueryStartIndex string `json:"opensearch:startIndex"`
-	QueryItemsPerPage string `json:"opensearch:itemsPerPage"`
-	AlbumMatches AlbumMatches `json:"albummatches"`
-	Attr SearchAttr `json:"@attr"`
+	Query             OpenSearchQuery `json:"opensearch:Query"`
+	QueryTotalResults string          `json:"opensearch:totalResults"`
+	QueryStartIndex   string          `json:"opensearch:startIndex"`
+	QueryItemsPerPage string          `json:"opensearch:itemsPerPage"`
+	AlbumMatches      AlbumMatches    `json:"albummatches"`
+	Attr              SearchAttr      `json:"@attr"`
 }
 
 type AlbumMatches struct {

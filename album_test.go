@@ -19,7 +19,7 @@ func TestAlbumGetInfo(t *testing.T) {
 	}
 
 	var tests = []struct {
-		test string
+		test     string
 		expected string
 	}{
 		{"Artist", "Cher"},
@@ -43,7 +43,7 @@ func TestAlbumTopTags(t *testing.T) {
 	}
 
 	var tests = []struct {
-		test string
+		test     string
 		expected string
 	}{
 		{"Artist", "Cher"},
@@ -57,7 +57,6 @@ func TestAlbumTopTags(t *testing.T) {
 	}
 }
 
-
 func TestAlbumSearch(t *testing.T) {
 	res, err := client.AlbumSearch("Believe")
 
@@ -66,7 +65,7 @@ func TestAlbumSearch(t *testing.T) {
 	}
 
 	var tests = []struct {
-		test string
+		test     string
 		expected string
 	}{
 		{"Text", ""},

@@ -20,34 +20,33 @@ import (
 // Client is a client for working with the Last.fm Web API
 // **Requires API key and secret for now, until auth.go is set up
 type Client struct {
-	http *http.Client
-	key string
-	secret string
-	baseURL string
-	jsonOpt PathOptions
-	keyOpt PathOptions
+	http      *http.Client
+	key       string
+	secret    string
+	baseURL   string
+	jsonOpt   PathOptions
+	keyOpt    PathOptions
 	secretOpt PathOptions
 }
 
 // PathOptions is the opt for URL parameters
 type PathOptions struct {
-	key string
+	key   string
 	value string
 }
-	
 
 // New returns a client for working with the Spotify Web API.
 // The provided httpClient must provide Authentication with the requests.
 // The auth package may be used to generate a suitable client.
 func New(httpClient *http.Client, key string, secret string) *Client {
 	c := &Client{
-		http:    httpClient,
+		http: httpClient,
 		// Base for Last.fm API endpoints
-		baseURL: "https://ws.audioscrobbler.com/2.0/?",
-		key: key,
-		secret: secret,
-		jsonOpt: PathOptions{"format", "json"},
-		keyOpt: PathOptions{"api_key", key},
+		baseURL:   "https://ws.audioscrobbler.com/2.0/?",
+		key:       key,
+		secret:    secret,
+		jsonOpt:   PathOptions{"format", "json"},
+		keyOpt:    PathOptions{"api_key", key},
 		secretOpt: PathOptions{"api_secret", secret},
 	}
 
@@ -61,12 +60,12 @@ func New(httpClient *http.Client, key string, secret string) *Client {
 // Takes strings of form "key.value"
 func (c *Client) getNoAuthURL(opts ...string) string {
 	var pathOpts []PathOptions
-	
+
 	for i := 0; i < len(opts); i++ {
 		pieces := strings.SplitN(opts[i], ".", 2)
 		pathOpts = append(pathOpts, PathOptions{key: pieces[0], value: pieces[1]})
 	}
-	
+
 	pathOpts = append(pathOpts, c.keyOpt, c.jsonOpt)
 
 	params := encodeParams(pathOpts)
@@ -87,21 +86,21 @@ func encodeParams(opts []PathOptions) string {
 
 // Image identifies an image associated with an item
 type Image struct {
-	URL string `json:"#text"`
+	URL  string `json:"#text"`
 	Size string `json:"size"`
 }
 
 type Wiki struct {
 	Published string `json:"published"`
-	Summary string `json:"summary"`
-	Content string `json:"content"`
+	Summary   string `json:"summary"`
+	Content   string `json:"content"`
 }
 
 type Bio struct {
-	Links Links `json:"links"`
+	Links     Links  `json:"links"`
 	Published string `json:"published"`
-	Summary string `json:"summary"`
-	Content string `json:"content"`
+	Summary   string `json:"summary"`
+	Content   string `json:"content"`
 }
 
 type Links struct {
@@ -110,7 +109,7 @@ type Links struct {
 
 type Link struct {
 	Text string `json:"#text"`
-	Rel string `json:"rel"`
+	Rel  string `json:"rel"`
 	Href string `json:"href"`
 }
 
@@ -120,28 +119,28 @@ type Tags struct {
 }
 
 type TagsWithCount struct {
-	Tag []TagWithCount `json:"tag"`
-	Attr ArtistTagAttr `json:"@attr"`
+	Tag  []TagWithCount `json:"tag"`
+	Attr ArtistTagAttr  `json:"@attr"`
 }
 
 // Tag identifies a tag associated with an item
 type Tag struct {
 	Name string `json:"name"`
-	URL string `json:"url"`
+	URL  string `json:"url"`
 }
 
 // TagWithCount identifies a tag with count
 type TagWithCount struct {
-	Count int `json:"count"`
-	Name string `json:"name"`
-	URL string `json:"url"`
+	Count int    `json:"count"`
+	Name  string `json:"name"`
+	URL   string `json:"url"`
 }
 
 type OpenSearchQuery struct {
-	Text string `json:"#text"`
-	Role string `json:"role"`
+	Text        string `json:"#text"`
+	Role        string `json:"role"`
 	SearchTerms string `json:"searchTerms"`
-	StartPage string `json:"startPage"`
+	StartPage   string `json:"startPage"`
 }
 
 type SearchAttr struct {
@@ -201,14 +200,14 @@ func (c *Client) get(url string, result interface{}) error {
 		if err != nil {
 			return err
 		}
-		
+
 		// body, err := ioutil.ReadAll(resp.Body)
 
 		// if err != nil {
 		// 	return err
 		// }
 
-    	// fmt.Println(string(body))
+		// fmt.Println(string(body))
 
 		defer resp.Body.Close()
 
