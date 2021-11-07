@@ -1,15 +1,8 @@
 package lastfm
 
 import (
-	"reflect"
 	"testing"
 )
-
-func getStringField(obj interface{}, field string) string {
-	r := reflect.ValueOf(obj)
-	f := reflect.Indirect(r).FieldByName(field)
-	return f.String()
-}
 
 func TestAlbumGetInfo(t *testing.T) {
 	res, err := client.AlbumGetInfo("Believe", "Cher")

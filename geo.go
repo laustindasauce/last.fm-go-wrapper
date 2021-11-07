@@ -19,15 +19,26 @@ type GeoAttr struct {
 	Total      string `json:"total"`
 }
 
-func (c *Client) GeoGetTopArtists(country string) (string, error) {
+func (c *Client) GeoGetTopArtists(country string) (GeoTopArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=YOUR_API_KEY&format=json
 
 	// Check if the country is defined by the ISO 3166-1 country names standard
 	thisCountry := countries.ByName(country)
 
 	if thisCountry.String() == "Unknown" {
-		return "", errors.New("country param invalid")
+		return GeoTopArtists{}, errors.New("country param invalid")
 	}
 	lastfmURL := c.getNoAuthURL("method.geo.gettopartists", "country."+thisCountry.String())
-	return lastfmURL, nil
+
+	var topArtistsRes struct {
+		TopArtists GeoTopArtists `json:"topartists"`
+	}
+
+	err := c.get(lastfmURL, &topArtistsRes)
+
+	if err != nil {
+		return GeoTopArtists{}, err
+	}
+
+	return topArtistsRes.TopArtists, nil
 }

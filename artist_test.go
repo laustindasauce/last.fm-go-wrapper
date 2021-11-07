@@ -1,14 +1,8 @@
 package lastfm
 
 import (
-	"net/http"
-	"os"
 	"testing"
-	"time"
 )
-
-var hClient http.Client = http.Client{Timeout: time.Duration(1) * time.Second}
-var client *Client = New(&hClient, os.Getenv("LAST_FM_KEY"), os.Getenv("LAST_FM_SECRET"))
 
 func TestArtistGetInfo(t *testing.T) {
 	res, err := client.ArtistGetInfo("cher")
