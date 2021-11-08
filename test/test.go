@@ -11,7 +11,7 @@ import (
 )
 
 func testLastfmFunc(client *lastfm.Client) {
-	res, err := client.GeoGetTopArtists("germani")
+	res, err := client.GeoGetTopTracks("usa")
 
 	if err != nil {
 		log.Fatal(err)

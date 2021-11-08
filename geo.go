@@ -11,6 +11,23 @@ type GeoTopArtists struct {
 	Attr   GeoAttr  `json:"@attr"`
 }
 
+type GeoTopTracks struct {
+	Tracks []GeoTopTrack `json:"track"`
+	Attr   GeoAttr       `json:"@attr"`
+}
+
+type GeoTopTrack struct {
+	Name       string          `json:"name"`
+	Duration   string          `json:"duration"`
+	Listeners  string          `json:"listeners"`
+	MBID       string          `json:"mbid"`
+	URL        string          `json:"url"`
+	Streamable StreamableTrack `json:"streamable"`
+	Artist     AlbumArtist     `json:"artist"`
+	Image      []Image         `json:"image"`
+	Attr       TrackRank       `json:"@attr"`
+}
+
 type GeoAttr struct {
 	Country    string `json:"country"`
 	Page       string `json:"page"`
@@ -41,4 +58,28 @@ func (c *Client) GeoGetTopArtists(country string) (GeoTopArtists, error) {
 	}
 
 	return topArtistsRes.TopArtists, nil
+}
+
+func (c *Client) GeoGetTopTracks(country string) (GeoTopTracks, error) {
+	// http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=spain&api_key=YOUR_API_KEY&format=json
+
+	// Check if the country is defined by the ISO 3166-1 country names standard
+	thisCountry := countries.ByName(country)
+
+	if thisCountry.String() == "Unknown" {
+		return GeoTopTracks{}, errors.New("country param invalid")
+	}
+	lastfmURL := c.getNoAuthURL("method.geo.gettoptracks", "country."+thisCountry.String())
+
+	var topTrackRes struct {
+		TopTracks GeoTopTracks `json:"tracks"`
+	}
+
+	err := c.get(lastfmURL, &topTrackRes)
+
+	if err != nil {
+		return GeoTopTracks{}, err
+	}
+
+	return topTrackRes.TopTracks, nil
 }
