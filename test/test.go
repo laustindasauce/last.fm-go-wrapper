@@ -24,5 +24,11 @@ func main() {
 	hClient := http.Client{Timeout: time.Duration(1) * time.Second}
 	client := lastfm.New(&hClient, os.Getenv("LAST_FM_KEY"), os.Getenv("LAST_FM_SECRET"))
 
-	testLastfmFunc(client)
+	// testLastfmFunc(client)
+	client.LibraryGetArtists()
+	err := client.SetUser("abspen1")
+
+	if err == nil {
+		fmt.Println(client.User)
+	}
 }

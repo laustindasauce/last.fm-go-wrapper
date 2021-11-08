@@ -24,6 +24,7 @@ type Client struct {
 	key       string
 	secret    string
 	baseURL   string
+	User      string
 	jsonOpt   PathOptions
 	keyOpt    PathOptions
 	secretOpt PathOptions
@@ -45,6 +46,7 @@ func New(httpClient *http.Client, key string, secret string) *Client {
 		baseURL:   "https://ws.audioscrobbler.com/2.0/?",
 		key:       key,
 		secret:    secret,
+		User:      "",
 		jsonOpt:   PathOptions{"format", "json"},
 		keyOpt:    PathOptions{"api_key", key},
 		secretOpt: PathOptions{"api_secret", secret},
@@ -55,6 +57,26 @@ func New(httpClient *http.Client, key string, secret string) *Client {
 	}
 
 	return c
+}
+
+func (c *Client) SetUser(user string) error {
+	// http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rj&api_key=YOUR_API_KEY&format=json
+
+	lastfmURL := c.getNoAuthURL("method.user.getinfo", "user."+user)
+
+	var userInfo struct {
+		User User `json:"user"`
+	}
+
+	err := c.get(lastfmURL, &userInfo)
+
+	if err != nil {
+		return err
+	}
+
+	// Set the user for the client
+	c.User = userInfo.User.Name
+	return nil
 }
 
 // Takes strings of form "key.value"
