@@ -11,11 +11,6 @@ func TestArtistGetInfo(t *testing.T) {
 		t.Error(err)
 	}
 
-	if res == nil {
-		t.Error("artist.getinfo returned nil")
-		return
-	}
-
 	if res.Name != "Cher" {
 		t.Error("artist.getinfo returned the wrong artist")
 	}

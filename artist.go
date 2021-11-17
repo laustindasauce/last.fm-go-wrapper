@@ -82,7 +82,7 @@ type ArtistMatches struct {
 
 // ArtistGetInfo uses the artist.getinfo method with scrobbler API to return the specifed
 // full artist information
-func (c *Client) ArtistGetInfo(artist string) (*FullArtist, error) {
+func (c *Client) ArtistGetInfo(artist string) (FullArtist, error) {
 	lastfmURL := c.getNoAuthURL("method.artist.getinfo", "artist."+artist)
 
 	var artistInfo struct {
@@ -92,10 +92,10 @@ func (c *Client) ArtistGetInfo(artist string) (*FullArtist, error) {
 	err := c.get(lastfmURL, &artistInfo)
 
 	if err != nil {
-		return nil, err
+		return FullArtist{}, err
 	}
 
-	return &artistInfo.Artist, nil
+	return artistInfo.Artist, nil
 }
 
 func (c *Client) ArtistGetSimilar(artist string) (SimilarArtists, error) {
