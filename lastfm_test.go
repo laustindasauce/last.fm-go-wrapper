@@ -19,6 +19,7 @@ func getStringField(obj interface{}, field string) string {
 	return f.String()
 }
 
+// Testing the getNoAuthURL and the encodeParams funcs
 func TestGetNoAuthURL(t *testing.T) {
 	var (
 		hClient http.Client = http.Client{Timeout: time.Duration(1) * time.Second}

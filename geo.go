@@ -12,11 +12,11 @@ type GeoTopArtists struct {
 }
 
 type GeoTopTracks struct {
-	Tracks []GeoTopTrack `json:"track"`
-	Attr   GeoAttr       `json:"@attr"`
+	Track []GeoTrack `json:"track"`
+	Attr  GeoAttr    `json:"@attr"`
 }
 
-type GeoTopTrack struct {
+type GeoTrack struct {
 	Name       string          `json:"name"`
 	Duration   string          `json:"duration"`
 	Listeners  string          `json:"listeners"`
@@ -62,8 +62,6 @@ func (c *Client) GeoGetTopArtists(country string) (GeoTopArtists, error) {
 
 func (c *Client) GeoGetTopTracks(country string) (GeoTopTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=spain&api_key=YOUR_API_KEY&format=json
-
-	// Check if the country is defined by the ISO 3166-1 country names standard
 	thisCountry := countries.ByName(country)
 
 	if thisCountry.String() == "Unknown" {
