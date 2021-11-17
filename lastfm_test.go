@@ -19,6 +19,12 @@ func getStringField(obj interface{}, field string) string {
 	return f.String()
 }
 
+// func getIntField(obj interface{}, field string) int64 {
+// 	r := reflect.ValueOf(obj)
+// 	f := reflect.Indirect(r).FieldByName(field)
+// 	return f.Int()
+// }
+
 // Testing the getNoAuthURL and the encodeParams funcs
 func TestGetNoAuthURL(t *testing.T) {
 	var (

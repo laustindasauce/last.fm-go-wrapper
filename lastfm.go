@@ -135,6 +135,10 @@ type Link struct {
 	Href string `json:"href"`
 }
 
+type Rank struct {
+	Rank string `json:"rank"`
+}
+
 // Tags identifies an array of type tag
 type Tags struct {
 	Tag []Tag `json:"tag"`

@@ -1,0 +1,1460 @@
+{
+  "topartists": {
+    "artist": [
+      {
+        "name": "Bee Gees",
+        "mbid": "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810",
+        "url": "https://www.last.fm/music/Bee+Gees",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "1" }
+      },
+      {
+        "name": "Donna Summer",
+        "mbid": "b60527cc-54f3-4bbe-a01b-dcf34c95ae14",
+        "url": "https://www.last.fm/music/Donna+Summer",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "2" }
+      },
+      {
+        "name": "Boney M.",
+        "mbid": "5403bf6e-bc1d-4e62-b31f-926a2bf66a14",
+        "url": "https://www.last.fm/music/Boney+M.",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "3" }
+      },
+      {
+        "name": "Grace Jones",
+        "mbid": "b1c124b3-cf60-41a6-8699-92728c8a3fe0",
+        "url": "https://www.last.fm/music/Grace+Jones",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "4" }
+      },
+      {
+        "name": "Chic",
+        "mbid": "a4ed036b-5f18-439c-b1e1-96d205bab255",
+        "url": "https://www.last.fm/music/Chic",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "5" }
+      },
+      {
+        "name": "The Pointer Sisters",
+        "mbid": "81bac815-97c5-4723-8f0b-4d8edfad1010",
+        "url": "https://www.last.fm/music/The+Pointer+Sisters",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "6" }
+      },
+      {
+        "name": "Giorgio Moroder",
+        "mbid": "38dd6337-19ae-4793-ab4b-313eff523457",
+        "url": "https://www.last.fm/music/Giorgio+Moroder",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "7" }
+      },
+      {
+        "name": "KC and The Sunshine Band",
+        "mbid": "76a5a114-ed6a-4eb6-8a81-ad5768d4b41c",
+        "url": "https://www.last.fm/music/KC+and+The+Sunshine+Band",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "8" }
+      },
+      {
+        "name": "Gloria Gaynor",
+        "mbid": "d5c51c36-ac67-4727-91ed-ee9f0df81a2d",
+        "url": "https://www.last.fm/music/Gloria+Gaynor",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "9" }
+      },
+      {
+        "name": "Sister Sledge",
+        "mbid": "1ed00158-c6a3-45cd-819c-2f91997fc480",
+        "url": "https://www.last.fm/music/Sister+Sledge",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "10" }
+      },
+      {
+        "name": "Hot Chocolate",
+        "mbid": "a749130e-c2d8-4a7c-b740-908ea4574961",
+        "url": "https://www.last.fm/music/Hot+Chocolate",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "11" }
+      },
+      {
+        "name": "Joy",
+        "mbid": "ea6a260d-3fca-4a4d-9608-125fc4f03b81",
+        "url": "https://www.last.fm/music/Joy",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "12" }
+      },
+      {
+        "name": "Village People",
+        "mbid": "f19d3d49-be22-4ca6-9903-64d86984fbf2",
+        "url": "https://www.last.fm/music/Village+People",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "13" }
+      },
+      {
+        "name": "Lipps, Inc.",
+        "mbid": "9f47e427-c31c-49fe-90d6-92ab6029d405",
+        "url": "https://www.last.fm/music/Lipps,+Inc.",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "14" }
+      },
+      {
+        "name": "The Weather Girls",
+        "mbid": "8bc23f36-2d1e-45c5-ad47-69e402b0923a",
+        "url": "https://www.last.fm/music/The+Weather+Girls",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "15" }
+      },
+      {
+        "name": "The Trammps",
+        "mbid": "8799413d-7df8-4eb9-8542-af8cea6b0feb",
+        "url": "https://www.last.fm/music/The+Trammps",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "16" }
+      },
+      {
+        "name": "Cerrone",
+        "mbid": "9ec90f51-2c4a-495b-b478-2dfc9c07f8bc",
+        "url": "https://www.last.fm/music/Cerrone",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "17" }
+      },
+      {
+        "name": "Baccara",
+        "mbid": "d17a5888-7775-4541-85d6-f6344f9e93b7",
+        "url": "https://www.last.fm/music/Baccara",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "18" }
+      },
+      {
+        "name": "Shalamar",
+        "mbid": "8e57b7d5-4548-4e2b-b32d-af4b4a51cb80",
+        "url": "https://www.last.fm/music/Shalamar",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "19" }
+      },
+      {
+        "name": "Evelyn \"Champagne\" King",
+        "mbid": "f104e236-9655-4022-b794-d1567357e3b0",
+        "url": "https://www.last.fm/music/Evelyn+%22Champagne%22+King",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "20" }
+      },
+      {
+        "name": "Cheryl Lynn",
+        "mbid": "c2b8f775-455c-44c3-97ca-f377938da19e",
+        "url": "https://www.last.fm/music/Cheryl+Lynn",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "21" }
+      },
+      {
+        "name": "Dschinghis Khan",
+        "mbid": "5898a370-5c9e-4924-97b1-c72b7e0452ca",
+        "url": "https://www.last.fm/music/Dschinghis+Khan",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "22" }
+      },
+      {
+        "name": "Miura Jam",
+        "url": "https://www.last.fm/music/Miura+Jam",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "23" }
+      },
+      {
+        "name": "Carl Douglas",
+        "mbid": "2100ca6c-5a1d-463e-b50b-7e649debc454",
+        "url": "https://www.last.fm/music/Carl+Douglas",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "24" }
+      },
+      {
+        "name": "Sylvester",
+        "mbid": "4d3b710b-a5f0-4772-97db-f09e47fbc6d8",
+        "url": "https://www.last.fm/music/Sylvester",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "25" }
+      },
+      {
+        "name": "Santa Esmeralda",
+        "mbid": "b233a9a9-2538-4c5b-986a-5843650e2611",
+        "url": "https://www.last.fm/music/Santa+Esmeralda",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "26" }
+      },
+      {
+        "name": "Jerry Folk",
+        "url": "https://www.last.fm/music/Jerry+Folk",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "27" }
+      },
+      {
+        "name": "Odyssey",
+        "mbid": "db466985-3b47-4ddb-8757-2546f8c07c28",
+        "url": "https://www.last.fm/music/Odyssey",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "28" }
+      },
+      {
+        "name": "Tavares",
+        "mbid": "f1bb3057-05ab-4cce-b5cc-921bb1b6e1b7",
+        "url": "https://www.last.fm/music/Tavares",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "29" }
+      },
+      {
+        "name": "KC & The Sunshine Band",
+        "url": "https://www.last.fm/music/KC+&+The+Sunshine+Band",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "30" }
+      },
+      {
+        "name": "Imagination",
+        "mbid": "f4038a4a-77af-4363-a2a8-5d847bb7f1ba",
+        "url": "https://www.last.fm/music/Imagination",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "31" }
+      },
+      {
+        "name": "Change",
+        "mbid": "df762770-0611-4f1e-adf8-07f4e69e08d6",
+        "url": "https://www.last.fm/music/Change",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "32" }
+      },
+      {
+        "name": "George McCrae",
+        "mbid": "bd013a43-a262-4658-a372-b75ddba236b4",
+        "url": "https://www.last.fm/music/George+McCrae",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "33" }
+      },
+      {
+        "name": "Dan Hartman",
+        "mbid": "4682d640-819a-4f71-9e7f-84be13a5e76a",
+        "url": "https://www.last.fm/music/Dan+Hartman",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "34" }
+      },
+      {
+        "name": "Blue System",
+        "mbid": "5d411d28-49a6-4dbc-af18-a496fee7c0d9",
+        "url": "https://www.last.fm/music/Blue+System",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "35" }
+      },
+      {
+        "name": "Andy Gibb",
+        "mbid": "f1d174fc-6bd9-41fe-b4c8-972ab578fb5c",
+        "url": "https://www.last.fm/music/Andy+Gibb",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "36" }
+      },
+      {
+        "name": "Yvonne Elliman",
+        "mbid": "62b9eb3e-c470-462d-8d63-9b6cbac13d62",
+        "url": "https://www.last.fm/music/Yvonne+Elliman",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "37" }
+      },
+      {
+        "name": "Thelma Houston",
+        "mbid": "cb327970-cf95-4f2d-91db-b1b787aa51f9",
+        "url": "https://www.last.fm/music/Thelma+Houston",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "38" }
+      },
+      {
+        "name": "Divine",
+        "mbid": "ef86b665-5d05-4a4c-8db3-be6a92a9b51d",
+        "url": "https://www.last.fm/music/Divine",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "39" }
+      },
+      {
+        "name": "Anita Ward",
+        "mbid": "5ffe7875-614f-4823-879b-1fd66574a36d",
+        "url": "https://www.last.fm/music/Anita+Ward",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "40" }
+      },
+      {
+        "name": "Voyage",
+        "mbid": "ca7b8e98-5dfa-4147-9d9a-29b51d1f7f87",
+        "url": "https://www.last.fm/music/Voyage",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "41" }
+      },
+      {
+        "name": "Patrick Cowley",
+        "mbid": "32e68aa4-72cf-4421-95dc-6d46b55702dc",
+        "url": "https://www.last.fm/music/Patrick+Cowley",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "42" }
+      },
+      {
+        "name": "Black Devil Disco Club",
+        "mbid": "5b1f38d2-4a09-4708-a3c4-4e35ae05a24b",
+        "url": "https://www.last.fm/music/Black+Devil+Disco+Club",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "43" }
+      },
+      {
+        "name": "Escort",
+        "mbid": "d1905c22-27b7-4e14-8e04-caf9a31ec8b4",
+        "url": "https://www.last.fm/music/Escort",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "44" }
+      },
+      {
+        "name": "Amanda Lear",
+        "mbid": "2f2608ed-ff2b-400e-b614-8c648bfaae7b",
+        "url": "https://www.last.fm/music/Amanda+Lear",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "45" }
+      },
+      {
+        "name": "Patrick Hernandez",
+        "mbid": "77cc643d-8e35-45e0-ae52-a8cf1e38f87a",
+        "url": "https://www.last.fm/music/Patrick+Hernandez",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "46" }
+      },
+      {
+        "name": "A Taste Of Honey",
+        "mbid": "8fb61843-e724-41b4-86bd-6e3b3dfe9c6e",
+        "url": "https://www.last.fm/music/A+Taste+Of+Honey",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "47" }
+      },
+      {
+        "name": "Indeep",
+        "mbid": "53382f53-cce6-4035-a7f0-a35e9f0c1215",
+        "url": "https://www.last.fm/music/Indeep",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "48" }
+      },
+      {
+        "name": "Ottawan",
+        "mbid": "c943a72c-ccd1-40b1-8516-300e83edb136",
+        "url": "https://www.last.fm/music/Ottawan",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "49" }
+      },
+      {
+        "name": "Maxine Nightingale",
+        "mbid": "0d8da158-389d-4b58-a62e-a6b5870fc3a4",
+        "url": "https://www.last.fm/music/Maxine+Nightingale",
+        "streamable": "0",
+        "image": [
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "extralarge"
+          },
+          {
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+            "size": "mega"
+          }
+        ],
+        "@attr": { "rank": "50" }
+      }
+    ],
+    "@attr": {
+      "tag": "disco",
+      "page": "1",
+      "perPage": "50",
+      "totalPages": "191",
+      "total": "9527"
+    }
+  }
+}
