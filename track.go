@@ -52,6 +52,29 @@ type TrackTopTags struct {
 	Attr ArtistTrackAttr `json:"@attr"`
 }
 
+type TrackSearchRes struct {
+	Query             OpenSearchQuery `json:"opensearch:Query"`
+	QueryTotalResults string          `json:"opensearch:totalResults"`
+	QueryStartIndex   string          `json:"opensearch:startIndex"`
+	QueryItemsPerPage string          `json:"opensearch:itemsPerPage"`
+	TrackMatches      TrackMatches    `json:"trackmatches"`
+	Attr              SearchAttr      `json:"@attr"`
+}
+
+type TrackMatches struct {
+	Tracks []TrackMatch `json:"track"`
+}
+
+type TrackMatch struct {
+	Name       string  `json:"name"`
+	Artist     string  `json:"artist"`
+	URL        string  `json:"url"`
+	Streamable string  `json:"streamable"`
+	Listeners  string  `json:"listeners"`
+	Image      []Image `json:"image"`
+	MBID       string  `json:"mbid"`
+}
+
 type SimilarTrack struct {
 	Name       string          `json:"name"`
 	Playcount  int             `json:"playcount"`
@@ -255,4 +278,38 @@ func (c *Client) TrackGetTopTags(track, artist, mbid string) (TrackTopTags, erro
 	}
 
 	return trackTags.Tags, nil
+}
+
+func (c *Client) TrackSearch(track, artist, page, limit string) (TrackSearchRes, error) {
+	// http://ws.audioscrobbler.com/2.0/?method=track.search&track=Believe&api_key=YOUR_API_KEY&format=json
+	var lastfmURL string
+	var allOpts []string
+
+	allOpts = append(allOpts, "method.track.search", "track."+track)
+
+	if limit != "" {
+		allOpts = append(allOpts, "limit."+limit)
+	}
+
+	if artist != "" {
+		allOpts = append(allOpts, "artist."+artist)
+	}
+
+	if page != "" {
+		allOpts = append(allOpts, "page."+page)
+	}
+
+	lastfmURL = c.getNoAuthURL(allOpts...)
+
+	var searchRes struct {
+		SearchResults TrackSearchRes `json:"results"`
+	}
+
+	err := c.get(lastfmURL, &searchRes)
+
+	if err != nil {
+		return TrackSearchRes{}, err
+	}
+
+	return searchRes.SearchResults, nil
 }

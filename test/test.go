@@ -25,7 +25,7 @@ func main() {
 	client := lastfm.New(&hClient, os.Getenv("LAST_FM_KEY"), os.Getenv("LAST_FM_SECRET"))
 
 	// client.SetUser("RJ")
-	res, err := client.TrackGetTopTags("Believe", "Cher", "")
+	res, err := client.TrackSearch("Believe", "Cher", "", "")
 
 	// res, err := client.TrackGetTags("Hells Bells", "AC/DC", "")
 

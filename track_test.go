@@ -142,3 +142,31 @@ func TestTrackGetTopTags(t *testing.T) {
 		}
 	}
 }
+
+func TestTrackSearch(t *testing.T) {
+	res, err := client.TrackSearch("Believe", "Cher", "", "")
+
+	if err != nil {
+		t.Error(err)
+	}
+
+	if len(res.TrackMatches.Tracks) == 0 {
+		t.Error("track.search returned empty list")
+	}
+
+	var tests = []struct {
+		test     string
+		expected string
+	}{
+		{"Name", "Believe"},
+		{"Artist", "Cher"},
+		{"URL", "https://www.last.fm/music/Cher/_/Believe"},
+		{"MBID", "32ca187e-ee25-4f18-b7d0-3b6713f24635"},
+	}
+
+	for _, test := range tests {
+		if output := getStringField(res.TrackMatches.Tracks[0], test.test); output != test.expected {
+			t.Errorf("Test Failed: %s expected, received: %s", test.expected, output)
+		}
+	}
+}
