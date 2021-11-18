@@ -24,5 +24,13 @@ func main() {
 	hClient := http.Client{Timeout: time.Duration(1) * time.Second}
 	client := lastfm.New(&hClient, os.Getenv("LAST_FM_KEY"), os.Getenv("LAST_FM_SECRET"))
 
-	client.TagGetWeeklyChartlist("rock")
+	// client.SetUser("RJ")
+	res, err := client.TrackGetTopTags("Believe", "Cher", "")
+
+	// res, err := client.TrackGetTags("Hells Bells", "AC/DC", "")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(res)
 }

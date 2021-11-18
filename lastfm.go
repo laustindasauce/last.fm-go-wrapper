@@ -155,6 +155,10 @@ type Tag struct {
 	URL  string `json:"url"`
 }
 
+type PosAttr struct {
+	Position string `json:"position"`
+}
+
 // TagWithCount identifies a tag with count
 type TagWithCount struct {
 	Count int    `json:"count"`

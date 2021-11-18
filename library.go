@@ -1,5 +1,7 @@
 package lastfm
 
+import "errors"
+
 type LibraryArtists struct {
 	Artists []LibraryArtist `json:"artist"`
 	Attr    UserAttr        `json:"@attr"`
@@ -17,6 +19,9 @@ type LibraryArtist struct {
 
 func (c *Client) LibraryGetArtists() (LibraryArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
+	if c.User == "" {
+		return LibraryArtists{}, errors.New("empty user... please run set user method first")
+	}
 	lastfmURL := c.getNoAuthURL("method.library.getartists", "user."+c.User)
 
 	var artists struct {
