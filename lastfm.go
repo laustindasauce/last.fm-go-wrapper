@@ -85,7 +85,11 @@ func (c *Client) getNoAuthURL(opts ...string) string {
 
 	for i := 0; i < len(opts); i++ {
 		pieces := strings.SplitN(opts[i], ".", 2)
-		pathOpts = append(pathOpts, PathOptions{key: pieces[0], value: pieces[1]})
+
+		// Ignore empty opts
+		if pieces[1] != "" {
+			pathOpts = append(pathOpts, PathOptions{key: pieces[0], value: pieces[1]})
+		}
 	}
 
 	pathOpts = append(pathOpts, c.keyOpt, c.jsonOpt)

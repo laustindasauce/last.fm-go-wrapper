@@ -124,21 +124,11 @@ func (c *Client) UserGetFriends(limit, page string) (UserFriends, error) {
 	var lastfmURL string
 	var allOpts []string
 
-	allOpts = append(allOpts, "method.user.getfriends")
-
 	if c.User == "" {
 		return UserFriends{}, errors.New("empty user... please run set user method first")
-	} else {
-		allOpts = append(allOpts, "user."+c.User)
 	}
 
-	if limit != "" {
-		allOpts = append(allOpts, "limit."+limit)
-	}
-
-	if page != "" {
-		allOpts = append(allOpts, "page."+page)
-	}
+	allOpts = append(allOpts, "method.user.getfriends", "user."+c.User, "limit."+limit, "page."+page)
 
 	lastfmURL = c.getNoAuthURL(allOpts...)
 
@@ -160,13 +150,11 @@ func (c *Client) UserGetInfo() (User, error) {
 	var lastfmURL string
 	var allOpts []string
 
-	allOpts = append(allOpts, "method.user.getinfo")
-
 	if c.User == "" {
 		return User{}, errors.New("empty user... please run set user method first")
-	} else {
-		allOpts = append(allOpts, "user."+c.User)
 	}
+
+	allOpts = append(allOpts, "method.user.getinfo", "user."+c.User)
 
 	lastfmURL = c.getNoAuthURL(allOpts...)
 
@@ -188,21 +176,11 @@ func (c *Client) UserGetLovedTracks(limit, page string) (UserLovedTracks, error)
 	var lastfmURL string
 	var allOpts []string
 
-	allOpts = append(allOpts, "method.user.getlovedtracks")
-
 	if c.User == "" {
 		return UserLovedTracks{}, errors.New("empty user... please run set user method first")
-	} else {
-		allOpts = append(allOpts, "user."+c.User)
 	}
 
-	if limit != "" {
-		allOpts = append(allOpts, "limit."+limit)
-	}
-
-	if page != "" {
-		allOpts = append(allOpts, "page."+page)
-	}
+	allOpts = append(allOpts, "method.user.getlovedtracks", "user."+c.User, "limit."+limit, "page."+page)
 
 	lastfmURL = c.getNoAuthURL(allOpts...)
 
@@ -224,21 +202,11 @@ func (c *Client) UserGetPersonalArtistTags(tag, limit, page string) (ArtistPerso
 	var lastfmURL string
 	var allOpts []string
 
-	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.artist", "tag."+tag)
-
 	if c.User == "" {
 		return ArtistPersonalTags{}, errors.New("empty user... please run set user method first")
-	} else {
-		allOpts = append(allOpts, "user."+c.User)
 	}
 
-	if limit != "" {
-		allOpts = append(allOpts, "limit."+limit)
-	}
-
-	if page != "" {
-		allOpts = append(allOpts, "page."+page)
-	}
+	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.artist", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
 
 	lastfmURL = c.getNoAuthURL(allOpts...)
 
@@ -260,21 +228,11 @@ func (c *Client) UserGetPersonalAlbumTags(tag, limit, page string) (AlbumPersona
 	var lastfmURL string
 	var allOpts []string
 
-	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.album", "tag."+tag)
-
 	if c.User == "" {
 		return AlbumPersonalTags{}, errors.New("empty user... please run set user method first")
-	} else {
-		allOpts = append(allOpts, "user."+c.User)
 	}
 
-	if limit != "" {
-		allOpts = append(allOpts, "limit."+limit)
-	}
-
-	if page != "" {
-		allOpts = append(allOpts, "page."+page)
-	}
+	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.album", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
 
 	lastfmURL = c.getNoAuthURL(allOpts...)
 
@@ -296,21 +254,11 @@ func (c *Client) UserGetPersonalTrackTags(tag, limit, page string) (TrackPersona
 	var lastfmURL string
 	var allOpts []string
 
-	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.track", "tag."+tag)
-
 	if c.User == "" {
 		return TrackPersonalTags{}, errors.New("empty user... please run set user method first")
-	} else {
-		allOpts = append(allOpts, "user."+c.User)
 	}
 
-	if limit != "" {
-		allOpts = append(allOpts, "limit."+limit)
-	}
-
-	if page != "" {
-		allOpts = append(allOpts, "page."+page)
-	}
+	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.track", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
 
 	lastfmURL = c.getNoAuthURL(allOpts...)
 

@@ -36,7 +36,7 @@ func TestGetNoAuthURL(t *testing.T) {
 		input    []string
 		expected string
 	}{
-		{[]string{"method.album.getinfo", "artist.Cher", "album.believe"}, "https://ws.audioscrobbler.com/2.0/?album=believe&api_key=" + os.Getenv("LAST_FM_KEY") + "&artist=Cher&format=json&method=album.getinfo"},
+		{[]string{"method.album.getinfo", "artist.Cher", "album.believe", "limit."}, "https://ws.audioscrobbler.com/2.0/?album=believe&api_key=" + os.Getenv("LAST_FM_KEY") + "&artist=Cher&format=json&method=album.getinfo"},
 		{[]string{"artist.anime", "method.artist.getinfo"}, "https://ws.audioscrobbler.com/2.0/?api_key=" + os.Getenv("LAST_FM_KEY") + "&artist=anime&format=json&method=artist.getinfo"},
 	}
 
