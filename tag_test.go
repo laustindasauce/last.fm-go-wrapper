@@ -24,7 +24,7 @@ func TestTagGetInfo(t *testing.T) {
 }
 
 func TestTagGetTopAlbums(t *testing.T) {
-	res, err := client.TagGetTopAlbums("disco")
+	res, err := client.TagGetTopAlbums("disco", "", "")
 
 	if err != nil {
 		t.Error(err)
@@ -51,7 +51,7 @@ func TestTagGetTopAlbums(t *testing.T) {
 }
 
 func TestTagGetTopArtists(t *testing.T) {
-	res, err := client.TagGetTopArtists("pop")
+	res, err := client.TagGetTopArtists("pop", "", "")
 
 	if err != nil {
 		t.Error(err)
@@ -90,7 +90,7 @@ func TestTagGetTopTags(t *testing.T) {
 }
 
 func TestTagGetTopTracks(t *testing.T) {
-	res, err := client.TagGetTopTracks("pop")
+	res, err := client.TagGetTopTracks("pop", "", "")
 
 	if err != nil {
 		t.Error(err)

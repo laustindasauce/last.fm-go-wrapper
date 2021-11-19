@@ -108,9 +108,11 @@ func (c *Client) TagGetInfo(tag string) (TagInfo, error) {
 	return tagInfo.Tag, nil
 }
 
-func (c *Client) TagGetTopAlbums(tag string) (TagTopAlbums, error) {
+func (c *Client) TagGetTopAlbums(tag, limit, page string) (TagTopAlbums, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
-	lastfmURL := c.getNoAuthURL("method.tag.gettopalbums", "tag."+tag)
+	allOpts := []string{"method.tag.gettopalbums", "tag." + tag, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var tagTopAlbums struct {
 		Albums TagTopAlbums `json:"albums"`
@@ -125,9 +127,11 @@ func (c *Client) TagGetTopAlbums(tag string) (TagTopAlbums, error) {
 	return tagTopAlbums.Albums, nil
 }
 
-func (c *Client) TagGetTopArtists(tag string) (TagTopArtists, error) {
+func (c *Client) TagGetTopArtists(tag, limit, page string) (TagTopArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
-	lastfmURL := c.getNoAuthURL("method.tag.gettopartists", "tag."+tag)
+	allOpts := []string{"method.tag.gettopartists", "tag." + tag, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var tagTopArtists struct {
 		Artists TagTopArtists `json:"topartists"`
@@ -159,9 +163,11 @@ func (c *Client) TagGetTopTags() (TagTopTags, error) {
 	return tagTopTags.Tags, nil
 }
 
-func (c *Client) TagGetTopTracks(tag string) (TagTopTracks, error) {
+func (c *Client) TagGetTopTracks(tag, limit, page string) (TagTopTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
-	lastfmURL := c.getNoAuthURL("method.tag.gettoptracks", "tag."+tag)
+	allOpts := []string{"method.tag.gettoptracks", "tag." + tag, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var tagTopTracks struct {
 		Tracks TagTopTracks `json:"tracks"`
