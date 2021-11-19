@@ -53,9 +53,11 @@ type ChartAttr struct {
 	Total      string `json:"total"`
 }
 
-func (c *Client) ChartGetTopArtists() (TopArtists, error) {
+func (c *Client) ChartGetTopArtists(limit, page string) (TopArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.chart.gettopartists")
+	allOpts := []string{"method.chart.gettopartists", "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var topArtistsRes struct {
 		TopArtists TopArtists `json:"artists"`
@@ -70,9 +72,11 @@ func (c *Client) ChartGetTopArtists() (TopArtists, error) {
 	return topArtistsRes.TopArtists, nil
 }
 
-func (c *Client) ChartGetTopTags() (TopTags, error) {
+func (c *Client) ChartGetTopTags(limit, page string) (TopTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptags&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.chart.gettoptags")
+	allOpts := []string{"method.chart.gettoptags", "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var topTagsRes struct {
 		TopTags TopTags `json:"tags"`
@@ -87,9 +91,11 @@ func (c *Client) ChartGetTopTags() (TopTags, error) {
 	return topTagsRes.TopTags, nil
 }
 
-func (c *Client) ChartGetTopTracks() (ChartTracks, error) {
+func (c *Client) ChartGetTopTracks(limit, page string) (ChartTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.chart.gettoptracks")
+	allOpts := []string{"method.chart.gettoptracks", "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var topTracksRes struct {
 		TopTracks ChartTracks `json:"tracks"`
