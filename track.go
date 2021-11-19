@@ -99,6 +99,11 @@ type CorrectedTrack struct {
 	Artist AlbumArtist `json:"artist"`
 }
 
+type TrackDate struct {
+	UTS  string `json:"uts"`
+	Text string `json:"#text"`
+}
+
 type CorrectedAttr struct {
 	Index           string `json:"index"`
 	ArtistCorrected string `json:"artistcorrected"`
