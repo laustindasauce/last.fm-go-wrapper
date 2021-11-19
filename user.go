@@ -121,16 +121,13 @@ type UserAttr struct {
 
 func (c *Client) UserGetFriends(limit, page string) (UserFriends, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getfriends&user=rj&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
 	if c.User == "" {
 		return UserFriends{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts = append(allOpts, "method.user.getfriends", "user."+c.User, "limit."+limit, "page."+page)
+	allOpts := []string{"method.user.getfriends", "user." + c.User, "limit." + limit, "page." + page}
 
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var friends struct {
 		Friends UserFriends `json:"friends"`
@@ -147,16 +144,13 @@ func (c *Client) UserGetFriends(limit, page string) (UserFriends, error) {
 
 func (c *Client) UserGetInfo() (User, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rj&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
 	if c.User == "" {
 		return User{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts = append(allOpts, "method.user.getinfo", "user."+c.User)
+	allOpts := []string{"method.user.getinfo", "user." + c.User}
 
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var userInfo struct {
 		User User `json:"user"`
@@ -173,16 +167,13 @@ func (c *Client) UserGetInfo() (User, error) {
 
 func (c *Client) UserGetLovedTracks(limit, page string) (UserLovedTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getlovedtracks&user=rj&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
 	if c.User == "" {
 		return UserLovedTracks{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts = append(allOpts, "method.user.getlovedtracks", "user."+c.User, "limit."+limit, "page."+page)
+	allOpts := []string{"method.user.getlovedtracks", "user." + c.User, "limit." + limit, "page." + page}
 
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var lovedTracks struct {
 		UserLovedTracks UserLovedTracks `json:"lovedtracks"`
@@ -199,16 +190,13 @@ func (c *Client) UserGetLovedTracks(limit, page string) (UserLovedTracks, error)
 
 func (c *Client) UserGetPersonalArtistTags(tag, limit, page string) (ArtistPersonalTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
 	if c.User == "" {
 		return ArtistPersonalTags{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.artist", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
+	allOpts := []string{"method.user.getpersonaltags", "taggingtype.artist", "tag." + tag, "user." + c.User, "limit." + limit, "page." + page}
 
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var personalTaggings struct {
 		Tags ArtistPersonalTags `json:"taggings"`
@@ -225,16 +213,13 @@ func (c *Client) UserGetPersonalArtistTags(tag, limit, page string) (ArtistPerso
 
 func (c *Client) UserGetPersonalAlbumTags(tag, limit, page string) (AlbumPersonalTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
 	if c.User == "" {
 		return AlbumPersonalTags{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.album", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
+	allOpts := []string{"method.user.getpersonaltags", "taggingtype.album", "tag." + tag, "user." + c.User, "limit." + limit, "page." + page}
 
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var personalTaggings struct {
 		Tags AlbumPersonalTags `json:"taggings"`
@@ -251,16 +236,13 @@ func (c *Client) UserGetPersonalAlbumTags(tag, limit, page string) (AlbumPersona
 
 func (c *Client) UserGetPersonalTrackTags(tag, limit, page string) (TrackPersonalTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
 	if c.User == "" {
 		return TrackPersonalTags{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts = append(allOpts, "method.user.getpersonaltags", "taggingtype.track", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
+	allOpts := []string{"method.user.getpersonaltags", "taggingtype.track", "tag." + tag, "user." + c.User, "limit." + limit, "page." + page}
 
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var personalTaggings struct {
 		Tags TrackPersonalTags `json:"taggings"`

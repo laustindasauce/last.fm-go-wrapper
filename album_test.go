@@ -5,7 +5,7 @@ import (
 )
 
 func TestAlbumGetInfo(t *testing.T) {
-	res, err := client.AlbumGetInfo("Believe", "Cher")
+	res, err := client.AlbumGetInfo("Believe", "Cher", "", "")
 
 	if err != nil {
 		t.Error(err)
@@ -29,7 +29,7 @@ func TestAlbumGetInfo(t *testing.T) {
 }
 
 func TestAlbumTopTags(t *testing.T) {
-	res, err := client.AlbumGetTopTags("Believe", "Cher")
+	res, err := client.AlbumGetTopTags("Believe", "Cher", "")
 
 	if err != nil {
 		t.Error(err)
@@ -51,7 +51,7 @@ func TestAlbumTopTags(t *testing.T) {
 }
 
 func TestAlbumSearch(t *testing.T) {
-	res, err := client.AlbumSearch("Believe")
+	res, err := client.AlbumSearch("Believe", "", "")
 
 	if err != nil {
 		t.Error(err)

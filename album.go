@@ -60,9 +60,11 @@ type AlbumMatches struct {
 	Album []SimpleAlbum `json:"album"`
 }
 
-func (c *Client) AlbumGetInfo(album, artist string) (FullAlbum, error) {
+func (c *Client) AlbumGetInfo(album, artist, mbid, username string) (FullAlbum, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=Cher&album=Believe&format=json
-	lastfmURL := c.getNoAuthURL("method.album.getinfo", "album."+album, "artist."+artist)
+	allOpts := []string{"method.album.getinfo", "album." + album, "artist." + artist, "mbid." + mbid, "username." + username}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var albumInfo struct {
 		FullAlbum FullAlbum `json:"album"`
@@ -83,9 +85,11 @@ func (c *Client) AlbumGetInfo(album, artist string) (FullAlbum, error) {
 // 	return lastfmURL, nil
 // }
 
-func (c *Client) AlbumGetTopTags(album, artist string) (AlbumTopTags, error) {
+func (c *Client) AlbumGetTopTags(album, artist, mbid string) (AlbumTopTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=album.gettoptags&artist=radiohead&album=the%20bends&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.album.gettoptags", "album."+album, "artist."+artist)
+	allOpts := []string{"method.album.gettoptags", "album." + album, "artist." + artist, "mbid." + mbid}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var topTags struct {
 		TopTags AlbumTopTags `json:"toptags"`
@@ -100,9 +104,11 @@ func (c *Client) AlbumGetTopTags(album, artist string) (AlbumTopTags, error) {
 	return topTags.TopTags, nil
 }
 
-func (c *Client) AlbumSearch(album string) (AlbumSearchRes, error) {
+func (c *Client) AlbumSearch(album, limit, page string) (AlbumSearchRes, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=album.search&album=believe&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.album.search", "album."+album)
+	allOpts := []string{"method.album.search", "album." + album, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var searchRes struct {
 		SearchResults AlbumSearchRes `json:"results"`
