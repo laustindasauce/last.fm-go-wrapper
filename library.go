@@ -17,12 +17,15 @@ type LibraryArtist struct {
 	Streamable string  `json:"streamable"`
 }
 
-func (c *Client) LibraryGetArtists() (LibraryArtists, error) {
+func (c *Client) LibraryGetArtists(limit, page string) (LibraryArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
 	if c.User == "" {
 		return LibraryArtists{}, errors.New("empty user... please run set user method first")
 	}
-	lastfmURL := c.getNoAuthURL("method.library.getartists", "user."+c.User)
+
+	allOpts := []string{"method.library.getartists", "user." + c.User, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var artists struct {
 		Artists LibraryArtists `json:"artists"`
