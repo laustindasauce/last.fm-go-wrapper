@@ -46,9 +46,7 @@ func (c *Client) GeoGetTopArtists(country, limit, page string) (GeoTopArtists, e
 		return GeoTopArtists{}, errors.New("country param invalid")
 	}
 
-	allOpts := []string{"method.geo.gettopartists", "country." + thisCountry.String(), "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.geo.gettopartists", "country."+thisCountry.String(), "limit."+limit, "page."+page)
 
 	var topArtistsRes struct {
 		TopArtists GeoTopArtists `json:"topartists"`
@@ -71,9 +69,7 @@ func (c *Client) GeoGetTopTracks(country, location, limit, page string) (GeoTopT
 		return GeoTopTracks{}, errors.New("country param invalid")
 	}
 
-	allOpts := []string{"method.geo.gettoptracks", "country." + thisCountry.String(), "location." + location, "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.geo.gettoptracks", "country."+thisCountry.String(), "location."+location, "limit."+limit, "page."+page)
 
 	var topTrackRes struct {
 		TopTracks GeoTopTracks `json:"tracks"`

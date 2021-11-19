@@ -23,9 +23,7 @@ func (c *Client) LibraryGetArtists(limit, page string) (LibraryArtists, error) {
 		return LibraryArtists{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts := []string{"method.library.getartists", "user." + c.User, "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.library.getartists", "user."+c.User, "limit."+limit, "page."+page)
 
 	var artists struct {
 		Artists LibraryArtists `json:"artists"`

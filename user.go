@@ -125,9 +125,7 @@ func (c *Client) UserGetFriends(limit, page string) (UserFriends, error) {
 		return UserFriends{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts := []string{"method.user.getfriends", "user." + c.User, "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.user.getfriends", "user."+c.User, "limit."+limit, "page."+page)
 
 	var friends struct {
 		Friends UserFriends `json:"friends"`
@@ -148,9 +146,7 @@ func (c *Client) UserGetInfo() (User, error) {
 		return User{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts := []string{"method.user.getinfo", "user." + c.User}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.user.getinfo", "user."+c.User)
 
 	var userInfo struct {
 		User User `json:"user"`
@@ -171,9 +167,7 @@ func (c *Client) UserGetLovedTracks(limit, page string) (UserLovedTracks, error)
 		return UserLovedTracks{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts := []string{"method.user.getlovedtracks", "user." + c.User, "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.user.getlovedtracks", "user."+c.User, "limit."+limit, "page."+page)
 
 	var lovedTracks struct {
 		UserLovedTracks UserLovedTracks `json:"lovedtracks"`
@@ -194,9 +188,7 @@ func (c *Client) UserGetPersonalArtistTags(tag, limit, page string) (ArtistPerso
 		return ArtistPersonalTags{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts := []string{"method.user.getpersonaltags", "taggingtype.artist", "tag." + tag, "user." + c.User, "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.user.getpersonaltags", "taggingtype.artist", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
 
 	var personalTaggings struct {
 		Tags ArtistPersonalTags `json:"taggings"`
@@ -217,9 +209,7 @@ func (c *Client) UserGetPersonalAlbumTags(tag, limit, page string) (AlbumPersona
 		return AlbumPersonalTags{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts := []string{"method.user.getpersonaltags", "taggingtype.album", "tag." + tag, "user." + c.User, "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.user.getpersonaltags", "taggingtype.album", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
 
 	var personalTaggings struct {
 		Tags AlbumPersonalTags `json:"taggings"`
@@ -240,9 +230,7 @@ func (c *Client) UserGetPersonalTrackTags(tag, limit, page string) (TrackPersona
 		return TrackPersonalTags{}, errors.New("empty user... please run set user method first")
 	}
 
-	allOpts := []string{"method.user.getpersonaltags", "taggingtype.track", "tag." + tag, "user." + c.User, "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.user.getpersonaltags", "taggingtype.track", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
 
 	var personalTaggings struct {
 		Tags TrackPersonalTags `json:"taggings"`

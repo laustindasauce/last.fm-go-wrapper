@@ -93,9 +93,7 @@ func (c *Client) ChartGetTopTags(limit, page string) (TopTags, error) {
 
 func (c *Client) ChartGetTopTracks(limit, page string) (ChartTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=YOUR_API_KEY&format=json
-	allOpts := []string{"method.chart.gettoptracks", "limit." + limit, "page." + page}
-
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.chart.gettoptracks", "limit."+limit, "page."+page)
 
 	var topTracksRes struct {
 		TopTracks ChartTracks `json:"tracks"`

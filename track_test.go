@@ -6,7 +6,7 @@ import (
 )
 
 func TestTrackGetInfo(t *testing.T) {
-	res, err := client.TrackGetInfo("believe", "cher")
+	res, err := client.TrackGetInfo("believe", "cher", "", "")
 
 	if err != nil {
 		t.Error(err)

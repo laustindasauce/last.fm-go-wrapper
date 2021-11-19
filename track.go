@@ -171,9 +171,9 @@ func (c *Client) TrackGetCorrection(track, artist string) (TrackCorrection, erro
 	return corrections.Corrections.TrackCorrection, nil
 }
 
-func (c *Client) TrackGetInfo(track, artist string) (TrackInfo, error) {
+func (c *Client) TrackGetInfo(track, artist, mbid, username string) (TrackInfo, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=YOUR_API_KEY&artist=cher&track=believe&format=json
-	lastfmURL := c.getNoAuthURL("method.track.getInfo", "track."+track, "artist."+artist)
+	lastfmURL := c.getNoAuthURL("method.track.getInfo", "track."+track, "artist."+artist, "mbid."+mbid, "username."+username)
 
 	var trackInfo struct {
 		Track TrackInfo `json:"track"`
@@ -190,22 +190,7 @@ func (c *Client) TrackGetInfo(track, artist string) (TrackInfo, error) {
 
 func (c *Client) TrackGetSimilar(track, artist, mbid, limit string) (SimilarTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=cher&track=believe&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
-	allOpts = append(allOpts, "method.track.getsimilar")
-
-	if mbid != "" {
-		allOpts = append(allOpts, "mbid."+mbid)
-	} else {
-		allOpts = append(allOpts, "track."+track, "artist."+artist)
-	}
-
-	if limit != "" {
-		allOpts = append(allOpts, "limit."+limit)
-	}
-
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.track.getsimilar", "track."+track, "artist."+artist, "mbid."+mbid, "limit."+limit)
 
 	var similarTrack struct {
 		SimilarTracks SimilarTracks `json:"similartracks"`
@@ -223,24 +208,11 @@ func (c *Client) TrackGetSimilar(track, artist, mbid, limit string) (SimilarTrac
 
 func (c *Client) TrackGetTags(track, artist, mbid string) (TrackTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.getTags&api_key=YOUR_API_KEY&artist=AC/DC&track=Hells+Bells&user=RJ&format=json
-	var lastfmURL string
-	var allOpts []string
-
-	allOpts = append(allOpts, "method.track.getTags")
-
 	if c.User == "" {
 		return TrackTags{}, errors.New("empty user... please run set user method first")
-	} else {
-		allOpts = append(allOpts, "user."+c.User)
 	}
 
-	if mbid != "" {
-		allOpts = append(allOpts, "mbid."+mbid)
-	} else {
-		allOpts = append(allOpts, "track."+track, "artist."+artist)
-	}
-
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.track.getTags", "track."+track, "artist."+artist, "mbid."+mbid, "user."+c.User)
 
 	var trackTags struct {
 		Tags TrackTags `json:"tags"`
@@ -258,18 +230,7 @@ func (c *Client) TrackGetTags(track, artist, mbid string) (TrackTags, error) {
 
 func (c *Client) TrackGetTopTags(track, artist, mbid string) (TrackTopTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.gettoptags&artist=radiohead&track=paranoid+android&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
-	allOpts = append(allOpts, "method.track.gettoptags")
-
-	if mbid != "" {
-		allOpts = append(allOpts, "mbid."+mbid)
-	} else {
-		allOpts = append(allOpts, "track."+track, "artist."+artist)
-	}
-
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.track.gettoptags", "track."+track, "artist."+artist, "mbid."+mbid)
 
 	var trackTags struct {
 		Tags TrackTopTags `json:"toptags"`
@@ -287,24 +248,7 @@ func (c *Client) TrackGetTopTags(track, artist, mbid string) (TrackTopTags, erro
 
 func (c *Client) TrackSearch(track, artist, page, limit string) (TrackSearchRes, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.search&track=Believe&api_key=YOUR_API_KEY&format=json
-	var lastfmURL string
-	var allOpts []string
-
-	allOpts = append(allOpts, "method.track.search", "track."+track)
-
-	if limit != "" {
-		allOpts = append(allOpts, "limit."+limit)
-	}
-
-	if artist != "" {
-		allOpts = append(allOpts, "artist."+artist)
-	}
-
-	if page != "" {
-		allOpts = append(allOpts, "page."+page)
-	}
-
-	lastfmURL = c.getNoAuthURL(allOpts...)
+	lastfmURL := c.getNoAuthURL("method.track.search", "track."+track, "artist."+artist, "limit."+limit, "page."+page)
 
 	var searchRes struct {
 		SearchResults TrackSearchRes `json:"results"`
