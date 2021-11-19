@@ -82,8 +82,10 @@ type ArtistMatches struct {
 
 // ArtistGetInfo uses the artist.getinfo method with scrobbler API to return the specifed
 // full artist information
-func (c *Client) ArtistGetInfo(artist string) (FullArtist, error) {
-	lastfmURL := c.getNoAuthURL("method.artist.getinfo", "artist."+artist)
+func (c *Client) ArtistGetInfo(artist, mbid, username string) (FullArtist, error) {
+	allOpts := []string{"method.artist.getinfo", "artist." + artist, "mbid." + mbid, "username." + username}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var artistInfo struct {
 		Artist FullArtist `json:"artist"`
@@ -98,8 +100,10 @@ func (c *Client) ArtistGetInfo(artist string) (FullArtist, error) {
 	return artistInfo.Artist, nil
 }
 
-func (c *Client) ArtistGetSimilar(artist string) (SimilarArtists, error) {
-	lastfmURL := c.getNoAuthURL("method.artist.getsimilar", "artist."+artist)
+func (c *Client) ArtistGetSimilar(artist, mbid, limit string) (SimilarArtists, error) {
+	allOpts := []string{"method.artist.getsimilar", "artist." + artist, "mbid." + mbid, "limit." + limit}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var similar struct {
 		SimilarRes SimilarArtists `json:"similarartists"`
@@ -114,9 +118,11 @@ func (c *Client) ArtistGetSimilar(artist string) (SimilarArtists, error) {
 	return similar.SimilarRes, nil
 }
 
-func (c *Client) ArtistGetTopAlbums(artist string) (ArtistAlbums, error) {
+func (c *Client) ArtistGetTopAlbums(artist, mbid, limit, page string) (ArtistAlbums, error) {
 	// method=artist.gettopalbums&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.gettopalbums", "artist."+artist)
+	allOpts := []string{"method.artist.gettopalbums", "artist." + artist, "mbid." + mbid, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var topAlbums struct {
 		Albums ArtistAlbums `json:"topalbums"`
@@ -131,9 +137,11 @@ func (c *Client) ArtistGetTopAlbums(artist string) (ArtistAlbums, error) {
 	return topAlbums.Albums, nil
 }
 
-func (c *Client) ArtistGetTopTags(artist string) (TagsWithCount, error) {
+func (c *Client) ArtistGetTopTags(artist, mbid string) (TagsWithCount, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.gettoptags&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.gettoptags", "artist."+artist)
+	allOpts := []string{"method.artist.gettoptags", "artist." + artist, "mbid." + mbid}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var topTags struct {
 		Tags TagsWithCount `json:"toptags"`
@@ -148,9 +156,11 @@ func (c *Client) ArtistGetTopTags(artist string) (TagsWithCount, error) {
 	return topTags.Tags, nil
 }
 
-func (c *Client) ArtistGetTopTracks(artist string) (Tracks, error) {
+func (c *Client) ArtistGetTopTracks(artist, mbid, limit, page string) (Tracks, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.gettoptracks", "artist."+artist)
+	allOpts := []string{"method.artist.gettoptracks", "artist." + artist, "mbid." + mbid, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var topTracks struct {
 		TopTracks Tracks `json:"toptracks"`
@@ -165,9 +175,11 @@ func (c *Client) ArtistGetTopTracks(artist string) (Tracks, error) {
 	return topTracks.TopTracks, nil
 }
 
-func (c *Client) ArtistSearch(artist string) (ArtistSearchRes, error) {
+func (c *Client) ArtistSearch(artist, limit, page string) (ArtistSearchRes, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.search", "artist."+artist)
+	allOpts := []string{"method.artist.search", "artist." + artist, "limit." + limit, "page." + page}
+
+	lastfmURL := c.getNoAuthURL(allOpts...)
 
 	var searchRes struct {
 		SearchResults ArtistSearchRes `json:"results"`
