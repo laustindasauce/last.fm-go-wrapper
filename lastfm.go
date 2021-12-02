@@ -20,14 +20,15 @@ import (
 // Client is a client for working with the Last.fm Web API
 // **Requires API key and secret for now, until auth.go is set up
 type Client struct {
-	http      *http.Client
-	key       string
-	secret    string
-	baseURL   string
-	User      string
-	jsonOpt   PathOptions
-	keyOpt    PathOptions
-	secretOpt PathOptions
+	http       *http.Client
+	key        string
+	secret     string
+	baseURL    string
+	baseApiURL string
+	User       string
+	jsonOpt    PathOptions
+	keyOpt     PathOptions
+	secretOpt  PathOptions
 }
 
 // PathOptions is the opt for URL parameters
@@ -43,13 +44,14 @@ func New(httpClient *http.Client, key string, secret string) *Client {
 	c := &Client{
 		http: httpClient,
 		// Base for Last.fm API endpoints
-		baseURL:   "https://ws.audioscrobbler.com/2.0/?",
-		key:       key,
-		secret:    secret,
-		User:      "",
-		jsonOpt:   PathOptions{"format", "json"},
-		keyOpt:    PathOptions{"api_key", key},
-		secretOpt: PathOptions{"api_secret", secret},
+		baseURL:    "https://ws.audioscrobbler.com/2.0/?",
+		baseApiURL: fmt.Sprintf("https://ws.audioscrobbler.com/2.0/?api_key=%s&format=%s", key, "json"),
+		key:        key,
+		secret:     secret,
+		User:       "",
+		jsonOpt:    PathOptions{"format", "json"},
+		keyOpt:     PathOptions{"api_key", key},
+		secretOpt:  PathOptions{"api_secret", secret},
 	}
 
 	if c.key == "" || c.secret == "" {

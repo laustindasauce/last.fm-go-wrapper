@@ -1,7 +1,8 @@
 package lastfm
 
 import (
-	"errors"
+	"fmt"
+	"strings"
 )
 
 type User struct {
@@ -119,13 +120,22 @@ type UserAttr struct {
 	Total      string `json:"total"`
 }
 
-func (c *Client) UserGetFriends(limit, page string) (UserFriends, error) {
+/*
+user (Required) : The last.fm username to fetch the friends of.
+recenttracks (Optional) : Whether or not to include information about friends' recent listening in the response.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number to fetch. Defaults to first page.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetFriends(user string, opts ...RequestOption) (UserFriends, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getfriends&user=rj&api_key=YOUR_API_KEY&format=json
-	if c.User == "" {
-		return UserFriends{}, errors.New("empty user... please run set user method first")
-	}
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getfriends", c.baseApiURL, user)
 
-	lastfmURL := c.getNoAuthURL("method.user.getfriends", "user."+c.User, "limit."+limit, "page."+page)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var friends struct {
 		Friends UserFriends `json:"friends"`
@@ -140,13 +150,15 @@ func (c *Client) UserGetFriends(limit, page string) (UserFriends, error) {
 	return friends.Friends, nil
 }
 
-func (c *Client) UserGetInfo() (User, error) {
+func (c *Client) UserGetInfo(user string, opts ...RequestOption) (User, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rj&api_key=YOUR_API_KEY&format=json
-	if c.User == "" {
-		return User{}, errors.New("empty user... please run set user method first")
-	}
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getinfo", c.baseApiURL, user)
 
-	lastfmURL := c.getNoAuthURL("method.user.getinfo", "user."+c.User)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var userInfo struct {
 		User User `json:"user"`
@@ -161,13 +173,21 @@ func (c *Client) UserGetInfo() (User, error) {
 	return userInfo.User, nil
 }
 
-func (c *Client) UserGetLovedTracks(limit, page string) (UserLovedTracks, error) {
+/*
+user (Required) : The user name to fetch the loved tracks for.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number to fetch. Defaults to first page.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetLovedTracks(user string, opts ...RequestOption) (UserLovedTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getlovedtracks&user=rj&api_key=YOUR_API_KEY&format=json
-	if c.User == "" {
-		return UserLovedTracks{}, errors.New("empty user... please run set user method first")
-	}
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getlovedtracks", c.baseApiURL, user)
 
-	lastfmURL := c.getNoAuthURL("method.user.getlovedtracks", "user."+c.User, "limit."+limit, "page."+page)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var lovedTracks struct {
 		UserLovedTracks UserLovedTracks `json:"lovedtracks"`
@@ -182,13 +202,26 @@ func (c *Client) UserGetLovedTracks(limit, page string) (UserLovedTracks, error)
 	return lovedTracks.UserLovedTracks, nil
 }
 
-func (c *Client) UserGetPersonalArtistTags(tag, limit, page string) (ArtistPersonalTags, error) {
+/*
+user (Required) : The user who performed the taggings.
+tag (Required) : The tag you're interested in.
+taggingtype=artist : The type of items which have been tagged
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number to fetch. Defaults to first page.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetPersonalArtistTags(user, tag string, opts ...RequestOption) (ArtistPersonalTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json
-	if c.User == "" {
-		return ArtistPersonalTags{}, errors.New("empty user... please run set user method first")
-	}
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getpersonaltags&tag=%s", c.baseApiURL, user, tag)
 
-	lastfmURL := c.getNoAuthURL("method.user.getpersonaltags", "taggingtype.artist", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
+	// Add taggingtype
+	opts = append(opts, TaggingTypeOpt(ArtistTag))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var personalTaggings struct {
 		Tags ArtistPersonalTags `json:"taggings"`
@@ -203,13 +236,27 @@ func (c *Client) UserGetPersonalArtistTags(tag, limit, page string) (ArtistPerso
 	return personalTaggings.Tags, nil
 }
 
-func (c *Client) UserGetPersonalAlbumTags(tag, limit, page string) (AlbumPersonalTags, error) {
+/*
+user (Required) : The user who performed the taggings.
+tag (Required) : The tag you're interested in.
+taggingtype=album : The type of items which have been tagged
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number to fetch. Defaults to first page.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetPersonalAlbumTags(user, tag string, opts ...RequestOption) (AlbumPersonalTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json
-	if c.User == "" {
-		return AlbumPersonalTags{}, errors.New("empty user... please run set user method first")
-	}
 
-	lastfmURL := c.getNoAuthURL("method.user.getpersonaltags", "taggingtype.album", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getpersonaltags&tag=%s", c.baseApiURL, user, tag)
+
+	// Add taggingtype
+	opts = append(opts, TaggingTypeOpt(AlbumTag))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var personalTaggings struct {
 		Tags AlbumPersonalTags `json:"taggings"`
@@ -224,13 +271,26 @@ func (c *Client) UserGetPersonalAlbumTags(tag, limit, page string) (AlbumPersona
 	return personalTaggings.Tags, nil
 }
 
-func (c *Client) UserGetPersonalTrackTags(tag, limit, page string) (TrackPersonalTags, error) {
+/*
+user (Required) : The user who performed the taggings.
+tag (Required) : The tag you're interested in.
+taggingtype=track : The type of items which have been tagged
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number to fetch. Defaults to first page.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetPersonalTrackTags(user, tag string, opts ...RequestOption) (TrackPersonalTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json
-	if c.User == "" {
-		return TrackPersonalTags{}, errors.New("empty user... please run set user method first")
-	}
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getpersonaltags&tag=%s", c.baseApiURL, user, tag)
 
-	lastfmURL := c.getNoAuthURL("method.user.getpersonaltags", "taggingtype.track", "tag."+tag, "user."+c.User, "limit."+limit, "page."+page)
+	// Add taggingtype
+	opts = append(opts, TaggingTypeOpt(TrackTag))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var personalTaggings struct {
 		Tags TrackPersonalTags `json:"taggings"`
@@ -243,4 +303,39 @@ func (c *Client) UserGetPersonalTrackTags(tag, limit, page string) (TrackPersona
 	}
 
 	return personalTaggings.Tags, nil
+}
+
+/*
+limit (Optional) : The number of results to fetch per page. Defaults to 50. Maximum is 200.
+
+user (Required) : The last.fm username to fetch the recent tracks of.
+
+page (Optional) : The page number to fetch. Defaults to first page.
+
+from (Optional) : Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format (integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.)
+
+extended (0|1) (Optional) : Includes extended data in each artist, and whether or not the user has loved each track
+
+to (Optional) : End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.)
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetRecentTracks(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getrecenttracks", c.baseApiURL, user)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
+
+	if strings.Contains(lastfmURL, "extended=1") {
+		fmt.Println("Contains")
+		// Need to set up for extended
+	} else {
+		// Get non extended info
+		fmt.Println("Not contained")
+	}
+
+	fmt.Println(lastfmURL)
 }

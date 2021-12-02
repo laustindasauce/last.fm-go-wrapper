@@ -20,7 +20,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	res, err := client.UserGetPersonalAlbumTags("love", "", "")
+	// limit := lastfm.LimitOpt(2)
+	// binary := lastfm.Binary(lastfm.One)
+	// extend := lastfm.ExtendedOpt(binary)
+
+	// client.UserGetRecentTracks("Abspen1", limit)
+	res, err := client.UserGetPersonalTrackTags(client.User, "rock", lastfm.LimitOpt(2))
 
 	// res, err := client.TrackGetTags("Hells Bells", "AC/DC", "")
 

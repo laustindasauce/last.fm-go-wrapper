@@ -11,7 +11,7 @@ func TestUserGetFriends(t *testing.T) {
 		t.Error(err)
 	}
 
-	res, err := client.UserGetFriends("2", "")
+	res, err := client.UserGetFriends(client.User, LimitOpt(2))
 
 	if err != nil {
 		t.Error(err)
@@ -40,7 +40,7 @@ func TestUserGetInfo(t *testing.T) {
 		t.Error(err)
 	}
 
-	res, err := client.UserGetInfo()
+	res, err := client.UserGetInfo(client.User)
 
 	if err != nil {
 		t.Error(err)
@@ -72,7 +72,7 @@ func TestUserGetLovedTracks(t *testing.T) {
 		t.Error(err)
 	}
 
-	res, err := client.UserGetLovedTracks("2", "")
+	res, err := client.UserGetLovedTracks(client.User, LimitOpt(2))
 
 	if err != nil {
 		t.Error(err)
@@ -101,7 +101,7 @@ func TestUserGetPersonalAlbumTags(t *testing.T) {
 		t.Error(err)
 	}
 
-	res, err := client.UserGetPersonalAlbumTags("love", "2", "")
+	res, err := client.UserGetPersonalAlbumTags(client.User, "love", LimitOpt(2))
 
 	if err != nil {
 		t.Error(err)
@@ -131,7 +131,7 @@ func TestUserGetPersonalArtistTags(t *testing.T) {
 		t.Error(err)
 	}
 
-	res, err := client.UserGetPersonalArtistTags("rock", "2", "")
+	res, err := client.UserGetPersonalArtistTags(client.User, "rock", LimitOpt(2))
 
 	if err != nil {
 		t.Error(err)
@@ -161,7 +161,7 @@ func TestUserGetPersonalTrackTags(t *testing.T) {
 		t.Error(err)
 	}
 
-	res, err := client.UserGetPersonalTrackTags("rock", "2", "")
+	res, err := client.UserGetPersonalTrackTags(client.User, "rock", LimitOpt(2))
 
 	if err != nil {
 		t.Error(err)
