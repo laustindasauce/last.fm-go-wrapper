@@ -1,12 +1,11 @@
 package lastfm
 
 import (
-	"strconv"
 	"testing"
 )
 
 func TestTrackGetInfo(t *testing.T) {
-	res, err := client.TrackGetInfo("believe", "cher", "", "")
+	res, err := client.TrackGetInfo("believe", "cher")
 
 	if err != nil {
 		t.Error(err)
@@ -53,8 +52,8 @@ func TestTrackGetCorrection(t *testing.T) {
 }
 
 func TestTrackGetSimilar(t *testing.T) {
-	const limit = "2"
-	res, err := client.TrackGetSimilar("believe", "cher", "", limit)
+	const limit = 2
+	res, err := client.TrackGetSimilar("believe", "cher", LimitOpt(limit))
 
 	if err != nil {
 		t.Error(err)
@@ -64,10 +63,7 @@ func TestTrackGetSimilar(t *testing.T) {
 		t.Error("track.getsimilar returned empty list")
 	}
 
-	// Convert the limit string variable to int
-	intVar, _ := strconv.Atoi(limit)
-
-	if len(res.Tracks) != intVar {
+	if len(res.Tracks) != limit {
 		t.Error("track.getsimilar returned the wrong amount of tracks")
 	}
 
@@ -88,7 +84,7 @@ func TestTrackGetSimilar(t *testing.T) {
 func TestTrackGetTags(t *testing.T) {
 	client.SetUser("RJ")
 
-	res, err := client.TrackGetTags("Hells Bells", "AC/DC", "")
+	res, err := client.TrackGetTags("AC/DC", "Hells Bells", client.User)
 
 	if err != nil {
 		t.Error(err)
@@ -96,6 +92,7 @@ func TestTrackGetTags(t *testing.T) {
 
 	if len(res.Tags) == 0 {
 		t.Error("track.getTags returned empty list")
+		return
 	}
 
 	var tests = []struct {
@@ -114,7 +111,8 @@ func TestTrackGetTags(t *testing.T) {
 }
 
 func TestTrackGetTopTags(t *testing.T) {
-	res, err := client.TrackGetTopTags("Believe", "Cher", "")
+	client.SetUser("RJ")
+	res, err := client.TrackGetTopTags("Cher", "Believe", client.User)
 
 	if err != nil {
 		t.Error(err)
@@ -144,7 +142,7 @@ func TestTrackGetTopTags(t *testing.T) {
 }
 
 func TestTrackSearch(t *testing.T) {
-	res, err := client.TrackSearch("Believe", "Cher", "", "")
+	res, err := client.TrackSearch("Believe", ArtistOpt("Cher"))
 
 	if err != nil {
 		t.Error(err)

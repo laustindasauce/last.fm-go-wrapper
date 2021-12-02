@@ -14,7 +14,7 @@ func main() {
 	hClient := http.Client{Timeout: time.Duration(1) * time.Second}
 	client := lastfm.New(&hClient, os.Getenv("LAST_FM_KEY"), os.Getenv("LAST_FM_SECRET"))
 
-	err := client.SetUser("abspen1")
+	err := client.SetUser("RJ")
 
 	if err != nil {
 		log.Fatal(err)
@@ -25,7 +25,7 @@ func main() {
 	// extend := lastfm.ExtendedOpt(binary)
 
 	// client.UserGetRecentTracks("Abspen1", limit)
-	res, err := client.UserGetPersonalTrackTags(client.User, "rock", lastfm.LimitOpt(2))
+	res, err := client.TrackGetTags("AC/DC", "Hells Bells", client.User)
 
 	// res, err := client.TrackGetTags("Hells Bells", "AC/DC", "")
 

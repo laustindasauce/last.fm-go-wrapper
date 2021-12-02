@@ -1,7 +1,6 @@
 package lastfm
 
 import (
-	"errors"
 	"fmt"
 )
 
@@ -150,9 +149,24 @@ type ArtistTrackAttr struct {
 	Track  string `json:"track"`
 }
 
+/*
+artist (Required) : The artist name to correct.
+track (Required) : The track name to correct.
+api_key (Required) : A Last.fm API key.
+*/
 func (c *Client) TrackGetCorrection(track, artist string) (TrackCorrection, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=guns and roses&track=Mrbrownstone&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.track.getcorrection", "track."+track, "artist."+artist)
+	lastfmURL := fmt.Sprintf("%s&method=track.getcorrection", c.baseApiURL)
+
+	var opts []RequestOption
+
+	opts = append(opts, ArtistOpt(artist), TrackOpt(track))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	type correction struct {
 		TrackCorrection TrackCorrection `json:"correction"`
@@ -171,9 +185,25 @@ func (c *Client) TrackGetCorrection(track, artist string) (TrackCorrection, erro
 	return corrections.Corrections.TrackCorrection, nil
 }
 
-func (c *Client) TrackGetInfo(track, artist, mbid, username string) (TrackInfo, error) {
+/*
+mbid (Optional) : The musicbrainz id for the track
+track (Required (unless mbid)] : The track name
+artist (Required (unless mbid)] : The artist name
+username (Optional) : The username for the context of the request. If supplied, the user's playcount for this track and whether they have loved the track is included in the response.
+autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) TrackGetInfo(track, artist string, opts ...RequestOption) (TrackInfo, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=YOUR_API_KEY&artist=cher&track=believe&format=json
-	lastfmURL := c.getNoAuthURL("method.track.getInfo", "track."+track, "artist."+artist, "mbid."+mbid, "username."+username)
+	lastfmURL := fmt.Sprintf("%s&method=track.getInfo", c.baseApiURL)
+
+	opts = append(opts, ArtistOpt(artist), TrackOpt(track))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var trackInfo struct {
 		Track TrackInfo `json:"track"`
@@ -188,9 +218,23 @@ func (c *Client) TrackGetInfo(track, artist, mbid, username string) (TrackInfo, 
 	return trackInfo.Track, nil
 }
 
-func (c *Client) TrackGetSimilar(track, artist, mbid, limit string) (SimilarTracks, error) {
+/*
+track (Required (unless mbid)] : The track name
+artist (Required (unless mbid)] : The artist name
+mbid (Optional) : The musicbrainz id for the track
+autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+limit (Optional) : Maximum number of similar tracks to return
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) TrackGetSimilar(track, artist string, opts ...RequestOption) (SimilarTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=cher&track=believe&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.track.getsimilar", "track."+track, "artist."+artist, "mbid."+mbid, "limit."+limit)
+	lastfmURL := fmt.Sprintf("%s&method=track.getsimilar&track=%s&artist=%s", c.baseApiURL, track, artist)
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var similarTrack struct {
 		SimilarTracks SimilarTracks `json:"similartracks"`
@@ -206,13 +250,27 @@ func (c *Client) TrackGetSimilar(track, artist, mbid, limit string) (SimilarTrac
 	return similarTrack.SimilarTracks, nil
 }
 
-func (c *Client) TrackGetTags(track, artist, mbid string) (TrackTags, error) {
+/*
+artist (Required (unless mbid)] : The artist name
+track (Required (unless mbid)] : The track name
+mbid (Optional) : The musicbrainz id for the track
+autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+user (Optional) : If called in non-authenticated mode you must specify the user to look up
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) TrackGetTags(artist, track, user string, opts ...RequestOption) (TrackTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.getTags&api_key=YOUR_API_KEY&artist=AC/DC&track=Hells+Bells&user=RJ&format=json
-	if c.User == "" {
-		return TrackTags{}, errors.New("empty user... please run set user method first")
+	lastfmURL := fmt.Sprintf("%s&method=track.getTags&user=%s", c.baseApiURL, user)
+
+	opts = append(opts, ArtistOpt(artist), TrackOpt(track))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
 	}
 
-	lastfmURL := c.getNoAuthURL("method.track.getTags", "track."+track, "artist."+artist, "mbid."+mbid, "user."+c.User)
+	fmt.Println(lastfmURL)
 
 	var trackTags struct {
 		Tags TrackTags `json:"tags"`
@@ -228,9 +286,24 @@ func (c *Client) TrackGetTags(track, artist, mbid string) (TrackTags, error) {
 	return trackTags.Tags, nil
 }
 
-func (c *Client) TrackGetTopTags(track, artist, mbid string) (TrackTopTags, error) {
+/*
+track (Required (unless mbid)] : The track name
+artist (Required (unless mbid)] : The artist name
+mbid (Optional) : The musicbrainz id for the track
+autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) TrackGetTopTags(artist, track, user string, opts ...RequestOption) (TrackTopTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.gettoptags&artist=radiohead&track=paranoid+android&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.track.gettoptags", "track."+track, "artist."+artist, "mbid."+mbid)
+	lastfmURL := fmt.Sprintf("%s&method=track.gettoptags&user=%s", c.baseApiURL, user)
+
+	opts = append(opts, ArtistOpt(artist), TrackOpt(track))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var trackTags struct {
 		Tags TrackTopTags `json:"toptags"`
@@ -246,9 +319,24 @@ func (c *Client) TrackGetTopTags(track, artist, mbid string) (TrackTopTags, erro
 	return trackTags.Tags, nil
 }
 
-func (c *Client) TrackSearch(track, artist, page, limit string) (TrackSearchRes, error) {
+/*
+limit (Optional) : The number of results to fetch per page. Defaults to 30.
+page (Optional) : The page number to fetch. Defaults to first page.
+track (Required) : The track name
+artist (Optional) : Narrow your search by specifying an artist.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) TrackSearch(track string, opts ...RequestOption) (TrackSearchRes, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=track.search&track=Believe&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.track.search", "track."+track, "artist."+artist, "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&method=track.search", c.baseApiURL)
+
+	opts = append(opts, TrackOpt(track))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var searchRes struct {
 		SearchResults TrackSearchRes `json:"results"`
