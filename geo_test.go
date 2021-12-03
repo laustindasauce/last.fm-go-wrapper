@@ -3,7 +3,7 @@ package lastfm
 import "testing"
 
 func TestGeoGetTopArtists(t *testing.T) {
-	res, err := client.GeoGetTopArtists("usa", "", "")
+	res, err := client.GeoGetTopArtists("usa")
 
 	if err != nil {
 		t.Error(err)
@@ -20,6 +20,7 @@ func TestGeoGetTopArtists(t *testing.T) {
 
 	if len(res.Artist) == 0 {
 		t.Error("geo.gettopartists returned an empty array")
+		return
 	}
 
 	for _, test := range tests {
@@ -30,7 +31,7 @@ func TestGeoGetTopArtists(t *testing.T) {
 }
 
 func TestGeoGetTopTracks(t *testing.T) {
-	res, err := client.GeoGetTopTracks("usa", "", "", "")
+	res, err := client.GeoGetTopTracks("usa")
 
 	if err != nil {
 		t.Error(err)

@@ -2,6 +2,7 @@ package lastfm
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/biter777/countries"
 )
@@ -36,8 +37,14 @@ type GeoAttr struct {
 	Total      string `json:"total"`
 }
 
-func (c *Client) GeoGetTopArtists(country, limit, page string) (GeoTopArtists, error) {
-	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=YOUR_API_KEY&format=json
+/*
+country (Required) : A country name, as defined by the ISO 3166-1 country names standard
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number to fetch. Defaults to first page.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) GeoGetTopArtists(country string, opts ...RequestOption) (GeoTopArtists, error) {
+	// http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=YOUR_API_KEY&format=json
 
 	// Check if the country is defined by the ISO 3166-1 country names standard
 	thisCountry := countries.ByName(country)
@@ -46,7 +53,15 @@ func (c *Client) GeoGetTopArtists(country, limit, page string) (GeoTopArtists, e
 		return GeoTopArtists{}, errors.New("country param invalid")
 	}
 
-	lastfmURL := c.getNoAuthURL("method.geo.gettopartists", "country."+thisCountry.String(), "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&method=geo.gettopartists", c.baseApiURL)
+
+	opts = append(opts, CountryOpt(thisCountry.String()))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topArtistsRes struct {
 		TopArtists GeoTopArtists `json:"topartists"`
@@ -61,7 +76,14 @@ func (c *Client) GeoGetTopArtists(country, limit, page string) (GeoTopArtists, e
 	return topArtistsRes.TopArtists, nil
 }
 
-func (c *Client) GeoGetTopTracks(country, location, limit, page string) (GeoTopTracks, error) {
+/*
+country (Required) : A country name, as defined by the ISO 3166-1 country names standard
+location (Optional) : A metro name, to fetch the charts for (must be within the country specified)
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number to fetch. Defaults to first page.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) GeoGetTopTracks(country string, opts ...RequestOption) (GeoTopTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=spain&api_key=YOUR_API_KEY&format=json
 	thisCountry := countries.ByName(country)
 
@@ -69,7 +91,15 @@ func (c *Client) GeoGetTopTracks(country, location, limit, page string) (GeoTopT
 		return GeoTopTracks{}, errors.New("country param invalid")
 	}
 
-	lastfmURL := c.getNoAuthURL("method.geo.gettoptracks", "country."+thisCountry.String(), "location."+location, "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&method=geo.gettoptracks", c.baseApiURL)
+
+	opts = append(opts, CountryOpt(thisCountry.String()))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topTrackRes struct {
 		TopTracks GeoTopTracks `json:"tracks"`
