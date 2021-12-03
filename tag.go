@@ -115,6 +115,8 @@ type TagAttr struct {
 }
 
 /*
+Get the metadata for a tag
+
 lang (Optional) : The language to return the wiki in, expressed as an ISO 639 alpha-2 code.
 
 tag (Required) : The tag name
@@ -145,6 +147,8 @@ func (c *Client) TagGetInfo(tag string, opts ...RequestOption) (TagInfo, error) 
 }
 
 /*
+Get the top albums tagged by this tag, ordered by tag count.
+
 tag (Required) : The tag name
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
@@ -177,6 +181,8 @@ func (c *Client) TagGetTopAlbums(tag string, opts ...RequestOption) (TagTopAlbum
 }
 
 /*
+Get the top artists tagged by this tag, ordered by tag count.
+
 tag (Required) : The tag name
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
@@ -209,6 +215,8 @@ func (c *Client) TagGetTopArtists(tag string, opts ...RequestOption) (TagTopArti
 }
 
 /*
+Fetches the top global tags on Last.fm, sorted by popularity (number of times used)
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopTags() (TagTopTags, error) {
@@ -229,6 +237,8 @@ func (c *Client) TagGetTopTags() (TagTopTags, error) {
 }
 
 /*
+Get the top tracks tagged by this tag, ordered by tag count.
+
 tag (Required) : The tag name
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
@@ -261,6 +271,8 @@ func (c *Client) TagGetTopTracks(tag string, opts ...RequestOption) (TagTopTrack
 }
 
 /*
+Get a list of available charts for this tag, expressed as date ranges which can be sent to the chart services.
+
 tag (Required) : The tag name
 
 api_key (Required) : A Last.fm API key.

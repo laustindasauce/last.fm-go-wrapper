@@ -208,6 +208,8 @@ type ArtistTrackAttr struct {
 }
 
 /*
+Use the last.fm corrections data to check whether the supplied track has a correction to a canonical track
+
 artist (Required) : The artist name to correct.
 
 track (Required) : The track name to correct.
@@ -246,6 +248,8 @@ func (c *Client) TrackGetCorrection(track, artist string) (TrackCorrection, erro
 }
 
 /*
+Get the metadata for a track on Last.fm using the artist/track name or a musicbrainz id.
+
 mbid (Optional) : The musicbrainz id for the track
 
 track (Required (unless mbid)] : The track name
@@ -284,6 +288,8 @@ func (c *Client) TrackGetInfo(track, artist string, opts ...RequestOption) (Trac
 }
 
 /*
+Get the similar tracks for this track on Last.fm, based on listening data.
+
 track (Required (unless mbid)] : The track name
 
 artist (Required (unless mbid)] : The artist name
@@ -321,6 +327,8 @@ func (c *Client) TrackGetSimilar(track, artist string, opts ...RequestOption) (S
 }
 
 /*
+Get the tags applied by an individual user to a track on Last.fm. To retrieve the list of top tags applied to a track by all users use track.getTopTags.
+
 artist (Required (unless mbid)] : The artist name
 
 track (Required (unless mbid)] : The track name
@@ -360,6 +368,8 @@ func (c *Client) TrackGetTags(artist, track, user string, opts ...RequestOption)
 }
 
 /*
+Get the top tags for this track on Last.fm, ordered by tag count. Supply either track & artist name or mbid.
+
 track (Required (unless mbid)] : The track name
 
 artist (Required (unless mbid)] : The artist name
@@ -397,6 +407,8 @@ func (c *Client) TrackGetTopTags(artist, track, user string, opts ...RequestOpti
 }
 
 /*
+Search for a track by track name. Returns track matches sorted by relevance.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 30.
 
 page (Optional) : The page number to fetch. Defaults to first page.

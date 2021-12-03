@@ -202,6 +202,8 @@ type WeeklyAttr struct {
 }
 
 /*
+Get a list of the user's friends on Last.fm.
+
 user (Required) : The last.fm username to fetch the friends of.
 
 recenttracks (Optional) : Whether or not to include information about friends' recent listening in the response.
@@ -236,6 +238,8 @@ func (c *Client) UserGetFriends(user string, opts ...RequestOption) (UserFriends
 }
 
 /*
+Get information about a user profile.
+
 user (Optional) : The user to fetch info for. Defaults to the authenticated user.
 
 api_key (Required) : A Last.fm API key.
@@ -258,6 +262,8 @@ func (c *Client) UserGetInfo(user string) (User, error) {
 }
 
 /*
+Get the last 50 tracks loved by a user.
+
 user (Required) : The user name to fetch the loved tracks for.
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
@@ -290,6 +296,8 @@ func (c *Client) UserGetLovedTracks(user string, opts ...RequestOption) (UserLov
 }
 
 /*
+Get the user's personal artist tags
+
 user (Required) : The user who performed the taggings.
 
 tag (Required) : The tag you're interested in.
@@ -329,6 +337,8 @@ func (c *Client) UserGetPersonalArtistTags(user, tag string, opts ...RequestOpti
 }
 
 /*
+Get the user's personal album tags
+
 user (Required) : The user who performed the taggings.
 
 tag (Required) : The tag you're interested in.
@@ -369,6 +379,8 @@ func (c *Client) UserGetPersonalAlbumTags(user, tag string, opts ...RequestOptio
 }
 
 /*
+Get the user's personal track tags
+
 user (Required) : The user who performed the taggings.
 
 tag (Required) : The tag you're interested in.
@@ -408,6 +420,8 @@ func (c *Client) UserGetPersonalTrackTags(user, tag string, opts ...RequestOptio
 }
 
 /*
+Get a list of the recent tracks listened to by this user. Also includes the currently playing track with the nowplaying="true" attribute if the user is currently listening.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50. Maximum is 200.
 
 user (Required) : The last.fm username to fetch the recent tracks of.
@@ -445,6 +459,8 @@ func (c *Client) UserGetRecentTracks(user string, opts ...RequestOption) (UserRe
 }
 
 /*
+Get the top albums listened to by a user. You can stipulate a time period. Sends the overall chart by default.
+
 user (Required) : The user name to fetch top albums for.
 
 period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top albums for.
@@ -478,6 +494,8 @@ func (c *Client) UserGetTopAlbums(user string, opts ...RequestOption) (UserTopAl
 }
 
 /*
+Get the top artists listened to by a user. You can stipulate a time period. Sends the overall chart by default.
+
 user (Required) : The user name to fetch top artists for.
 
 period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top artists for.
@@ -545,7 +563,7 @@ func (c *Client) UserGetTopTags(user string, opts ...RequestOption) (UserTopTags
 }
 
 /*
-	Get the top tracks listened to by a user. You can stipulate a time period. Sends the overall chart by default.
+Get the top tracks listened to by a user. You can stipulate a time period. Sends the overall chart by default.
 
 Params:
 
@@ -583,7 +601,7 @@ func (c *Client) UserGetTopTracks(user string, opts ...RequestOption) (UserTopTr
 }
 
 /*
-	Get an album chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent album chart for this user.
+Get an album chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent album chart for this user.
 
 Params:
 
@@ -619,7 +637,7 @@ func (c *Client) UserGetWeeklyAlbumChart(user string, opts ...RequestOption) (Us
 }
 
 /*
-	Get an artist chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent artist chart for this user.
+Get an artist chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent artist chart for this user.
 
 Params:
 
@@ -655,7 +673,7 @@ func (c *Client) UserGetWeeklyArtistChart(user string, opts ...RequestOption) (U
 }
 
 /*
-	Get a list of available charts for this user, expressed as date ranges which can be sent to the chart services.
+Get a list of available charts for this user, expressed as date ranges which can be sent to the chart services.
 
 Params:
 
@@ -681,7 +699,7 @@ func (c *Client) UserGetWeeklyChartList(user string) (UserWeeklyChartList, error
 }
 
 /*
-	Get a track chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent track chart for this user.
+Get a track chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent track chart for this user.
 
 Params:
 

@@ -63,6 +63,8 @@ type ChartAttr struct {
 }
 
 /*
+Get the top artists chart
+
 page (Optional) : The page number to fetch. Defaults to first page.
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
@@ -93,6 +95,8 @@ func (c *Client) ChartGetTopArtists(opts ...RequestOption) (TopArtists, error) {
 }
 
 /*
+Get the top tags chart
+
 page (Optional) : The page number to fetch. Defaults to first page.
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
@@ -123,6 +127,8 @@ func (c *Client) ChartGetTopTags(opts ...RequestOption) (TopTags, error) {
 }
 
 /*
+Get the top tracks chart
+
 page (Optional) : The page number to fetch. Defaults to first page.
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.

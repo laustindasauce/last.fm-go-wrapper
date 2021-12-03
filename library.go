@@ -20,6 +20,8 @@ type LibraryArtist struct {
 }
 
 /*
+A paginated list of all the artists in a user's library, with play counts and tag counts.
+
 user (Required) : The user whose library you want to fetch.
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.

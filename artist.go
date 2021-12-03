@@ -123,6 +123,8 @@ type ArtistMatches struct {
 }
 
 /*
+Get the metadata for an artist. Includes biography, truncated at 300 characters.
+
 artist (Required (unless mbid)] : The artist name
 
 mbid (Optional) : The musicbrainz id for the artist
@@ -161,6 +163,8 @@ func (c *Client) ArtistGetInfo(artist string, opts ...RequestOption) (FullArtist
 }
 
 /*
+Get all the artists similar to this artist
+
 limit (Optional) : Limit the number of similar artists returned
 
 artist (Required (unless mbid)] : The artist name
@@ -197,6 +201,8 @@ func (c *Client) ArtistGetSimilar(artist string, opts ...RequestOption) (Similar
 }
 
 /*
+Get the top albums for an artist on Last.fm, ordered by popularity.
+
 artist (Required (unless mbid)] : The artist name
 
 mbid (Optional) : The musicbrainz id for the artist
@@ -235,6 +241,8 @@ func (c *Client) ArtistGetTopAlbums(artist string, opts ...RequestOption) (Artis
 }
 
 /*
+Get the top tags for an artist on Last.fm, ordered by popularity.
+
 artist (Required (unless mbid)] : The artist name
 
 mbid (Optional) : The musicbrainz id for the artist
@@ -269,6 +277,8 @@ func (c *Client) ArtistGetTopTags(artist string, opts ...RequestOption) (TagsWit
 }
 
 /*
+Get the top tracks by an artist on Last.fm, ordered by popularity
+
 artist (Required (unless mbid)] : The artist name
 
 mbid (Optional) : The musicbrainz id for the artist
@@ -307,6 +317,8 @@ func (c *Client) ArtistGetTopTracks(artist string, opts ...RequestOption) (Track
 }
 
 /*
+Search for an artist by name. Returns artist matches sorted by relevance.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 30.
 
 page (Optional) : The page number to fetch. Defaults to first page.

@@ -42,6 +42,8 @@ type GeoAttr struct {
 }
 
 /*
+Get the most popular artists on Last.fm by country
+
 country (Required) : A country name, as defined by the ISO 3166-1 country names standard
 
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
@@ -84,6 +86,8 @@ func (c *Client) GeoGetTopArtists(country string, opts ...RequestOption) (GeoTop
 }
 
 /*
+Get the most popular tracks on Last.fm last week by country
+
 country (Required) : A country name, as defined by the ISO 3166-1 country names standard
 
 location (Optional) : A metro name, to fetch the charts for (must be within the country specified)

@@ -97,6 +97,8 @@ type AlbumMatches struct {
 }
 
 /*
+Get the metadata and tracklist for an album on Last.fm using the album name or a musicbrainz id.
+
 artist (Required (unless mbid)] : The artist name
 
 album (Required (unless mbid)] : The album name
@@ -137,6 +139,8 @@ func (c *Client) AlbumGetInfo(album, artist string, opts ...RequestOption) (Full
 }
 
 /*
+Get the top tags for an album on Last.fm, ordered by popularity.
+
 artist (Required (unless mbid)] : The artist name
 
 album (Required (unless mbid)] : The album name
@@ -173,6 +177,8 @@ func (c *Client) AlbumGetTopTags(album, artist string, opts ...RequestOption) (A
 }
 
 /*
+Search for an album by name. Returns album matches sorted by relevance.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 30.
 
 page (Optional) : The page number to fetch. Defaults to first page.
