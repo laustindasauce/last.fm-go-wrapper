@@ -4,7 +4,7 @@ import "testing"
 
 func TestLibraryGetArtists(t *testing.T) {
 	client.SetUser("abspen1")
-	res, err := client.LibraryGetArtists("", "")
+	res, err := client.LibraryGetArtists(client.User)
 
 	if err != nil {
 		t.Error(err)

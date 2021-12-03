@@ -1,6 +1,6 @@
 package lastfm
 
-import "errors"
+import "fmt"
 
 type LibraryArtists struct {
 	Artists []LibraryArtist `json:"artist"`
@@ -17,13 +17,21 @@ type LibraryArtist struct {
 	Streamable string  `json:"streamable"`
 }
 
-func (c *Client) LibraryGetArtists(limit, page string) (LibraryArtists, error) {
+/*
+user (Required) : The user whose library you want to fetch.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+page (Optional) : The page number you wish to scan to.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) LibraryGetArtists(user string, opts ...RequestOption) (LibraryArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
-	if c.User == "" {
-		return LibraryArtists{}, errors.New("empty user... please run set user method first")
-	}
+	lastfmURL := fmt.Sprintf("%s&method=library.getartists&user=%s", c.baseApiURL, user)
 
-	lastfmURL := c.getNoAuthURL("method.library.getartists", "user."+c.User, "limit."+limit, "page."+page)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var artists struct {
 		Artists LibraryArtists `json:"artists"`
