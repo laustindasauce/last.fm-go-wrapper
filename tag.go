@@ -128,7 +128,7 @@ page (Optional) : The page number to fetch. Defaults to first page.
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopAlbums(tag string, opts ...RequestOption) (TagTopAlbums, error) {
-	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
+	// http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=disco&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&method=tag.gettopalbums&tag=%s", c.baseApiURL, tag)
 
 	values := processOptions(opts...).urlParams
@@ -157,7 +157,7 @@ page (Optional) : The page number to fetch. Defaults to first page.
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopArtists(tag string, opts ...RequestOption) (TagTopArtists, error) {
-	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
+	// http://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=disco&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&method=tag.gettopartists&tag=%s", c.baseApiURL, tag)
 
 	values := processOptions(opts...).urlParams
@@ -183,7 +183,7 @@ func (c *Client) TagGetTopArtists(tag string, opts ...RequestOption) (TagTopArti
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopTags() (TagTopTags, error) {
-	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
+	// http://ws.audioscrobbler.com/2.0/?method=tag.getTopTags&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&method=tag.getTopTags", c.baseApiURL)
 
 	var tagTopTags struct {
@@ -206,7 +206,7 @@ page (Optional) : The page number to fetch. Defaults to first page.
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopTracks(tag string, opts ...RequestOption) (TagTopTracks, error) {
-	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
+	// http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=disco&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&method=tag.gettoptracks&tag=%s", c.baseApiURL, tag)
 
 	values := processOptions(opts...).urlParams
@@ -233,7 +233,7 @@ tag (Required) : The tag name
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetWeeklyChartlist(tag string) (TagWeeklyChartlist, error) {
-	// http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=YOUR_API_KEY&user=joanofarctan&format=json
+	// http://ws.audioscrobbler.com/2.0/?method=tag.getweeklychartlist&tag=disco&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&method=tag.getweeklychartlist&tag=%s", c.baseApiURL, tag)
 
 	var tagChartlist struct {
