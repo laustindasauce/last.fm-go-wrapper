@@ -85,6 +85,12 @@ type Image struct {
 	Size string `json:"size"`
 }
 
+// RecentDate
+type RecentDate struct {
+	UTS  string `json:"uts"`
+	Text string `json:"#text"`
+}
+
 type Wiki struct {
 	Published string `json:"published"`
 	Summary   string `json:"summary"`

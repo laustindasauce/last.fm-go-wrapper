@@ -2,7 +2,6 @@ package lastfm
 
 import (
 	"fmt"
-	"strings"
 )
 
 type User struct {
@@ -50,6 +49,11 @@ type AlbumPersonalTags struct {
 type TrackPersonalTags struct {
 	TrackTags TrackPersonalTag `json:"tracks"`
 	Attr      PersonalTagAttr  `json:"@attr"`
+}
+
+type UserRecentTracks struct {
+	Tracks []TrackRecent `json:"track"`
+	Attr   UserAttr      `json:"@attr"`
 }
 
 type ArtistPersonalTag struct {
@@ -341,7 +345,7 @@ to (Optional) : End timestamp of a range - only display scrobbles before this ti
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetRecentTracks(user string, opts ...RequestOption) {
+func (c *Client) UserGetRecentTracks(user string, opts ...RequestOption) (UserRecentTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getrecenttracks", c.baseApiURL, user)
 	values := processOptions(opts...).urlParams
@@ -350,15 +354,17 @@ func (c *Client) UserGetRecentTracks(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	if strings.Contains(lastfmURL, "extended=1") {
-		fmt.Println("Contains")
-		// Need to set up for extended
-	} else {
-		// Get non extended info
-		fmt.Println("Not contained")
+	var recentTracks struct {
+		RecentTracks UserRecentTracks `json:"recenttracks"`
 	}
 
-	fmt.Println(lastfmURL)
+	err := c.get(lastfmURL, &recentTracks)
+
+	if err != nil {
+		return UserRecentTracks{}, err
+	}
+
+	return recentTracks.RecentTracks, nil
 }
 
 /*

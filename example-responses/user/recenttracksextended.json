@@ -1,0 +1,113 @@
+{
+  "recenttracks": {
+    "track": [
+      {
+        "artist": {
+          "url": "https://www.last.fm/music/Beck",
+          "name": "Beck",
+          "image": [
+            {
+              "size": "small",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
+            },
+            {
+              "size": "medium",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
+            },
+            {
+              "size": "large",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+            },
+            {
+              "size": "extralarge",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+            }
+          ],
+          "mbid": ""
+        },
+        "date": { "uts": "1638386919", "#text": "01 Dec 2021, 19:28" },
+        "mbid": "01b3754a-e2e1-30f2-abc9-468e82d12628",
+        "name": "Loser",
+        "image": [
+          {
+            "size": "small",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/38159726e13d3f8251eaa6266197d9b7.jpg"
+          },
+          {
+            "size": "medium",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/38159726e13d3f8251eaa6266197d9b7.jpg"
+          },
+          {
+            "size": "large",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/38159726e13d3f8251eaa6266197d9b7.jpg"
+          },
+          {
+            "size": "extralarge",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/38159726e13d3f8251eaa6266197d9b7.jpg"
+          }
+        ],
+        "url": "https://www.last.fm/music/Beck/_/Loser",
+        "streamable": "0",
+        "album": { "mbid": "", "#text": "90s Mixtape" },
+        "loved": "1"
+      },
+      {
+        "artist": {
+          "url": "https://www.last.fm/music/Hanson",
+          "name": "Hanson",
+          "image": [
+            {
+              "size": "small",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
+            },
+            {
+              "size": "medium",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
+            },
+            {
+              "size": "large",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+            },
+            {
+              "size": "extralarge",
+              "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+            }
+          ],
+          "mbid": ""
+        },
+        "date": { "uts": "1638382312", "#text": "01 Dec 2021, 18:11" },
+        "mbid": "009958ef-9de3-4e3e-a0e7-b2a902582222",
+        "name": "Mmmbop",
+        "image": [
+          {
+            "size": "small",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/38159726e13d3f8251eaa6266197d9b7.jpg"
+          },
+          {
+            "size": "medium",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/38159726e13d3f8251eaa6266197d9b7.jpg"
+          },
+          {
+            "size": "large",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/38159726e13d3f8251eaa6266197d9b7.jpg"
+          },
+          {
+            "size": "extralarge",
+            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/38159726e13d3f8251eaa6266197d9b7.jpg"
+          }
+        ],
+        "url": "https://www.last.fm/music/Hanson/_/Mmmbop",
+        "streamable": "0",
+        "album": { "mbid": "", "#text": "90s Mixtape" },
+        "loved": "0"
+      }
+    ],
+    "@attr": {
+      "user": "RJ",
+      "totalPages": "67160",
+      "page": "1",
+      "perPage": "2",
+      "total": "134319"
+    }
+  }
+}

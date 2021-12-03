@@ -35,6 +35,11 @@ type FullAlbum struct {
 	Wiki      Wiki        `json:"wiki"`
 }
 
+type AlbumRecent struct {
+	MBID string `json:"mbid"`
+	Text string `json:"#text"`
+}
+
 type AlbumTracks struct {
 	Track []TrackAlbum `json:"track"`
 }

@@ -52,6 +52,14 @@ type FullArtist struct {
 	Bio        Bio         `json:"bio"`
 }
 
+type ArtistRecent struct {
+	MBID  string  `json:"mbid"`
+	Text  string  `json:"#text,omitempty"`
+	URL   string  `json:"url,omitempty"`
+	Name  string  `json:"name,omitempty"`
+	Image []Image `json:"image,omitempty"`
+}
+
 type SimilarArtists struct {
 	SimilarArtists []Artist      `json:"artist"`
 	Attr           ArtistTagAttr `json:"@attr"`

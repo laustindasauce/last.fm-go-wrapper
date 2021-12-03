@@ -21,6 +21,18 @@ type Track struct {
 	Attr       TrackRank   `json:"@attr"`
 }
 
+type TrackRecent struct {
+	Artist     ArtistRecent `json:"artist"`
+	Date       RecentDate   `json:"date"`
+	MBID       string       `json:"mbid"`
+	Name       string       `json:"name"`
+	Image      []Image      `json:"image"`
+	URL        string       `json:"url"`
+	Streamable string       `json:"streamable"`
+	Album      AlbumRecent  `json:"album"`
+	Loved      string       `json:"loved,omitempty"`
+}
+
 type TrackInfo struct {
 	Name       string          `json:"name"`
 	MBID       string          `json:"mbid"`
