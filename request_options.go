@@ -90,17 +90,17 @@ func TagOpt(tag string) RequestOption {
 
 // FromOpt – The date at which the chart should start from. See User.getChartsList for more.
 // integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.
-func FromOpt(from string) RequestOption {
+func FromOpt(from int) RequestOption {
 	return func(o *requestOptions) {
-		o.urlParams.Set("from", from)
+		o.urlParams.Set("from", strconv.Itoa(from))
 	}
 }
 
 // ToOpt – End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format
 // integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.
-func ToOpt(to string) RequestOption {
+func ToOpt(to int) RequestOption {
 	return func(o *requestOptions) {
-		o.urlParams.Set("to", to)
+		o.urlParams.Set("to", strconv.Itoa(to))
 	}
 }
 
