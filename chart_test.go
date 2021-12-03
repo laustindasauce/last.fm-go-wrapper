@@ -3,7 +3,7 @@ package lastfm
 import "testing"
 
 func TestChartGetTopArtists(t *testing.T) {
-	res, err := client.ChartGetTopArtists("", "")
+	res, err := client.ChartGetTopArtists()
 
 	if err != nil {
 		t.Error(err)
@@ -15,7 +15,7 @@ func TestChartGetTopArtists(t *testing.T) {
 }
 
 func TestChartGetTopTags(t *testing.T) {
-	res, err := client.ChartGetTopTags("", "")
+	res, err := client.ChartGetTopTags()
 
 	if err != nil {
 		t.Error(err)
@@ -27,7 +27,7 @@ func TestChartGetTopTags(t *testing.T) {
 }
 
 func TestChartGetTopTracks(t *testing.T) {
-	res, err := client.ChartGetTopTracks("", "")
+	res, err := client.ChartGetTopTracks()
 
 	if err != nil {
 		t.Error(err)

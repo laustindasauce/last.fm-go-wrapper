@@ -1,5 +1,7 @@
 package lastfm
 
+import "fmt"
+
 type TopArtists struct {
 	Artist []ChartArtist `json:"artist"`
 	Attr   ChartAttr     `json:"@attr"`
@@ -53,11 +55,20 @@ type ChartAttr struct {
 	Total      string `json:"total"`
 }
 
-func (c *Client) ChartGetTopArtists(limit, page string) (TopArtists, error) {
+/*
+page (Optional) : The page number to fetch. Defaults to first page.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ChartGetTopArtists(opts ...RequestOption) (TopArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=YOUR_API_KEY&format=json
-	allOpts := []string{"method.chart.gettopartists", "limit." + limit, "page." + page}
+	lastfmURL := fmt.Sprintf("%s&method=chart.gettopartists", c.baseApiURL)
 
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topArtistsRes struct {
 		TopArtists TopArtists `json:"artists"`
@@ -72,11 +83,20 @@ func (c *Client) ChartGetTopArtists(limit, page string) (TopArtists, error) {
 	return topArtistsRes.TopArtists, nil
 }
 
-func (c *Client) ChartGetTopTags(limit, page string) (TopTags, error) {
+/*
+page (Optional) : The page number to fetch. Defaults to first page.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ChartGetTopTags(opts ...RequestOption) (TopTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptags&api_key=YOUR_API_KEY&format=json
-	allOpts := []string{"method.chart.gettoptags", "limit." + limit, "page." + page}
+	lastfmURL := fmt.Sprintf("%s&method=chart.gettoptags", c.baseApiURL)
 
-	lastfmURL := c.getNoAuthURL(allOpts...)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topTagsRes struct {
 		TopTags TopTags `json:"tags"`
@@ -91,9 +111,20 @@ func (c *Client) ChartGetTopTags(limit, page string) (TopTags, error) {
 	return topTagsRes.TopTags, nil
 }
 
-func (c *Client) ChartGetTopTracks(limit, page string) (ChartTracks, error) {
+/*
+page (Optional) : The page number to fetch. Defaults to first page.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ChartGetTopTracks(opts ...RequestOption) (ChartTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.chart.gettoptracks", "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&method=chart.gettoptracks", c.baseApiURL)
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topTracksRes struct {
 		TopTracks ChartTracks `json:"tracks"`
