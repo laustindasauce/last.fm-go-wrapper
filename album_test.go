@@ -35,26 +35,28 @@ func TestAlbumTopTags(t *testing.T) {
 		t.Error(err)
 	}
 
-	var tests = []struct {
-		test     string
-		expected string
-	}{
-		{"Artist", "Cher"},
-		{"Album", "Believe"},
+	if count := len(res.Tag); count != 100 {
+		t.Fatalf("Got %d artist matches, wanted 100\n", count)
 	}
 
-	for _, test := range tests {
-		if output := getStringField(res.Attr, test.test); output != test.expected {
-			t.Errorf("Test Failed: %s expected, received: %s", test.expected, output)
-		}
+	if res.Attr.Album != "Believe" {
+		t.Errorf("Got incorrect Album name. Expected %s, got %s", "Believe", res.Attr.Album)
+	}
+
+	if res.Attr.Artist != "Cher" {
+		t.Errorf("Got incorrect Artist name. Expected %s, got %s", "Cher", res.Attr.Artist)
 	}
 }
 
 func TestAlbumSearch(t *testing.T) {
-	res, err := client.AlbumSearch("Believe")
+	res, err := client.AlbumSearch("Believe", LimitOpt(2))
 
 	if err != nil {
 		t.Error(err)
+	}
+
+	if count := len(res.AlbumMatches.Album); count != 2 {
+		t.Fatalf("Got %d artist matches, wanted 2\n", count)
 	}
 
 	var tests = []struct {

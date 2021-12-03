@@ -10,6 +10,10 @@ func TestLibraryGetArtists(t *testing.T) {
 		t.Error(err)
 	}
 
+	if count := len(res.Artists); count != 50 {
+		t.Fatalf("Got %d recent tracks, wanted 50\n", count)
+	}
+
 	var tests = []struct {
 		test     string
 		expected string

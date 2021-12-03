@@ -25,7 +25,7 @@ func main() {
 	// extend := lastfm.ExtendedOpt(binary)
 
 	// client.UserGetRecentTracks("Abspen1", limit)
-	res, err := client.UserGetRecentTracks(client.User, lastfm.ExtendedOpt(lastfm.Zero), lastfm.LimitOpt(2))
+	res, err := client.TagGetTopTags()
 
 	// client.UserGetRecentTracks(client.User, lastfm.ExtendedOpt(lastfm.One), lastfm.LimitOpt(2))
 

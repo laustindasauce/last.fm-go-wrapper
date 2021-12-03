@@ -299,8 +299,6 @@ func (c *Client) TrackGetTags(artist, track, user string, opts ...RequestOption)
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
-
 	var trackTags struct {
 		Tags TrackTags `json:"tags"`
 	}

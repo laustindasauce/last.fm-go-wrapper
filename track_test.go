@@ -59,12 +59,8 @@ func TestTrackGetSimilar(t *testing.T) {
 		t.Error(err)
 	}
 
-	if len(res.Tracks) == 0 {
-		t.Error("track.getsimilar returned empty list")
-	}
-
-	if len(res.Tracks) != limit {
-		t.Error("track.getsimilar returned the wrong amount of tracks")
+	if count := len(res.Tracks); count != limit {
+		t.Fatalf("Got %d similar tracks, wanted %d\n", count, limit)
 	}
 
 	var tests = []struct {
@@ -90,9 +86,16 @@ func TestTrackGetTags(t *testing.T) {
 		t.Error(err)
 	}
 
-	if len(res.Tags) == 0 {
-		t.Error("track.getTags returned empty list")
-		return
+	if count := len(res.Tags); count == 0 {
+		t.Fatalf("Got %d tags, wanted more\n", count)
+	}
+
+	if res.Attr.Track != "Hells Bells" {
+		t.Errorf("Got incorrect Track name. Expected %s, got %s", "Hells Bells", res.Attr.Track)
+	}
+
+	if res.Attr.Artist != "AC/DC" {
+		t.Errorf("Got incorrect Artist name. Expected %s, got %s", "AC/DC", res.Attr.Artist)
 	}
 
 	var tests = []struct {
@@ -118,26 +121,16 @@ func TestTrackGetTopTags(t *testing.T) {
 		t.Error(err)
 	}
 
-	if len(res.Tags) == 0 {
-		t.Error("track.gettoptags returned empty list")
+	if count := len(res.Tags); count != 100 {
+		t.Fatalf("Got %d recent tracks, wanted 100\n", count)
 	}
 
-	if len(res.Tags) != 100 {
-		t.Error("track.gettoptags didn't return 100 results")
+	if res.Attr.Track != "Believe" {
+		t.Errorf("Got incorrect Track name. Expected %s, got %s", "Believe", res.Attr.Track)
 	}
 
-	var tests = []struct {
-		test     string
-		expected string
-	}{
-		{"Artist", "Cher"},
-		{"Track", "Believe"},
-	}
-
-	for _, test := range tests {
-		if output := getStringField(res.Attr, test.test); output != test.expected {
-			t.Errorf("Test Failed: %s expected, received: %s", test.expected, output)
-		}
+	if res.Attr.Artist != "Cher" {
+		t.Errorf("Got incorrect Artist name. Expected %s, got %s", "Cher", res.Attr.Artist)
 	}
 }
 
@@ -149,7 +142,7 @@ func TestTrackSearch(t *testing.T) {
 	}
 
 	if len(res.TrackMatches.Tracks) == 0 {
-		t.Error("track.search returned empty list")
+		t.Fatal("track.search returned empty list")
 	}
 
 	var tests = []struct {

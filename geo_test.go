@@ -9,6 +9,10 @@ func TestGeoGetTopArtists(t *testing.T) {
 		t.Error(err)
 	}
 
+	if count := len(res.Artist); count != 50 {
+		t.Fatalf("Got %d recent tracks, wanted 50\n", count)
+	}
+
 	var tests = []struct {
 		test     string
 		expected string
@@ -35,6 +39,10 @@ func TestGeoGetTopTracks(t *testing.T) {
 
 	if err != nil {
 		t.Error(err)
+	}
+
+	if count := len(res.Track); count != 50 {
+		t.Fatalf("Got %d recent tracks, wanted 50\n", count)
 	}
 
 	var tests = []struct {

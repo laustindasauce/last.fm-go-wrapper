@@ -24,14 +24,14 @@ func TestTagGetInfo(t *testing.T) {
 }
 
 func TestTagGetTopAlbums(t *testing.T) {
-	res, err := client.TagGetTopAlbums("disco")
+	res, err := client.TagGetTopAlbums("disco", LimitOpt(2))
 
 	if err != nil {
 		t.Error(err)
 	}
 
-	if len(res.Albums) == 0 {
-		t.Error("tag.gettopalbums returned empty list")
+	if count := len(res.Albums); count != 2 {
+		t.Fatalf("Got %d top albums, wanted 2\n", count)
 	}
 
 	var tests = []struct {
@@ -40,7 +40,7 @@ func TestTagGetTopAlbums(t *testing.T) {
 	}{
 		{"Tag", "disco"},
 		{"Page", "1"},
-		{"PerPage", "50"},
+		{"PerPage", "2"},
 	}
 
 	for _, test := range tests {
@@ -57,8 +57,8 @@ func TestTagGetTopArtists(t *testing.T) {
 		t.Error(err)
 	}
 
-	if len(res.Artists) == 0 {
-		t.Error("tag.gettopartists returned empty list")
+	if count := len(res.Artists); count != 50 {
+		t.Fatalf("Got %d recent tracks, wanted 50\n", count)
 	}
 
 	var tests = []struct {
@@ -84,8 +84,8 @@ func TestTagGetTopTags(t *testing.T) {
 		t.Error(err)
 	}
 
-	if len(res.Tag) == 0 {
-		t.Error("tag.getTopTags returned empty list")
+	if count := len(res.Tag); count != 50 {
+		t.Fatalf("Got %d top tags, wanted 50\n", count)
 	}
 }
 
@@ -96,8 +96,8 @@ func TestTagGetTopTracks(t *testing.T) {
 		t.Error(err)
 	}
 
-	if len(res.Tracks) == 0 {
-		t.Error("tag.gettoptracks returned empty list")
+	if count := len(res.Tracks); count != 50 {
+		t.Fatalf("Got %d recent tracks, wanted 50\n", count)
 	}
 
 	var tests = []struct {
@@ -124,19 +124,10 @@ func TestTagGetWeeklyChartlist(t *testing.T) {
 	}
 
 	if len(res.Charts) == 0 {
-		t.Error("tag.getweeklychartlist returned empty list")
+		t.Fatal("tag.getweeklychartlist returned empty list")
 	}
 
-	var tests = []struct {
-		test     string
-		expected string
-	}{
-		{"Tag", "rock"},
-	}
-
-	for _, test := range tests {
-		if output := getStringField(res.Attr, test.test); output != test.expected {
-			t.Errorf("Test Failed: %s expected, received: %s", test.expected, output)
-		}
+	if res.Attr.Tag != "rock" {
+		t.Errorf("Got incorrect tag. Expected %s, got %s", "rock", res.Attr.Tag)
 	}
 }

@@ -14,7 +14,11 @@ func TestUserGetFriends(t *testing.T) {
 	res, err := client.UserGetFriends(client.User, LimitOpt(2))
 
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
+	}
+
+	if count := len(res.Users); count != 2 {
+		t.Fatalf("Got %d users, wanted 2\n", count)
 	}
 
 	var tests = []struct {
@@ -43,7 +47,7 @@ func TestUserGetInfo(t *testing.T) {
 	res, err := client.UserGetInfo(client.User)
 
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
 	}
 
 	var tests = []struct {
@@ -75,7 +79,11 @@ func TestUserGetLovedTracks(t *testing.T) {
 	res, err := client.UserGetLovedTracks(client.User, LimitOpt(2))
 
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
+	}
+
+	if count := len(res.Tracks); count != 2 {
+		t.Fatalf("Got %d loved tracks, wanted 2\n", count)
 	}
 
 	var tests = []struct {
@@ -104,7 +112,7 @@ func TestUserGetPersonalAlbumTags(t *testing.T) {
 	res, err := client.UserGetPersonalAlbumTags(client.User, "love", LimitOpt(2))
 
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
 	}
 
 	var tests = []struct {
@@ -134,7 +142,7 @@ func TestUserGetPersonalArtistTags(t *testing.T) {
 	res, err := client.UserGetPersonalArtistTags(client.User, "rock", LimitOpt(2))
 
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
 	}
 
 	var tests = []struct {
@@ -164,7 +172,11 @@ func TestUserGetPersonalTrackTags(t *testing.T) {
 	res, err := client.UserGetPersonalTrackTags(client.User, "rock", LimitOpt(2))
 
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
+	}
+
+	if count := len(res.TrackTags.Tracks); count != 2 {
+		t.Fatalf("Got %d track tags, wanted 2\n", count)
 	}
 
 	var tests = []struct {
@@ -175,6 +187,39 @@ func TestUserGetPersonalTrackTags(t *testing.T) {
 		{"User", "RJ"},
 		{"PerPage", "2"},
 		{"Tag", "rock"},
+	}
+
+	for _, test := range tests {
+		if output := getStringField(res.Attr, test.test); output != test.expected {
+			t.Errorf("Test Failed: %s expected, received: %s", test.expected, output)
+		}
+	}
+}
+
+func TestUserGetRecentTracks(t *testing.T) {
+	err := client.SetUser("rj")
+
+	if err != nil {
+		t.Error(err)
+	}
+
+	res, err := client.UserGetRecentTracks(client.User, LimitOpt(2))
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if count := len(res.Tracks); count != 2 {
+		t.Fatalf("Got %d recent tracks, wanted 2\n", count)
+	}
+
+	var tests = []struct {
+		test     string
+		expected string
+	}{
+		{"Page", "1"},
+		{"User", "RJ"},
+		{"PerPage", "2"},
 	}
 
 	for _, test := range tests {
