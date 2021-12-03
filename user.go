@@ -159,15 +159,9 @@ user (Optional) : The user to fetch info for. Defaults to the authenticated user
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetInfo(user string, opts ...RequestOption) (User, error) {
+func (c *Client) UserGetInfo(user string) (User, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getinfo", c.baseApiURL, user)
-
-	values := processOptions(opts...).urlParams
-
-	if query := values.Encode(); query != "" {
-		lastfmURL += "&" + query
-	}
 
 	var userInfo struct {
 		User User `json:"user"`
@@ -362,6 +356,174 @@ func (c *Client) UserGetRecentTracks(user string, opts ...RequestOption) {
 	} else {
 		// Get non extended info
 		fmt.Println("Not contained")
+	}
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The user name to fetch top albums for.
+
+period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top albums for.
+
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
+page (Optional) : The page number to fetch. Defaults to first page.
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetTopAlbums(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettopalbums", c.baseApiURL, user)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The user name to fetch top artists for.
+
+period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top artists for.
+
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
+page (Optional) : The page number to fetch. Defaults to first page.
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetTopArtists(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettopartists", c.baseApiURL, user)
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The user name
+
+limit (Optional) : Limit the number of tags returned
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetTopTags(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettoptags", c.baseApiURL, user)
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The user name to fetch top tracks for.
+
+period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top tracks for.
+
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
+page (Optional) : The page number to fetch. Defaults to first page.
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetTopTracks(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettoptracks", c.baseApiURL, user)
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The last.fm username to fetch the charts of.
+
+from (Optional) : The date at which the chart should start from. See User.getChartsList for more.
+
+to (Optional) : The date at which the chart should end on. See User.getChartsList for more.
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetWeeklyAlbumChart(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklyalbumchart", c.baseApiURL, user)
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The last.fm username to fetch the charts of.
+
+from (Optional) : The date at which the chart should start from. See User.getChartsList for more.
+
+to (Optional) : The date at which the chart should end on. See User.getChartsList for more.
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetWeeklyArtistChart(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklyartistchart", c.baseApiURL, user)
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The last.fm username to fetch the charts list for.
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetWeeklyChartList(user string) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklychartlist&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklychartlist", c.baseApiURL, user)
+
+	fmt.Println(lastfmURL)
+}
+
+/*
+user (Required) : The last.fm username to fetch the charts of.
+
+from (Optional) : The date at which the chart should start from. See User.getChartsList for more.
+
+to (Optional) : The date at which the chart should end on. See User.getChartsList for more.
+
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) UserGetWeeklyTrackChart(user string, opts ...RequestOption) {
+	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=rj&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklytrackchart", c.baseApiURL, user)
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
 	}
 
 	fmt.Println(lastfmURL)
