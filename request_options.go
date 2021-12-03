@@ -61,9 +61,9 @@ func UsernameOpt(user string) RequestOption {
 }
 
 // Lang – The language to return the biography in, expressed as an ISO 639 alpha-2 code.
-func LangOpt(code string) RequestOption {
+func LangOpt(lang string) RequestOption {
 	return func(o *requestOptions) {
-		o.urlParams.Set("username", code)
+		o.urlParams.Set("lang", lang)
 	}
 }
 
