@@ -19,8 +19,11 @@ type LibraryArtist struct {
 
 /*
 user (Required) : The user whose library you want to fetch.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number you wish to scan to.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) LibraryGetArtists(user string, opts ...RequestOption) (LibraryArtists, error) {

@@ -64,11 +64,17 @@ type AlbumMatches struct {
 
 /*
 artist (Required (unless mbid)] : The artist name
+
 album (Required (unless mbid)] : The album name
+
 mbid (Optional) : The musicbrainz id for the album
+
 autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+
 username (Optional) : The username for the context of the request. If supplied, the user's playcount for this album is included in the response.
+
 lang (Optional) : The language to return the biography in, expressed as an ISO 639 alpha-2 code.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) AlbumGetInfo(album, artist string, opts ...RequestOption) (FullAlbum, error) {
@@ -104,9 +110,13 @@ func (c *Client) AlbumGetInfo(album, artist string, opts ...RequestOption) (Full
 
 /*
 artist (Required (unless mbid)] : The artist name
+
 album (Required (unless mbid)] : The album name
+
 autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+
 mbid (Optional) : The musicbrainz id for the album
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) AlbumGetTopTags(album, artist string, opts ...RequestOption) (AlbumTopTags, error) {
@@ -136,8 +146,11 @@ func (c *Client) AlbumGetTopTags(album, artist string, opts ...RequestOption) (A
 
 /*
 limit (Optional) : The number of results to fetch per page. Defaults to 30.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 album (Required) : The album name
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) AlbumSearch(album string, opts ...RequestOption) (AlbumSearchRes, error) {

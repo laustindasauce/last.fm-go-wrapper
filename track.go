@@ -151,7 +151,9 @@ type ArtistTrackAttr struct {
 
 /*
 artist (Required) : The artist name to correct.
+
 track (Required) : The track name to correct.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TrackGetCorrection(track, artist string) (TrackCorrection, error) {
@@ -187,10 +189,15 @@ func (c *Client) TrackGetCorrection(track, artist string) (TrackCorrection, erro
 
 /*
 mbid (Optional) : The musicbrainz id for the track
+
 track (Required (unless mbid)] : The track name
+
 artist (Required (unless mbid)] : The artist name
+
 username (Optional) : The username for the context of the request. If supplied, the user's playcount for this track and whether they have loved the track is included in the response.
+
 autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TrackGetInfo(track, artist string, opts ...RequestOption) (TrackInfo, error) {
@@ -220,10 +227,15 @@ func (c *Client) TrackGetInfo(track, artist string, opts ...RequestOption) (Trac
 
 /*
 track (Required (unless mbid)] : The track name
+
 artist (Required (unless mbid)] : The artist name
+
 mbid (Optional) : The musicbrainz id for the track
+
 autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+
 limit (Optional) : Maximum number of similar tracks to return
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TrackGetSimilar(track, artist string, opts ...RequestOption) (SimilarTracks, error) {
@@ -252,10 +264,15 @@ func (c *Client) TrackGetSimilar(track, artist string, opts ...RequestOption) (S
 
 /*
 artist (Required (unless mbid)] : The artist name
+
 track (Required (unless mbid)] : The track name
+
 mbid (Optional) : The musicbrainz id for the track
+
 autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+
 user (Optional) : If called in non-authenticated mode you must specify the user to look up
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TrackGetTags(artist, track, user string, opts ...RequestOption) (TrackTags, error) {
@@ -288,9 +305,13 @@ func (c *Client) TrackGetTags(artist, track, user string, opts ...RequestOption)
 
 /*
 track (Required (unless mbid)] : The track name
+
 artist (Required (unless mbid)] : The artist name
+
 mbid (Optional) : The musicbrainz id for the track
+
 autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TrackGetTopTags(artist, track, user string, opts ...RequestOption) (TrackTopTags, error) {
@@ -321,9 +342,13 @@ func (c *Client) TrackGetTopTags(artist, track, user string, opts ...RequestOpti
 
 /*
 limit (Optional) : The number of results to fetch per page. Defaults to 30.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 track (Required) : The track name
+
 artist (Optional) : Narrow your search by specifying an artist.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TrackSearch(track string, opts ...RequestOption) (TrackSearchRes, error) {

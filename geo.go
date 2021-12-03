@@ -39,8 +39,11 @@ type GeoAttr struct {
 
 /*
 country (Required) : A country name, as defined by the ISO 3166-1 country names standard
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) GeoGetTopArtists(country string, opts ...RequestOption) (GeoTopArtists, error) {
@@ -78,9 +81,13 @@ func (c *Client) GeoGetTopArtists(country string, opts ...RequestOption) (GeoTop
 
 /*
 country (Required) : A country name, as defined by the ISO 3166-1 country names standard
+
 location (Optional) : A metro name, to fetch the charts for (must be within the country specified)
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) GeoGetTopTracks(country string, opts ...RequestOption) (GeoTopTracks, error) {

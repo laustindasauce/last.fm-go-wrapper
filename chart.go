@@ -57,7 +57,9 @@ type ChartAttr struct {
 
 /*
 page (Optional) : The page number to fetch. Defaults to first page.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ChartGetTopArtists(opts ...RequestOption) (TopArtists, error) {
@@ -85,7 +87,9 @@ func (c *Client) ChartGetTopArtists(opts ...RequestOption) (TopArtists, error) {
 
 /*
 page (Optional) : The page number to fetch. Defaults to first page.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ChartGetTopTags(opts ...RequestOption) (TopTags, error) {
@@ -113,7 +117,9 @@ func (c *Client) ChartGetTopTags(opts ...RequestOption) (TopTags, error) {
 
 /*
 page (Optional) : The page number to fetch. Defaults to first page.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ChartGetTopTracks(opts ...RequestOption) (ChartTracks, error) {

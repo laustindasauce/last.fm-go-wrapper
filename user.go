@@ -122,9 +122,13 @@ type UserAttr struct {
 
 /*
 user (Required) : The last.fm username to fetch the friends of.
+
 recenttracks (Optional) : Whether or not to include information about friends' recent listening in the response.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) UserGetFriends(user string, opts ...RequestOption) (UserFriends, error) {
@@ -150,6 +154,11 @@ func (c *Client) UserGetFriends(user string, opts ...RequestOption) (UserFriends
 	return friends.Friends, nil
 }
 
+/*
+user (Optional) : The user to fetch info for. Defaults to the authenticated user.
+
+api_key (Required) : A Last.fm API key.
+*/
 func (c *Client) UserGetInfo(user string, opts ...RequestOption) (User, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getinfo", c.baseApiURL, user)
@@ -175,8 +184,11 @@ func (c *Client) UserGetInfo(user string, opts ...RequestOption) (User, error) {
 
 /*
 user (Required) : The user name to fetch the loved tracks for.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) UserGetLovedTracks(user string, opts ...RequestOption) (UserLovedTracks, error) {
@@ -204,10 +216,15 @@ func (c *Client) UserGetLovedTracks(user string, opts ...RequestOption) (UserLov
 
 /*
 user (Required) : The user who performed the taggings.
+
 tag (Required) : The tag you're interested in.
+
 taggingtype=artist : The type of items which have been tagged
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) UserGetPersonalArtistTags(user, tag string, opts ...RequestOption) (ArtistPersonalTags, error) {
@@ -238,10 +255,15 @@ func (c *Client) UserGetPersonalArtistTags(user, tag string, opts ...RequestOpti
 
 /*
 user (Required) : The user who performed the taggings.
+
 tag (Required) : The tag you're interested in.
+
 taggingtype=album : The type of items which have been tagged
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) UserGetPersonalAlbumTags(user, tag string, opts ...RequestOption) (AlbumPersonalTags, error) {
@@ -273,10 +295,15 @@ func (c *Client) UserGetPersonalAlbumTags(user, tag string, opts ...RequestOptio
 
 /*
 user (Required) : The user who performed the taggings.
+
 tag (Required) : The tag you're interested in.
+
 taggingtype=track : The type of items which have been tagged
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) UserGetPersonalTrackTags(user, tag string, opts ...RequestOption) (TrackPersonalTags, error) {

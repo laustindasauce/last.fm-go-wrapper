@@ -84,10 +84,15 @@ type ArtistMatches struct {
 
 /*
 artist (Required (unless mbid)] : The artist name
+
 mbid (Optional) : The musicbrainz id for the artist
+
 lang (Optional) : The language to return the biography in, expressed as an ISO 639 alpha-2 code.
+
 autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+
 username (Optional) : The username for the context of the request. If supplied, the user's playcount for this artist is included in the response.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ArtistGetInfo(artist string, opts ...RequestOption) (FullArtist, error) {
@@ -117,9 +122,13 @@ func (c *Client) ArtistGetInfo(artist string, opts ...RequestOption) (FullArtist
 
 /*
 limit (Optional) : Limit the number of similar artists returned
+
 artist (Required (unless mbid)] : The artist name
+
 autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+
 mbid (Optional) : The musicbrainz id for the artist
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ArtistGetSimilar(artist string, opts ...RequestOption) (SimilarArtists, error) {
@@ -149,10 +158,15 @@ func (c *Client) ArtistGetSimilar(artist string, opts ...RequestOption) (Similar
 
 /*
 artist (Required (unless mbid)] : The artist name
+
 mbid (Optional) : The musicbrainz id for the artist
+
 autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ArtistGetTopAlbums(artist string, opts ...RequestOption) (ArtistAlbums, error) {
@@ -182,8 +196,11 @@ func (c *Client) ArtistGetTopAlbums(artist string, opts ...RequestOption) (Artis
 
 /*
 artist (Required (unless mbid)] : The artist name
+
 mbid (Optional) : The musicbrainz id for the artist
+
 autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ArtistGetTopTags(artist string, opts ...RequestOption) (TagsWithCount, error) {
@@ -213,10 +230,15 @@ func (c *Client) ArtistGetTopTags(artist string, opts ...RequestOption) (TagsWit
 
 /*
 artist (Required (unless mbid)] : The artist name
+
 mbid (Optional) : The musicbrainz id for the artist
+
 autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ArtistGetTopTracks(artist string, opts ...RequestOption) (Tracks, error) {
@@ -246,8 +268,11 @@ func (c *Client) ArtistGetTopTracks(artist string, opts ...RequestOption) (Track
 
 /*
 limit (Optional) : The number of results to fetch per page. Defaults to 30.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 artist (Required) : The artist name
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) ArtistSearch(artist string, opts ...RequestOption) (ArtistSearchRes, error) {

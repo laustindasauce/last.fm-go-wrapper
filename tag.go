@@ -95,7 +95,9 @@ type TagAttr struct {
 
 /*
 lang (Optional) : The language to return the wiki in, expressed as an ISO 639 alpha-2 code.
+
 tag (Required) : The tag name
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetInfo(tag string, opts ...RequestOption) (TagInfo, error) {
@@ -123,8 +125,11 @@ func (c *Client) TagGetInfo(tag string, opts ...RequestOption) (TagInfo, error) 
 
 /*
 tag (Required) : The tag name
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopAlbums(tag string, opts ...RequestOption) (TagTopAlbums, error) {
@@ -152,8 +157,11 @@ func (c *Client) TagGetTopAlbums(tag string, opts ...RequestOption) (TagTopAlbum
 
 /*
 tag (Required) : The tag name
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopArtists(tag string, opts ...RequestOption) (TagTopArtists, error) {
@@ -201,8 +209,11 @@ func (c *Client) TagGetTopTags() (TagTopTags, error) {
 
 /*
 tag (Required) : The tag name
+
 limit (Optional) : The number of results to fetch per page. Defaults to 50.
+
 page (Optional) : The page number to fetch. Defaults to first page.
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetTopTracks(tag string, opts ...RequestOption) (TagTopTracks, error) {
@@ -230,6 +241,7 @@ func (c *Client) TagGetTopTracks(tag string, opts ...RequestOption) (TagTopTrack
 
 /*
 tag (Required) : The tag name
+
 api_key (Required) : A Last.fm API key.
 */
 func (c *Client) TagGetWeeklyChartlist(tag string) (TagWeeklyChartlist, error) {
