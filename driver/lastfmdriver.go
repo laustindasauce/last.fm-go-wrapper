@@ -6,6 +6,7 @@ import (
 )
 
 var (
+	// LAST_FM_KEY ...
 	LAST_FM_KEY = os.Getenv("LAST_FM_KEY")
 )
 

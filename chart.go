@@ -2,11 +2,13 @@ package lastfm
 
 import "fmt"
 
+// TopArtists ...
 type TopArtists struct {
 	Artist []ChartArtist `json:"artist"`
 	Attr   ChartAttr     `json:"@attr"`
 }
 
+// ChartArtist ...
 type ChartArtist struct {
 	Name       string  `json:"name"`
 	Playcount  string  `json:"playcount"`
@@ -17,11 +19,13 @@ type ChartArtist struct {
 	Image      []Image `json:"image"`
 }
 
+// TopTags ...
 type TopTags struct {
 	Tag  []ChartTag `json:"tag"`
 	Attr ChartAttr  `json:"@attr"`
 }
 
+// ChartTag ...
 type ChartTag struct {
 	Name       string `json:"name"`
 	URL        string `json:"url"`
@@ -31,11 +35,13 @@ type ChartTag struct {
 	Wiki       Wiki   `json:"wiki"`
 }
 
+// ChartTracks ...
 type ChartTracks struct {
 	Track []ChartTrack `json:"track"`
 	Attr  ChartAttr    `json:"@attr"`
 }
 
+// ChartTrack ...
 type ChartTrack struct {
 	Name       string          `json:"name"`
 	Duration   string          `json:"duration"`
@@ -48,6 +54,7 @@ type ChartTrack struct {
 	Image      []Image         `json:"image"`
 }
 
+// ChartAttr ...
 type ChartAttr struct {
 	Page       string `json:"page"`
 	PerPage    string `json:"perPage"`

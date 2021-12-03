@@ -2,6 +2,7 @@ package lastfm
 
 import "fmt"
 
+// Artists ...
 type Artists struct {
 	Artist []BareArtist `json:"artist"`
 }
@@ -12,23 +13,27 @@ type ArtistStats struct {
 	Playcount string `json:"playcount"`
 }
 
+// ArtistAlbums ...
 type ArtistAlbums struct {
 	Album []Album    `json:"album"`
 	Attr  ArtistAttr `json:"@attr"`
 }
 
+// AlbumArtist ...
 type AlbumArtist struct {
 	Name string `json:"name"`
 	MBID string `json:"mbid"`
 	URL  string `json:"url"`
 }
 
+// BareArtist ...
 type BareArtist struct {
 	Name  string  `json:"name"`
 	URL   string  `json:"url"`
 	Image []Image `json:"image"`
 }
 
+// Artist ...
 type Artist struct {
 	Name       string  `json:"name"`
 	Listeners  string  `json:"listeners"`
@@ -39,6 +44,7 @@ type Artist struct {
 	Streamable string  `json:"streamable"`
 }
 
+// FullArtist ...
 type FullArtist struct {
 	Name       string      `json:"name"`
 	MBID       string      `json:"mbid"`
@@ -52,6 +58,7 @@ type FullArtist struct {
 	Bio        Bio         `json:"bio"`
 }
 
+// ArtistRanked ...
 type ArtistRanked struct {
 	Streamable string  `json:"streamable"`
 	Image      []Image `json:"image"`
@@ -62,6 +69,7 @@ type ArtistRanked struct {
 	Name       string  `json:"name"`
 }
 
+// WeeklyArtistChart ...
 type WeeklyArtistChart struct {
 	MBID      string `json:"mbid"`
 	URL       string `json:"url"`
@@ -70,6 +78,7 @@ type WeeklyArtistChart struct {
 	Playcount string `json:"playcount"`
 }
 
+// ArtistRecent ...
 type ArtistRecent struct {
 	MBID  string  `json:"mbid"`
 	Text  string  `json:"#text,omitempty"`
@@ -78,11 +87,13 @@ type ArtistRecent struct {
 	Image []Image `json:"image,omitempty"`
 }
 
+// SimilarArtists ...
 type SimilarArtists struct {
 	SimilarArtists []Artist      `json:"artist"`
 	Attr           ArtistTagAttr `json:"@attr"`
 }
 
+// ArtistAttr ...
 type ArtistAttr struct {
 	Artist     string `json:"artist"`
 	Page       string `json:"page"`
@@ -91,10 +102,12 @@ type ArtistAttr struct {
 	Total      string `json:"total"`
 }
 
+// ArtistTagAttr ...
 type ArtistTagAttr struct {
 	Artist string `json:"artist"`
 }
 
+// ArtistSearchRes ...
 type ArtistSearchRes struct {
 	Query             OpenSearchQuery `json:"opensearch:Query"`
 	QueryTotalResults string          `json:"opensearch:totalResults"`
@@ -104,6 +117,7 @@ type ArtistSearchRes struct {
 	Attr              SearchAttr      `json:"@attr"`
 }
 
+// ArtistMatches ...
 type ArtistMatches struct {
 	Artist []Artist `json:"artist"`
 }

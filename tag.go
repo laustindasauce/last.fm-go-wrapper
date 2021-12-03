@@ -2,6 +2,7 @@ package lastfm
 
 import "fmt"
 
+// TagInfo ...
 type TagInfo struct {
 	Name  string `json:"name"`
 	Total int    `json:"total"`
@@ -9,31 +10,37 @@ type TagInfo struct {
 	Wiki  Wiki   `json:"wiki"`
 }
 
+// TagTopTags ...
 type TagTopTags struct {
 	Attr TopTagAttr `json:"@attr"`
 	Tag  []TopTag   `json:"tag"`
 }
 
+// TagTopAlbums ...
 type TagTopAlbums struct {
 	Albums []TagAlbum `json:"album"`
 	Attr   TagAttr    `json:"@attr"`
 }
 
+// TagTopArtists ...
 type TagTopArtists struct {
 	Artists []TagArtist `json:"artist"`
 	Attr    TagAttr     `json:"@attr"`
 }
 
+// TagTopTracks ...
 type TagTopTracks struct {
 	Tracks []TagTrack `json:"track"`
 	Attr   TagAttr    `json:"@attr"`
 }
 
+// TagWeeklyChartlist ...
 type TagWeeklyChartlist struct {
 	Charts []TagChartlist `json:"chart"`
 	Attr   TagChartAttr   `json:"@attr"`
 }
 
+// TagAlbum ...
 type TagAlbum struct {
 	Name   string      `json:"name"`
 	MBID   string      `json:"mbid"`
@@ -43,6 +50,7 @@ type TagAlbum struct {
 	Attr   Rank        `json:"@attr"`
 }
 
+// TagArtist ...
 type TagArtist struct {
 	Name       string  `json:"name"`
 	MBID       string  `json:"mbid"`
@@ -52,6 +60,7 @@ type TagArtist struct {
 	Attr       Rank    `json:"@attr"`
 }
 
+// TagTrack ...
 type TagTrack struct {
 	Name       string          `json:"name"`
 	Duration   string          `json:"duration"`
@@ -63,34 +72,40 @@ type TagTrack struct {
 	Attr       Rank            `json:"@attr"`
 }
 
+// TagWithStrCount ...
 type TagWithStrCount struct {
 	Name  string `json:"name"`
 	URL   string `json:"url"`
 	Count string `json:"count"`
 }
 
+// TopTag ...
 type TopTag struct {
 	Name  string `json:"name"`
 	Count int    `json:"count"`
 	Reach int    `json:"reach"`
 }
 
+// TagChartlist ...
 type TagChartlist struct {
 	Text string `json:"#text"`
 	From string `json:"from"`
 	To   string `json:"to"`
 }
 
+// TopTagAttr ...
 type TopTagAttr struct {
 	Offset int `json:"offset"`
 	NumRes int `json:"num_res"`
 	Total  int `json:"total"`
 }
 
+// TagChartAttr ...
 type TagChartAttr struct {
 	Tag string `json:"tag"`
 }
 
+// TagAttr ...
 type TagAttr struct {
 	Tag        string `json:"tag"`
 	Page       string `json:"page"`

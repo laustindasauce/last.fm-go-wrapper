@@ -59,6 +59,7 @@ func New(httpClient *http.Client, key string, secret string) *Client {
 	return c
 }
 
+// SetUser ...
 func (c *Client) SetUser(user string) error {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rj&api_key=YOUR_API_KEY&format=json
 
@@ -85,24 +86,27 @@ type Image struct {
 	Size string `json:"size"`
 }
 
-// RecentDate
+// RecentDate ...
 type RecentDate struct {
 	UTS  string `json:"uts"`
 	Text string `json:"#text"`
 }
 
+// ChartDates ...
 type ChartDates struct {
 	Text string `json:"#text"`
 	From string `json:"from"`
 	To   string `json:"to"`
 }
 
+// Wiki ...
 type Wiki struct {
 	Published string `json:"published"`
 	Summary   string `json:"summary"`
 	Content   string `json:"content"`
 }
 
+// Bio ...
 type Bio struct {
 	Links     Links  `json:"links"`
 	Published string `json:"published"`
@@ -110,16 +114,19 @@ type Bio struct {
 	Content   string `json:"content"`
 }
 
+// Links ...
 type Links struct {
 	Link Link `json:"link"`
 }
 
+// Link ...
 type Link struct {
 	Text string `json:"#text"`
 	Rel  string `json:"rel"`
 	Href string `json:"href"`
 }
 
+// Rank ...
 type Rank struct {
 	Rank string `json:"rank"`
 }
@@ -129,6 +136,7 @@ type Tags struct {
 	Tag []Tag `json:"tag"`
 }
 
+// TagsWithCount ...
 type TagsWithCount struct {
 	Tag  []TagWithCount `json:"tag"`
 	Attr ArtistTagAttr  `json:"@attr"`
@@ -140,6 +148,7 @@ type Tag struct {
 	URL  string `json:"url"`
 }
 
+// PosAttr ...
 type PosAttr struct {
 	Position string `json:"position"`
 }
@@ -151,6 +160,7 @@ type TagWithCount struct {
 	URL   string `json:"url"`
 }
 
+// OpenSearchQuery ...
 type OpenSearchQuery struct {
 	Text        string `json:"#text"`
 	Role        string `json:"role"`
@@ -158,6 +168,7 @@ type OpenSearchQuery struct {
 	StartPage   string `json:"startPage"`
 }
 
+// SearchAttr ...
 type SearchAttr struct {
 	For string `json:"for"`
 }
@@ -170,6 +181,7 @@ type Error struct {
 	Err int `json:"error"`
 }
 
+// Error ...
 func (e Error) Error() string {
 	return e.Message
 }

@@ -2,11 +2,13 @@ package lastfm
 
 import "fmt"
 
+// LibraryArtists ...
 type LibraryArtists struct {
 	Artists []LibraryArtist `json:"artist"`
 	Attr    UserAttr        `json:"@attr"`
 }
 
+// LibraryArtist ...
 type LibraryArtist struct {
 	TagCount   string  `json:"tagcount"`
 	Image      []Image `json:"image"`

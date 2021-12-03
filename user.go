@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// User ...
 type User struct {
 	Country    string         `json:"country"`
 	Age        string         `json:"age"`
@@ -20,6 +21,7 @@ type User struct {
 	Type       string         `json:"type"`
 }
 
+// UserFriend ...
 type UserFriend struct {
 	Country    string            `json:"country"`
 	Age        string            `json:"age"`
@@ -36,78 +38,94 @@ type UserFriend struct {
 	Type       string            `json:"type"`
 }
 
+// ArtistPersonalTags ...
 type ArtistPersonalTags struct {
 	ArtistTags ArtistPersonalTag `json:"artists"`
 	Attr       PersonalTagAttr   `json:"@attr"`
 }
 
+// AlbumPersonalTags ...
 type AlbumPersonalTags struct {
 	AlbumTags AlbumPersonalTag `json:"albums"`
 	Attr      PersonalTagAttr  `json:"@attr"`
 }
 
+// TrackPersonalTags ...
 type TrackPersonalTags struct {
 	TrackTags TrackPersonalTag `json:"tracks"`
 	Attr      PersonalTagAttr  `json:"@attr"`
 }
 
+// UserRecentTracks ...
 type UserRecentTracks struct {
 	Tracks []TrackRecent `json:"track"`
 	Attr   UserAttr      `json:"@attr"`
 }
 
+// UserTopAlbums ...
 type UserTopAlbums struct {
 	Albums []AlbumRanked `json:"album"`
 	Attr   UserAttr      `json:"@attr"`
 }
 
+// UserTopArtists ...
 type UserTopArtists struct {
 	Artists []ArtistRanked `json:"artist"`
 	Attr    UserAttr       `json:"@attr"`
 }
 
+// UserTopTags ...
 type UserTopTags struct {
 	Tags []TagWithStrCount `json:"tag"`
 	Attr UserAttrSimple    `json:"@attr"`
 }
 
+// UserTopTracks ...
 type UserTopTracks struct {
 	Tracks []TrackRanked `json:"track"`
 	Attr   UserAttr      `json:"@attr"`
 }
 
+// UserWeeklyAlbumChart ...
 type UserWeeklyAlbumChart struct {
 	Albums []WeeklyAlbumChart `json:"album"`
 	Attr   WeeklyAttr         `json:"@attr"`
 }
 
+// UserWeeklyArtistChart ...
 type UserWeeklyArtistChart struct {
 	Artists []WeeklyArtistChart `json:"artist"`
 	Attr    WeeklyAttr          `json:"@attr"`
 }
 
+// UserWeeklyChartList ...
 type UserWeeklyChartList struct {
 	Charts []ChartDates   `json:"chart"`
 	Attr   UserAttrSimple `json:"@attr"`
 }
 
+// UserWeeklyTrackChart ...
 type UserWeeklyTrackChart struct {
 	Tracks []WeeklyTrackChart `json:"track"`
 	Attr   WeeklyAttr         `json:"@attr"`
 }
 
+// ArtistPersonalTag ...
 type ArtistPersonalTag struct {
 	Artists []Artist `json:"artist"`
 }
 
+// AlbumPersonalTag ...
 type AlbumPersonalTag struct {
 	Albums []Album `json:"album"`
 }
 
+// TrackPersonalTag ...
 type TrackPersonalTag struct {
 	Tracks []PersonalTrack `json:"track"`
 }
 
+// PersonalTrack ...
 type PersonalTrack struct {
 	Name       string          `json:"name"`
 	MBID       string          `json:"mbid"`
@@ -118,6 +136,7 @@ type PersonalTrack struct {
 	Image      []Image         `json:"image"`
 }
 
+// PersonalTagAttr ...
 type PersonalTagAttr struct {
 	User       string `json:"user"`
 	Tag        string `json:"tag"`
@@ -127,11 +146,13 @@ type PersonalTagAttr struct {
 	Total      string `json:"total"`
 }
 
+// UserLovedTracks ...
 type UserLovedTracks struct {
 	Tracks []LovedTrack `json:"track"`
 	Attr   UserAttr     `json:"@attr"`
 }
 
+// LovedTrack ...
 type LovedTrack struct {
 	Artist     AlbumArtist     `json:"artist"`
 	Date       TrackDate       `json:"date"`
@@ -142,20 +163,24 @@ type LovedTrack struct {
 	Streamable StreamableTrack `json:"streamable"`
 }
 
+// UserFriends ...
 type UserFriends struct {
 	Attr  UserAttr     `json:"@attr"`
 	Users []UserFriend `json:"user"`
 }
 
+// UserRegistered ...
 type UserRegistered struct {
 	Unixtime string `json:"unixtime"`
 	Text     int    `json:"#text"`
 }
 
+// UserRegisteredStr ...
 type UserRegisteredStr struct {
 	Unixtime string `json:"unixtime"`
 }
 
+// UserAttr ...
 type UserAttr struct {
 	User       string `json:"user"`
 	Page       string `json:"page"`
@@ -164,10 +189,12 @@ type UserAttr struct {
 	Total      string `json:"total"`
 }
 
+// UserAttrSimple ...
 type UserAttrSimple struct {
 	User string `json:"user"`
 }
 
+// WeeklyAttr ...
 type WeeklyAttr struct {
 	From string `json:"from"`
 	User string `json:"user"`
@@ -484,6 +511,10 @@ func (c *Client) UserGetTopArtists(user string, opts ...RequestOption) (UserTopA
 }
 
 /*
+Get the top tags used by this user.
+
+Params:
+
 user (Required) : The user name
 
 limit (Optional) : Limit the number of tags returned
@@ -514,6 +545,10 @@ func (c *Client) UserGetTopTags(user string, opts ...RequestOption) (UserTopTags
 }
 
 /*
+	Get the top tracks listened to by a user. You can stipulate a time period. Sends the overall chart by default.
+
+Params:
+
 user (Required) : The user name to fetch top tracks for.
 
 period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top tracks for.
@@ -548,6 +583,10 @@ func (c *Client) UserGetTopTracks(user string, opts ...RequestOption) (UserTopTr
 }
 
 /*
+	Get an album chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent album chart for this user.
+
+Params:
+
 user (Required) : The last.fm username to fetch the charts of.
 
 from (Optional) : The date at which the chart should start from. See User.getChartsList for more.
@@ -580,6 +619,10 @@ func (c *Client) UserGetWeeklyAlbumChart(user string, opts ...RequestOption) (Us
 }
 
 /*
+	Get an artist chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent artist chart for this user.
+
+Params:
+
 user (Required) : The last.fm username to fetch the charts of.
 
 from (Optional) : The date at which the chart should start from. See User.getChartsList for more.
@@ -638,6 +681,10 @@ func (c *Client) UserGetWeeklyChartList(user string) (UserWeeklyChartList, error
 }
 
 /*
+	Get a track chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent track chart for this user.
+
+Params:
+
 user (Required) : The last.fm username to fetch the charts of.
 
 from (Optional) : The date at which the chart should start from. See User.getChartsList for more.

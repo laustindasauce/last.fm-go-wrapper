@@ -7,16 +7,19 @@ import (
 	"github.com/biter777/countries"
 )
 
+// GeoTopArtists ...
 type GeoTopArtists struct {
 	Artist []Artist `json:"artist"`
 	Attr   GeoAttr  `json:"@attr"`
 }
 
+// GeoTopTracks ...
 type GeoTopTracks struct {
 	Track []GeoTrack `json:"track"`
 	Attr  GeoAttr    `json:"@attr"`
 }
 
+// GeoTrack ...
 type GeoTrack struct {
 	Name       string          `json:"name"`
 	Duration   string          `json:"duration"`
@@ -29,6 +32,7 @@ type GeoTrack struct {
 	Attr       TrackRank       `json:"@attr"`
 }
 
+// GeoAttr ...
 type GeoAttr struct {
 	Country    string `json:"country"`
 	Page       string `json:"page"`

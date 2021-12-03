@@ -13,6 +13,7 @@ type Album struct {
 	Attr      ArtistAttr  `json:"@attr"`
 }
 
+// SimpleAlbum ...
 type SimpleAlbum struct {
 	Name       string  `json:"name"`
 	Artist     string  `json:"artist"`
@@ -22,6 +23,7 @@ type SimpleAlbum struct {
 	MBID       string  `json:"mbid"`
 }
 
+// FullAlbum ...
 type FullAlbum struct {
 	Artist    string      `json:"artist"`
 	MBID      string      `json:"mbid"`
@@ -35,6 +37,7 @@ type FullAlbum struct {
 	Wiki      Wiki        `json:"wiki"`
 }
 
+// AlbumRanked ...
 type AlbumRanked struct {
 	Name      string      `json:"name"`
 	Playcount string      `json:"playcount"`
@@ -45,6 +48,7 @@ type AlbumRanked struct {
 	Attr      Rank        `json:"@attr"`
 }
 
+// WeeklyAlbumChart ...
 type WeeklyAlbumChart struct {
 	Artist    AlbumRecent `json:"artist"`
 	MBID      string      `json:"mbid"`
@@ -54,25 +58,30 @@ type WeeklyAlbumChart struct {
 	Playcount string      `json:"playcount"`
 }
 
+// AlbumRecent ...
 type AlbumRecent struct {
 	MBID string `json:"mbid"`
 	Text string `json:"#text"`
 }
 
+// AlbumTracks ...
 type AlbumTracks struct {
 	Track []TrackAlbum `json:"track"`
 }
 
+// AlbumTopTags ...
 type AlbumTopTags struct {
 	Tag  []TagWithCount `json:"tag"`
 	Attr AlbumAttr      `json:"@attr"`
 }
 
+// AlbumAttr ...
 type AlbumAttr struct {
 	Artist string `json:"artist"`
 	Album  string `json:"album"`
 }
 
+// AlbumSearchRes ...
 type AlbumSearchRes struct {
 	Query             OpenSearchQuery `json:"opensearch:Query"`
 	QueryTotalResults string          `json:"opensearch:totalResults"`
@@ -82,6 +91,7 @@ type AlbumSearchRes struct {
 	Attr              SearchAttr      `json:"@attr"`
 }
 
+// AlbumMatches ...
 type AlbumMatches struct {
 	Album []SimpleAlbum `json:"album"`
 }
@@ -125,12 +135,6 @@ func (c *Client) AlbumGetInfo(album, artist string, opts ...RequestOption) (Full
 
 	return albumInfo.FullAlbum, nil
 }
-
-// func (c *Client) AlbumGetTags(album, artist string) (string, error) {
-// 	// http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=cher&album=believe&api_key=YOUR_API_KEY&format=json
-// 	lastfmURL := c.getNoAuthURL("method.album.gettags", "album."+album, "artist."+artist)
-// 	return lastfmURL, nil
-// }
 
 /*
 artist (Required (unless mbid)] : The artist name

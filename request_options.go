@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+// RequestOption ...
 type RequestOption func(*requestOptions)
 
 type requestOptions struct {
@@ -104,6 +105,7 @@ func ToOpt(to int) RequestOption {
 	}
 }
 
+// Binary ...
 type Binary string
 
 const (
@@ -127,12 +129,16 @@ func ExtendedOpt(extend Binary) RequestOption {
 	}
 }
 
+// Tagging ...
 type Tagging string
 
 const (
-	AlbumTag  Tagging = "album"
+	// AlbumTag ...
+	AlbumTag Tagging = "album"
+	// ArtistTag ...
 	ArtistTag Tagging = "artist"
-	TrackTag  Tagging = "track"
+	// TrackTag ...
+	TrackTag Tagging = "track"
 )
 
 // TaggingTypeOpt – The type of items which have been tagged
@@ -142,15 +148,22 @@ func TaggingTypeOpt(tag Tagging) RequestOption {
 	}
 }
 
+// TimePeriod ...
 type TimePeriod string
 
 const (
-	Overall    TimePeriod = "overall"
-	Week       TimePeriod = "7day"
-	OneMonth   TimePeriod = "1month"
+	// Overall ...
+	Overall TimePeriod = "overall"
+	// Week ...
+	Week TimePeriod = "7day"
+	// OneMonth ...
+	OneMonth TimePeriod = "1month"
+	// ThreeMonth ...
 	ThreeMonth TimePeriod = "3month"
-	SixMonth   TimePeriod = "6month"
-	Year       TimePeriod = "12month"
+	// SixMonth ...
+	SixMonth TimePeriod = "6month"
+	// Year ...
+	Year TimePeriod = "12month"
 )
 
 // PeriodOpt – The time period over which to retrieve data for.

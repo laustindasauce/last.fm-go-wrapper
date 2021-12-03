@@ -4,11 +4,13 @@ import (
 	"fmt"
 )
 
+// Tracks ...
 type Tracks struct {
 	Track []Track    `json:"track"`
 	Attr  ArtistAttr `json:"@attr"`
 }
 
+// Track ...
 type Track struct {
 	Name       string      `json:"name"`
 	Playcount  string      `json:"playcount"`
@@ -21,6 +23,7 @@ type Track struct {
 	Attr       TrackRank   `json:"@attr"`
 }
 
+// TrackRanked ...
 type TrackRanked struct {
 	Streamable StreamableTrack `json:"streamable"`
 	MBID       string          `json:"mbid"`
@@ -33,6 +36,7 @@ type TrackRanked struct {
 	Playcount  string          `json:"playcount"`
 }
 
+// WeeklyTrackChart ...
 type WeeklyTrackChart struct {
 	Artist    AlbumRecent `json:"artist"`
 	Image     []Image     `json:"image"`
@@ -43,6 +47,7 @@ type WeeklyTrackChart struct {
 	Playcount string      `json:"playcount"`
 }
 
+// TrackRecent ...
 type TrackRecent struct {
 	Artist     ArtistRecent `json:"artist"`
 	Date       RecentDate   `json:"date"`
@@ -55,6 +60,7 @@ type TrackRecent struct {
 	Loved      string       `json:"loved,omitempty"`
 }
 
+// TrackInfo ...
 type TrackInfo struct {
 	Name       string          `json:"name"`
 	MBID       string          `json:"mbid"`
@@ -69,22 +75,26 @@ type TrackInfo struct {
 	Wiki       Wiki            `json:"wiki"`
 }
 
+// SimilarTracks ...
 type SimilarTracks struct {
 	Tracks []SimilarTrack   `json:"track"`
 	Attr   SimpleArtistAttr `json:"@attr"`
 }
 
+// TrackTags ...
 type TrackTags struct {
 	Tags []Tag           `json:"tag,omitempty"`
 	Text string          `json:"#text,omitempty"`
 	Attr ArtistTrackAttr `json:"@attr"`
 }
 
+// TrackTopTags ...
 type TrackTopTags struct {
 	Tags []TagWithCount  `json:"tag"`
 	Attr ArtistTrackAttr `json:"@attr"`
 }
 
+// TrackSearchRes ...
 type TrackSearchRes struct {
 	Query             OpenSearchQuery `json:"opensearch:Query"`
 	QueryTotalResults string          `json:"opensearch:totalResults"`
@@ -94,10 +104,12 @@ type TrackSearchRes struct {
 	Attr              SearchAttr      `json:"@attr"`
 }
 
+// TrackMatches ...
 type TrackMatches struct {
 	Tracks []TrackMatch `json:"track"`
 }
 
+// TrackMatch ...
 type TrackMatch struct {
 	Name       string  `json:"name"`
 	Artist     string  `json:"artist"`
@@ -108,6 +120,7 @@ type TrackMatch struct {
 	MBID       string  `json:"mbid"`
 }
 
+// SimilarTrack ...
 type SimilarTrack struct {
 	Name       string          `json:"name"`
 	Playcount  int             `json:"playcount"`
@@ -120,11 +133,13 @@ type SimilarTrack struct {
 	Image      []Image         `json:"image"`
 }
 
+// TrackCorrection ...
 type TrackCorrection struct {
 	Track CorrectedTrack `json:"track"`
 	Attr  CorrectedAttr  `json:"@attr"`
 }
 
+// CorrectedTrack ...
 type CorrectedTrack struct {
 	Name   string      `json:"name"`
 	URL    string      `json:"url"`
@@ -132,22 +147,26 @@ type CorrectedTrack struct {
 	Artist AlbumArtist `json:"artist"`
 }
 
+// TrackDate ...
 type TrackDate struct {
 	UTS  string `json:"uts"`
 	Text string `json:"#text"`
 }
 
+// CorrectedAttr ...
 type CorrectedAttr struct {
 	Index           string `json:"index"`
 	ArtistCorrected string `json:"artistcorrected"`
 	TrackCorrected  string `json:"trackcorrected"`
 }
 
+// StreamableTrack ...
 type StreamableTrack struct {
 	FullTrack string `json:"fulltrack"`
 	Text      string `json:"#text"`
 }
 
+// TrackAlbum ...
 type TrackAlbum struct {
 	Streamable StreamableTrack `json:"streamable"`
 	Duration   int             `json:"duration"`
@@ -157,6 +176,7 @@ type TrackAlbum struct {
 	Artist     AlbumArtist     `json:"artist"`
 }
 
+// TrackInfoAlbum ...
 type TrackInfoAlbum struct {
 	Artist string  `json:"artist"`
 	Title  string  `json:"title"`
@@ -166,18 +186,22 @@ type TrackInfoAlbum struct {
 	Attr   PosAttr `json:"@attr"`
 }
 
+// TrackRank ...
 type TrackRank struct {
 	Rank string `json:"rank"`
 }
 
+// TrackRankInt ...
 type TrackRankInt struct {
 	Rank int `json:"rank"`
 }
 
+// SimpleArtistAttr ...
 type SimpleArtistAttr struct {
 	Artist string `json:"artist"`
 }
 
+// ArtistTrackAttr ...
 type ArtistTrackAttr struct {
 	Artist string `json:"artist"`
 	Track  string `json:"track"`
