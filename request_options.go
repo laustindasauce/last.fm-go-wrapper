@@ -142,6 +142,24 @@ func TaggingTypeOpt(tag Tagging) RequestOption {
 	}
 }
 
+type TimePeriod string
+
+const (
+	Overall    TimePeriod = "overall"
+	Week       TimePeriod = "7day"
+	OneMonth   TimePeriod = "1month"
+	ThreeMonth TimePeriod = "3month"
+	SixMonth   TimePeriod = "6month"
+	Year       TimePeriod = "12month"
+)
+
+// PeriodOpt – The time period over which to retrieve data for.
+func PeriodOpt(period TimePeriod) RequestOption {
+	return func(o *requestOptions) {
+		o.urlParams.Set("period", string(period))
+	}
+}
+
 func processOptions(options ...RequestOption) requestOptions {
 	o := requestOptions{
 		urlParams: url.Values{},
