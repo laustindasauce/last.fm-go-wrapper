@@ -13,8 +13,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"net/url"
-	"strings"
 )
 
 // Client is a client for working with the Last.fm Web API
@@ -64,7 +62,7 @@ func New(httpClient *http.Client, key string, secret string) *Client {
 func (c *Client) SetUser(user string) error {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rj&api_key=YOUR_API_KEY&format=json
 
-	lastfmURL := c.getNoAuthURL("method.user.getinfo", "user."+user)
+	lastfmURL := fmt.Sprintf("%s&method=user.getinfo&user=%s", c.baseApiURL, user)
 
 	var userInfo struct {
 		User User `json:"user"`
@@ -79,37 +77,6 @@ func (c *Client) SetUser(user string) error {
 	// Set the user for the client
 	c.User = userInfo.User.Name
 	return nil
-}
-
-// Takes strings of form "key.value"
-func (c *Client) getNoAuthURL(opts ...string) string {
-	var pathOpts []PathOptions
-
-	for i := 0; i < len(opts); i++ {
-		pieces := strings.SplitN(opts[i], ".", 2)
-
-		// Ignore empty opts
-		if pieces[1] != "" {
-			pathOpts = append(pathOpts, PathOptions{key: pieces[0], value: pieces[1]})
-		}
-	}
-
-	pathOpts = append(pathOpts, c.keyOpt, c.jsonOpt)
-
-	params := encodeParams(pathOpts)
-
-	lastfmURL := c.baseURL + params
-
-	return lastfmURL
-}
-
-func encodeParams(opts []PathOptions) string {
-	params := url.Values{}
-	for i := 0; i < len(opts); i++ {
-		params.Add(opts[i].key, opts[i].value)
-	}
-
-	return params.Encode()
 }
 
 // Image identifies an image associated with an item
