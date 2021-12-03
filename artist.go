@@ -1,5 +1,7 @@
 package lastfm
 
+import "fmt"
+
 type Artists struct {
 	Artist []BareArtist `json:"artist"`
 }
@@ -80,10 +82,25 @@ type ArtistMatches struct {
 	Artist []Artist `json:"artist"`
 }
 
-// ArtistGetInfo uses the artist.getinfo method with scrobbler API to return the specifed
-// full artist information
-func (c *Client) ArtistGetInfo(artist, mbid, username string) (FullArtist, error) {
-	lastfmURL := c.getNoAuthURL("method.artist.getinfo", "artist."+artist, "mbid."+mbid, "username."+username)
+/*
+artist (Required (unless mbid)] : The artist name
+mbid (Optional) : The musicbrainz id for the artist
+lang (Optional) : The language to return the biography in, expressed as an ISO 639 alpha-2 code.
+autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+username (Optional) : The username for the context of the request. If supplied, the user's playcount for this artist is included in the response.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ArtistGetInfo(artist string, opts ...RequestOption) (FullArtist, error) {
+	// http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&method=artist.getinfo", c.baseApiURL)
+
+	opts = append(opts, ArtistOpt(artist))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var artistInfo struct {
 		Artist FullArtist `json:"artist"`
@@ -98,8 +115,24 @@ func (c *Client) ArtistGetInfo(artist, mbid, username string) (FullArtist, error
 	return artistInfo.Artist, nil
 }
 
-func (c *Client) ArtistGetSimilar(artist, mbid, limit string) (SimilarArtists, error) {
-	lastfmURL := c.getNoAuthURL("method.artist.getsimilar", "artist."+artist, "mbid."+mbid, "limit."+limit)
+/*
+limit (Optional) : Limit the number of similar artists returned
+artist (Required (unless mbid)] : The artist name
+autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+mbid (Optional) : The musicbrainz id for the artist
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ArtistGetSimilar(artist string, opts ...RequestOption) (SimilarArtists, error) {
+	// http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=cher&api_key=YOUR_API_KEY&format=json
+	lastfmURL := fmt.Sprintf("%s&method=artist.getsimilar", c.baseApiURL)
+
+	opts = append(opts, ArtistOpt(artist))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var similar struct {
 		SimilarRes SimilarArtists `json:"similarartists"`
@@ -114,9 +147,25 @@ func (c *Client) ArtistGetSimilar(artist, mbid, limit string) (SimilarArtists, e
 	return similar.SimilarRes, nil
 }
 
-func (c *Client) ArtistGetTopAlbums(artist, mbid, limit, page string) (ArtistAlbums, error) {
+/*
+artist (Required (unless mbid)] : The artist name
+mbid (Optional) : The musicbrainz id for the artist
+autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+page (Optional) : The page number to fetch. Defaults to first page.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ArtistGetTopAlbums(artist string, opts ...RequestOption) (ArtistAlbums, error) {
 	// method=artist.gettopalbums&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.gettopalbums", "artist."+artist, "mbid."+mbid, "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&method=artist.gettopalbums", c.baseApiURL)
+
+	opts = append(opts, ArtistOpt(artist))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topAlbums struct {
 		Albums ArtistAlbums `json:"topalbums"`
@@ -131,9 +180,23 @@ func (c *Client) ArtistGetTopAlbums(artist, mbid, limit, page string) (ArtistAlb
 	return topAlbums.Albums, nil
 }
 
-func (c *Client) ArtistGetTopTags(artist, mbid string) (TagsWithCount, error) {
+/*
+artist (Required (unless mbid)] : The artist name
+mbid (Optional) : The musicbrainz id for the artist
+autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ArtistGetTopTags(artist string, opts ...RequestOption) (TagsWithCount, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.gettoptags&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.gettoptags", "artist."+artist, "mbid."+mbid)
+	lastfmURL := fmt.Sprintf("%s&method=artist.gettoptags", c.baseApiURL)
+
+	opts = append(opts, ArtistOpt(artist))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topTags struct {
 		Tags TagsWithCount `json:"toptags"`
@@ -148,9 +211,25 @@ func (c *Client) ArtistGetTopTags(artist, mbid string) (TagsWithCount, error) {
 	return topTags.Tags, nil
 }
 
-func (c *Client) ArtistGetTopTracks(artist, mbid, limit, page string) (Tracks, error) {
+/*
+artist (Required (unless mbid)] : The artist name
+mbid (Optional) : The musicbrainz id for the artist
+autocorrect[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+page (Optional) : The page number to fetch. Defaults to first page.
+limit (Optional) : The number of results to fetch per page. Defaults to 50.
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ArtistGetTopTracks(artist string, opts ...RequestOption) (Tracks, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.gettoptracks", "artist."+artist, "mbid."+mbid, "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&method=artist.gettoptracks", c.baseApiURL)
+
+	opts = append(opts, ArtistOpt(artist))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var topTracks struct {
 		TopTracks Tracks `json:"toptracks"`
@@ -165,9 +244,23 @@ func (c *Client) ArtistGetTopTracks(artist, mbid, limit, page string) (Tracks, e
 	return topTracks.TopTracks, nil
 }
 
-func (c *Client) ArtistSearch(artist, limit, page string) (ArtistSearchRes, error) {
+/*
+limit (Optional) : The number of results to fetch per page. Defaults to 30.
+page (Optional) : The page number to fetch. Defaults to first page.
+artist (Required) : The artist name
+api_key (Required) : A Last.fm API key.
+*/
+func (c *Client) ArtistSearch(artist string, opts ...RequestOption) (ArtistSearchRes, error) {
 	//http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=YOUR_API_KEY&format=json
-	lastfmURL := c.getNoAuthURL("method.artist.search", "artist."+artist, "limit."+limit, "page."+page)
+	lastfmURL := fmt.Sprintf("%s&method=artist.search", c.baseApiURL)
+
+	opts = append(opts, ArtistOpt(artist))
+
+	values := processOptions(opts...).urlParams
+
+	if query := values.Encode(); query != "" {
+		lastfmURL += "&" + query
+	}
 
 	var searchRes struct {
 		SearchResults ArtistSearchRes `json:"results"`

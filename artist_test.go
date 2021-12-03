@@ -5,7 +5,7 @@ import (
 )
 
 func TestArtistGetInfo(t *testing.T) {
-	res, err := client.ArtistGetInfo("cher", "", "")
+	res, err := client.ArtistGetInfo("cher")
 
 	if err != nil {
 		t.Error(err)
@@ -17,7 +17,7 @@ func TestArtistGetInfo(t *testing.T) {
 }
 
 func TestArtistGetSimilar(t *testing.T) {
-	res, err := client.ArtistGetSimilar("cher", "", "")
+	res, err := client.ArtistGetSimilar("cher")
 
 	if err != nil {
 		t.Error(err)
@@ -33,7 +33,7 @@ func TestArtistGetSimilar(t *testing.T) {
 }
 
 func TestArtistGetTopAlbums(t *testing.T) {
-	res, err := client.ArtistGetTopAlbums("cher", "", "", "")
+	res, err := client.ArtistGetTopAlbums("cher")
 
 	if err != nil {
 		t.Error(err)
@@ -45,7 +45,7 @@ func TestArtistGetTopAlbums(t *testing.T) {
 }
 
 func TestArtistGetTopTags(t *testing.T) {
-	res, err := client.ArtistGetTopTags("cher", "")
+	res, err := client.ArtistGetTopTags("cher")
 
 	if err != nil {
 		t.Error(err)
@@ -57,7 +57,7 @@ func TestArtistGetTopTags(t *testing.T) {
 }
 
 func TestArtistGetTopTracks(t *testing.T) {
-	res, err := client.ArtistGetTopTracks("cher", "", "", "")
+	res, err := client.ArtistGetTopTracks("cher")
 
 	if err != nil {
 		t.Error(err)
@@ -69,7 +69,7 @@ func TestArtistGetTopTracks(t *testing.T) {
 }
 
 func TestArtistSearch(t *testing.T) {
-	res, err := client.ArtistSearch("cher", "", "")
+	res, err := client.ArtistSearch("cher")
 
 	if err != nil {
 		t.Error(err)
