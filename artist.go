@@ -52,6 +52,24 @@ type FullArtist struct {
 	Bio        Bio         `json:"bio"`
 }
 
+type ArtistRanked struct {
+	Streamable string  `json:"streamable"`
+	Image      []Image `json:"image"`
+	MBID       string  `json:"mbid"`
+	URL        string  `json:"url"`
+	Playcount  string  `json:"playcount"`
+	Attr       Rank    `json:"@attr"`
+	Name       string  `json:"name"`
+}
+
+type WeeklyArtistChart struct {
+	MBID      string `json:"mbid"`
+	URL       string `json:"url"`
+	Name      string `json:"name"`
+	Attr      Rank   `json:"@attr"`
+	Playcount string `json:"playcount"`
+}
+
 type ArtistRecent struct {
 	MBID  string  `json:"mbid"`
 	Text  string  `json:"#text,omitempty"`

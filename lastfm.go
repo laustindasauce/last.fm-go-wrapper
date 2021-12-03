@@ -91,6 +91,12 @@ type RecentDate struct {
 	Text string `json:"#text"`
 }
 
+type ChartDates struct {
+	Text string `json:"#text"`
+	From string `json:"from"`
+	To   string `json:"to"`
+}
+
 type Wiki struct {
 	Published string `json:"published"`
 	Summary   string `json:"summary"`

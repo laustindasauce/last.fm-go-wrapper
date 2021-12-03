@@ -56,6 +56,46 @@ type UserRecentTracks struct {
 	Attr   UserAttr      `json:"@attr"`
 }
 
+type UserTopAlbums struct {
+	Albums []AlbumRanked `json:"album"`
+	Attr   UserAttr      `json:"@attr"`
+}
+
+type UserTopArtists struct {
+	Artists []ArtistRanked `json:"artist"`
+	Attr    UserAttr       `json:"@attr"`
+}
+
+type UserTopTags struct {
+	Tags []TagWithStrCount `json:"tag"`
+	Attr UserAttrSimple    `json:"@attr"`
+}
+
+type UserTopTracks struct {
+	Tracks []TrackRanked `json:"track"`
+	Attr   UserAttr      `json:"@attr"`
+}
+
+type UserWeeklyAlbumChart struct {
+	Albums []WeeklyAlbumChart `json:"album"`
+	Attr   WeeklyAttr         `json:"@attr"`
+}
+
+type UserWeeklyArtistChart struct {
+	Artists []WeeklyArtistChart `json:"artist"`
+	Attr    WeeklyAttr          `json:"@attr"`
+}
+
+type UserWeeklyChartList struct {
+	Charts []ChartDates   `json:"chart"`
+	Attr   UserAttrSimple `json:"@attr"`
+}
+
+type UserWeeklyTrackChart struct {
+	Tracks []WeeklyTrackChart `json:"track"`
+	Attr   WeeklyAttr         `json:"@attr"`
+}
+
 type ArtistPersonalTag struct {
 	Artists []Artist `json:"artist"`
 }
@@ -122,6 +162,16 @@ type UserAttr struct {
 	PerPage    string `json:"perPage"`
 	TotalPages string `json:"totalPages"`
 	Total      string `json:"total"`
+}
+
+type UserAttrSimple struct {
+	User string `json:"user"`
+}
+
+type WeeklyAttr struct {
+	From string `json:"from"`
+	User string `json:"user"`
+	To   string `json:"to"`
 }
 
 /*
@@ -378,7 +428,7 @@ page (Optional) : The page number to fetch. Defaults to first page.
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetTopAlbums(user string, opts ...RequestOption) {
+func (c *Client) UserGetTopAlbums(user string, opts ...RequestOption) (UserTopAlbums, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettopalbums", c.baseApiURL, user)
 	values := processOptions(opts...).urlParams
@@ -387,7 +437,17 @@ func (c *Client) UserGetTopAlbums(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
+	var topAlbums struct {
+		TopAlbums UserTopAlbums `json:"topalbums"`
+	}
+
+	err := c.get(lastfmURL, &topAlbums)
+
+	if err != nil {
+		return UserTopAlbums{}, err
+	}
+
+	return topAlbums.TopAlbums, nil
 }
 
 /*
@@ -401,7 +461,7 @@ page (Optional) : The page number to fetch. Defaults to first page.
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetTopArtists(user string, opts ...RequestOption) {
+func (c *Client) UserGetTopArtists(user string, opts ...RequestOption) (UserTopArtists, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettopartists", c.baseApiURL, user)
 	values := processOptions(opts...).urlParams
@@ -410,7 +470,17 @@ func (c *Client) UserGetTopArtists(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
+	var topArtists struct {
+		TopArtists UserTopArtists `json:"topartists"`
+	}
+
+	err := c.get(lastfmURL, &topArtists)
+
+	if err != nil {
+		return UserTopArtists{}, err
+	}
+
+	return topArtists.TopArtists, nil
 }
 
 /*
@@ -420,7 +490,7 @@ limit (Optional) : Limit the number of tags returned
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetTopTags(user string, opts ...RequestOption) {
+func (c *Client) UserGetTopTags(user string, opts ...RequestOption) (UserTopTags, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettoptags", c.baseApiURL, user)
 
@@ -430,7 +500,17 @@ func (c *Client) UserGetTopTags(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
+	var topTags struct {
+		TopTags UserTopTags `json:"toptags"`
+	}
+
+	err := c.get(lastfmURL, &topTags)
+
+	if err != nil {
+		return UserTopTags{}, err
+	}
+
+	return topTags.TopTags, nil
 }
 
 /*
@@ -444,7 +524,7 @@ page (Optional) : The page number to fetch. Defaults to first page.
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetTopTracks(user string, opts ...RequestOption) {
+func (c *Client) UserGetTopTracks(user string, opts ...RequestOption) (UserTopTracks, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.gettoptracks", c.baseApiURL, user)
 
@@ -454,7 +534,17 @@ func (c *Client) UserGetTopTracks(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
+	var topTracks struct {
+		TopTracks UserTopTracks `json:"toptracks"`
+	}
+
+	err := c.get(lastfmURL, &topTracks)
+
+	if err != nil {
+		return UserTopTracks{}, err
+	}
+
+	return topTracks.TopTracks, nil
 }
 
 /*
@@ -466,7 +556,7 @@ to (Optional) : The date at which the chart should end on. See User.getChartsLis
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetWeeklyAlbumChart(user string, opts ...RequestOption) {
+func (c *Client) UserGetWeeklyAlbumChart(user string, opts ...RequestOption) (UserWeeklyAlbumChart, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklyalbumchart", c.baseApiURL, user)
 
@@ -476,7 +566,17 @@ func (c *Client) UserGetWeeklyAlbumChart(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
+	var weeklyChart struct {
+		Chart UserWeeklyAlbumChart `json:"weeklyalbumchart"`
+	}
+
+	err := c.get(lastfmURL, &weeklyChart)
+
+	if err != nil {
+		return UserWeeklyAlbumChart{}, err
+	}
+
+	return weeklyChart.Chart, nil
 }
 
 /*
@@ -488,7 +588,7 @@ to (Optional) : The date at which the chart should end on. See User.getChartsLis
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetWeeklyArtistChart(user string, opts ...RequestOption) {
+func (c *Client) UserGetWeeklyArtistChart(user string, opts ...RequestOption) (UserWeeklyArtistChart, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklyartistchart", c.baseApiURL, user)
 
@@ -498,19 +598,43 @@ func (c *Client) UserGetWeeklyArtistChart(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
+	var weeklyChart struct {
+		Chart UserWeeklyArtistChart `json:"weeklyartistchart"`
+	}
+
+	err := c.get(lastfmURL, &weeklyChart)
+
+	if err != nil {
+		return UserWeeklyArtistChart{}, err
+	}
+
+	return weeklyChart.Chart, nil
 }
 
 /*
+	Get a list of available charts for this user, expressed as date ranges which can be sent to the chart services.
+
+Params:
+
 user (Required) : The last.fm username to fetch the charts list for.
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetWeeklyChartList(user string) {
+func (c *Client) UserGetWeeklyChartList(user string) (UserWeeklyChartList, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklychartlist&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklychartlist", c.baseApiURL, user)
 
-	fmt.Println(lastfmURL)
+	var weeklyChart struct {
+		Chart UserWeeklyChartList `json:"weeklychartlist"`
+	}
+
+	err := c.get(lastfmURL, &weeklyChart)
+
+	if err != nil {
+		return UserWeeklyChartList{}, err
+	}
+
+	return weeklyChart.Chart, nil
 }
 
 /*
@@ -522,7 +646,7 @@ to (Optional) : The date at which the chart should end on. See User.getChartsLis
 
 api_key (Required) : A Last.fm API key.
 */
-func (c *Client) UserGetWeeklyTrackChart(user string, opts ...RequestOption) {
+func (c *Client) UserGetWeeklyTrackChart(user string, opts ...RequestOption) (UserWeeklyTrackChart, error) {
 	// http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=rj&api_key=YOUR_API_KEY&format=json
 	lastfmURL := fmt.Sprintf("%s&user=%s&method=user.getweeklytrackchart", c.baseApiURL, user)
 
@@ -532,5 +656,15 @@ func (c *Client) UserGetWeeklyTrackChart(user string, opts ...RequestOption) {
 		lastfmURL += "&" + query
 	}
 
-	fmt.Println(lastfmURL)
+	var weeklyChart struct {
+		Chart UserWeeklyTrackChart `json:"weeklytrackchart"`
+	}
+
+	err := c.get(lastfmURL, &weeklyChart)
+
+	if err != nil {
+		return UserWeeklyTrackChart{}, err
+	}
+
+	return weeklyChart.Chart, nil
 }

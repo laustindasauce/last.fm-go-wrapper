@@ -63,6 +63,12 @@ type TagTrack struct {
 	Attr       Rank            `json:"@attr"`
 }
 
+type TagWithStrCount struct {
+	Name  string `json:"name"`
+	URL   string `json:"url"`
+	Count string `json:"count"`
+}
+
 type TopTag struct {
 	Name  string `json:"name"`
 	Count int    `json:"count"`

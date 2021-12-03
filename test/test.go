@@ -25,9 +25,9 @@ func main() {
 	// extend := lastfm.ExtendedOpt(binary)
 
 	// client.UserGetRecentTracks("Abspen1", limit)
-	res, err := client.TagGetTopTags()
+	res, err := client.UserGetWeeklyTrackChart(client.User, lastfm.LimitOpt(2))
 
-	// client.UserGetRecentTracks(client.User, lastfm.ExtendedOpt(lastfm.One), lastfm.LimitOpt(2))
+	// client.UserGetWeeklyTrackChart(client.User)
 
 	if err != nil {
 		log.Fatal(err)

@@ -21,6 +21,28 @@ type Track struct {
 	Attr       TrackRank   `json:"@attr"`
 }
 
+type TrackRanked struct {
+	Streamable StreamableTrack `json:"streamable"`
+	MBID       string          `json:"mbid"`
+	Name       string          `json:"name"`
+	Image      []Image         `json:"image"`
+	Artist     AlbumArtist     `json:"artist"`
+	URL        string          `json:"url"`
+	Duration   string          `json:"duration"`
+	Attr       TrackRank       `json:"@attr"`
+	Playcount  string          `json:"playcount"`
+}
+
+type WeeklyTrackChart struct {
+	Artist    AlbumRecent `json:"artist"`
+	Image     []Image     `json:"image"`
+	MBID      string      `json:"mbid"`
+	URL       string      `json:"url"`
+	Name      string      `json:"name"`
+	Attr      TrackRank   `json:"@attr"`
+	Playcount string      `json:"playcount"`
+}
+
 type TrackRecent struct {
 	Artist     ArtistRecent `json:"artist"`
 	Date       RecentDate   `json:"date"`

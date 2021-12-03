@@ -35,6 +35,25 @@ type FullAlbum struct {
 	Wiki      Wiki        `json:"wiki"`
 }
 
+type AlbumRanked struct {
+	Name      string      `json:"name"`
+	Playcount string      `json:"playcount"`
+	MBID      string      `json:"mbid"`
+	URL       string      `json:"url"`
+	Artist    AlbumArtist `json:"artist"`
+	Image     []Image     `json:"image"`
+	Attr      Rank        `json:"@attr"`
+}
+
+type WeeklyAlbumChart struct {
+	Artist    AlbumRecent `json:"artist"`
+	MBID      string      `json:"mbid"`
+	URL       string      `json:"url"`
+	Name      string      `json:"name"`
+	Attr      Rank        `json:"@attr"`
+	Playcount string      `json:"playcount"`
+}
+
 type AlbumRecent struct {
 	MBID string `json:"mbid"`
 	Text string `json:"#text"`
